@@ -1,4 +1,6 @@
-// # Literals
+(**
+# Literals
+ *)
 
 86y // sbyte - signed 8-bit integer
 86uy // byte - unsigned 8-bit integer

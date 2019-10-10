@@ -1,6 +1,8 @@
-// # Code Quotations
+(**
+# Code Quotations
 
-// Pass around F# code as a dynamic expression. Untyped quotations are a little faster to process.
+Pass around F# code as a dynamic expression. Untyped quotations are a little faster to process.
+ *)
 
 open Microsoft.FSharp.Quotations
 
@@ -9,14 +11,18 @@ let expr2: Expr = <@@ 1 + 1 @@> // Untyped code quotation
 
 <@ let f x = x + 1 in f 20 @>
 
-// or
+(**
+or
+ *)
 
-<@ 
+<@
   let f x = x + 1
-  f 20 
+  f 20
 @>
 
-// Splicing
+(**
+## Splicing
+ *)
 
 <@ 1 + %expr @> // Add typed expression `expr` to quotation
 <@@ 1 + %%expr2 @@> // Add untyped expression `expr2` to quotation

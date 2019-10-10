@@ -1,9 +1,11 @@
-// # Loops
+(**
+# Loops
 
-// ## for...to Expression
+## for...to Expression
 
-// Iterate over a range of values returning unit. 
-// Works like imperative for loop.
+Iterate over a range of values returning unit.
+Works like imperative for loop.
+ *)
 
 printfn "for...to"
 
@@ -15,9 +17,11 @@ for i = 10 downto 1 do
   printf "%d " i
 printfn ""
 
-// ## for...in Expression
+(**
+## for...in Expression
 
-// Iterate over values in an enumerable collection.
+Iterate over values in an enumerable collection.
+ *)
 
 printfn "for...in"
 
@@ -30,9 +34,11 @@ for i in 10 .. -1 .. 1 do
   printf "%d " i
 printfn ""
 
-// ## while...do Expression
+(**
+## while...do Expression
 
-// Loop while a condition is true
+Loop while a condition is true
+ *)
 
 open System
 

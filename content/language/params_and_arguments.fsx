@@ -1,33 +1,43 @@
-// # Parameters & Arguments
+(**
+# Parameters & Arguments
 
-// The term *parameter* is used to describe the names for values that are
-// expected to be supplied. The term *argument* is used for the values
-// provided for each parameter.
+The term *parameter* is used to describe the names for values that are
+expected to be supplied. The term *argument* is used for the values
+provided for each parameter.
+ *)
 
 type SomeType =
   member this.SomeMethod(param1, param2) = () // Tuple form
 
 let function1 param1 param2 = () // Curried form
 
-// The Tuple form is generally used when calling methods as this most
-// closely resembles .NET calling convention.
+(**
+The Tuple form is generally used when calling methods as this most
+closely resembles .NET calling convention.
 
-// The curried form is generally used when creating functions.
+The curried form is generally used when creating functions.
 
-// The two forms can be mixed:
+The two forms can be mixed:
 
 let function2 param1 (param2, param3) param4 = ()
+ *)
 
-// It's also possible to ignore parameters using the wildcard (`_`) pattern:
+(**
+It's also possible to ignore parameters using the wildcard (`_`) pattern:
+ *)
 
 let makeList _ = [ for i in 1 .. 100 -> i * i ]
 let list1 = makeList 200 // 200 is ignored
 
-// Other patterns that are used in arguments are the `as` pattern and identifier
-// patterns associated with discriminated unions and active patterns.
+(**
+Other patterns that are used in arguments are the `as` pattern and identifier
+patterns associated with discriminated unions and active patterns.
+ *)
 
 
-// ## Named Arguments
+(**
+## Named Arguments
+ *)
 
 type SpeedingTicket() =
   member this.GetMPHOver(speed: int, limit: int) = speed - limit
@@ -54,10 +64,12 @@ type Account() =
 let account1 = Account(AccountNumber=83746, Balance=234.43)
 
 
-// ## Optional Parameters
+(**
+## Optional Parameters
+ *)
 
-// Only on members, not functions. Prefix parameter with `?`. Use option type
-// `Some` or `None`.
+Only on members, not functions. Prefix parameter with `?`. Use option type
+`Some` or `None`.
 
 type DuplexType =
   | Full
@@ -75,7 +87,9 @@ let conn1 = Connection(duplex0 = Full)
 let conn2 = Connection(300, Half)
 let conn3 = Connection(?duplex0 = None)
 
-// When calling F# from C# the `Optional` attribute can be used.
+(**
+When calling F# from C# the `Optional` attribute can be used.
+ *)
 
 open System
 open System.Runtime.InteropServices
@@ -84,11 +98,13 @@ type C =
     printfn "%s" message
 
 
-// ## Passing by Reference
+(**
+## Passing by Reference
 
-// * Use `inref<'T>` to read a pointer
-// * Use `outref<'T>` to write to a pointer
-// * Use `byref<'T>` to read and write a pointer
+* Use `inref<'T>` to read a pointer
+* Use `outref<'T>` to write to a pointer
+* Use `byref<'T>` to read and write a pointer
+ *)
 
 let exampleInref (x: inref<int>) = printfn "It's %d" x
 let exampleOutref (x: outref<int>) = x <- x + 1
@@ -97,17 +113,21 @@ let exampleByref (x: byref<int>) =
   x <- x + 1
 
 let xxx = 1
-// Waiting for https://github.com/dotnet/docs/issues/14522 to be resolved:
-// `exampleInref &xxx`
+(**
+Waiting for https://github.com/dotnet/docs/issues/14522 to be resolved:
+`exampleInref &xxx`
+ *)
 
 let mutable y = 2
 exampleOutref &y
 exampleByref &y
 
 
-// ## Parameter Arrays
+(**
+## Parameter Arrays
 
-// Can only be used in methods not functions. Can only be used as the last parameter.
+Can only be used in methods not functions. Can only be used as the last parameter.
+ *)
 
 open System
 

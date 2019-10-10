@@ -1,14 +1,16 @@
-// # Pattern Matching
+(**
+# Pattern Matching
 
-// Compare, decompose or extract data using `match`, function arguments,
-// lambda expressions, `try...with` exception handlers.
-// TODO: ensure we document try...with and lambda expressions
+Compare, decompose or extract data using `match`, function arguments,
+lambda expressions, `try...with` exception handlers.
+TODO: ensure we document try...with and lambda expressions
 
 
-// ## Constant Pattern
+## Constant Pattern
 
-// Similar to a case statement in other languages. Any numeric, character,
-// or string literal, enumeration constant, or defined literal identifier.
+Similar to a case statement in other languages. Any numeric, character,
+or string literal, enumeration constant, or defined literal identifier.
+ *)
 
 [<Literal>]
 let Three = 3
@@ -32,13 +34,15 @@ let printColorName (color: Color) =
   | _ -> printfn "Unknown value"
 
 
-// ## Identifier Pattern
+(**
+## Identifier Pattern
 
-// A case value of a discriminated union, exception label, active pattern case.
-// See relevant types for pattern matching examples.
+A case value of a discriminated union, exception label, active pattern case.
+See relevant types for pattern matching examples.
 
 
-// ## Variable Pattern
+## Variable Pattern
+ *)
 
 let function1 x =
   match x with
@@ -47,13 +51,17 @@ let function1 x =
   | (var1, var2) -> printfn "%d equals %d" var1 var2
 
 
-// ## As Pattern
+(**
+## As Pattern
+ *)
 
 let (var1, var2) as tuple1 = (1, 2)
 printfn "%d %d %A" var1 var2 tuple1
 
 
-// ## Or/And Pattern
+(**
+## Or/And Pattern
+ *)
 
 let detectZero point =
   match point with
@@ -62,7 +70,9 @@ let detectZero point =
   | _ -> "Other value"
 
 
-// ## Cons(truct) Pattern
+(**
+## Cons(truct) Pattern
+ *)
 
 let list1 = [1, 2, 3]
 let rec printList l =
@@ -71,10 +81,12 @@ let rec printList l =
   | [] -> printfn ""
 
 
-// ## List/Array Pattern
+(**
+## List/Array Pattern
 
-// Decompose lists (`[]`) or arrays (`[||]`).
 
+Decompose lists (`[]`) or arrays (`[||]`).
+ *)
 let listLength list =
   match list with
   | [] -> 0
@@ -83,10 +95,12 @@ let listLength list =
   | _ -> List.length list
 
 
-// ## Parenthesized Pattern
+(**
+## Parenthesized Pattern
 
-// Use to group patterns.
 
+Use to group patterns.
+ *)
 let countValues list value =
   let rec checkList list acc =
     match list with
@@ -97,7 +111,9 @@ let countValues list value =
   checkList list 0
 
 
-// ## Tuple Pattern
+(**
+## Tuple Pattern
+ *)
 
 let print tuple1 =
   match tuple1 with
@@ -106,7 +122,9 @@ let print tuple1 =
 // TODO: Pattern matching Tuples in function inputs
 
 
-// ## Record Pattern
+(**
+## Record Pattern
+ *)
 
 type MyRecord = { Name: string; ID: int }
 let IsMatchByName record (name: string) =
@@ -117,21 +135,25 @@ let IsMatchByName record (name: string) =
 let recordX = { Name = "Parker"; ID = 10 }
 
 
-// ## Wildcard Pattern
-
-// Underscore (`_`) matches anything. Like variable pattern but discards
-// input. Used in most of the previous examples as the last catch all case.
+(**
+## Wildcard Pattern
 
 
-// ## Type Annotations
+Underscore (`_`) matches anything. Like variable pattern but discards
+input. Used in most of the previous examples as the last catch all case.
 
+
+## Type Annotations
+ *)
 let detect x =
   match x with
   | 1 -> "Found a 1"
   | (var1: int) -> sprintf "%d" var1
 
 
-// ## Type Test Pattern
+(**
+## Type Test Pattern
+ *)
 
 open System.Windows.Forms
 let RegisterControl(control: Control) =
@@ -141,15 +163,17 @@ let RegisterControl(control: Control) =
   | _ -> ()
 
 
-// ## Null Pattern
+(**
+## Null Pattern
 
-// Matches null, mainly for working with .NET interop. `| null -> ...`
+
+Matches null, mainly for working with .NET interop. `| null -> ...`
 
 
-// ## Active Patterns
+## Active Patterns
 
-// Named positions that subdivide input data. Max 7 partitions.
-
+Named positions that subdivide input data. Max 7 partitions.
+ *)
 let (|Even|Odd|) input = if input % 2 = 0 then Even else Odd
 
 let TestNumber input =

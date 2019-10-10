@@ -1,4 +1,6 @@
-// # String
+(**
+# String
+ *)
 
 printfn "Standard string with\n\tsome escape sequences"
 printfn "%A" @"Verbatim string escape sequences such as \n are ignored. Quoting can be done like so, ""Quoted text"""
@@ -12,12 +14,18 @@ a line break"
 printfn "Second character in the string is %c" "Hello".[1]
 printfn "Substring of Hello is %s" "Hello".[0..2]
 
-// ASCII array representation of a string
+(**
+ASCII array representation of a string
+ *)
 let bytearray : byte[] = "abc"B
 
-// Concatenate a string
+(**
+Concatenate a string
+ *)
 let string1 = "Hello, " + "World"
 
-// ## Core.String Module
+(**
+## Core.String Module
 
-// https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.string-module-%5bfsharp%5d
+https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.string-module-%5bfsharp%5d
+ *)

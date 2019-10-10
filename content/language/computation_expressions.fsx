@@ -1,9 +1,11 @@
-// # Computation Expressions
+(**
+# Computation Expressions
 
-// [Sequence Expressions](sequences.fsx), [Asynchronous Workflows](async_workflows.fsx) and 
-// [Query Expressions](query_expressions.fsx) are types of computation expressions.
+[Sequence Expressions](sequences.fsx), [Asynchronous Workflows](async_workflows.fsx) and
+[Query Expressions](query_expressions.fsx) are types of computation expressions.
 
-// ## Logging all assignments
+## Logging all assignments
+ *)
 
 type LoggingBuilder() =
   let log p = printfn "expression is %A" p
@@ -22,13 +24,15 @@ let loggedWorkflow =
     return z
   }
 
-// `use!` can be applied instead of `let!` when the result
-// implements IDisposable (same use as `use`).
+(**
+`use!` can be applied instead of `let!` when the result
+implements IDisposable (same use as `use`).
 
 
-// ## Handling divide by zero
-// Handle a series of divide operations, shortcutting if 
-// any divide by zero
+## Handling divide by zero
+Handle a series of divide operations, shortcutting if
+any divide by zero
+ *)
 
 let divideBy bottom top =
   if bottom = 0
@@ -41,7 +45,7 @@ let divideByWorkflow x y w z =
   >>= divideBy w
   >>= divideBy z
 
-let printResult result = 
+let printResult result =
   match result with
   | Some result -> printfn "Good workflow: %i" result
   | None -> printfn "Bad workflow: Divide by zero happened"
@@ -53,7 +57,9 @@ printResult good
 printResult bad
 
 
-// ## Return early if a call succeeds
+(**
+## Return early if a call succeeds
+ *)
 
 type OrElseBuilder() =
   member this.ReturnFrom(x) = x
@@ -79,16 +85,20 @@ multiLookup "A" |> printfn "Result for A is %A"
 multiLookup "CA" |> printfn "Result for CA is %A"
 multiLookup "X" |> printfn "Result for X is %A"
 
-// ## Continuations
+(**
+## Continuations
 
-// Caller decides what to do with a result instead of the function.
+Caller decides what to do with a result instead of the function.
+ *)
 
 let divide ifZero ifSuccess top bottom =
   if (bottom = 0)
   then ifZero()
   else ifSuccess (top / bottom)
 
-// Print out the result
+(**
+Print out the result
+ *)
 let ifZeroPrint () = printfn "bad"
 let ifSuccessPrint x = printfn "good %i" x
 
@@ -97,7 +107,9 @@ let dividePrint = divide ifZeroPrint ifSuccessPrint
 let goodPrint = dividePrint 6 3
 let badPrint = dividePrint 6 0
 
-// Convert to an option
+(**
+Convert to an option
+ *)
 let ifZeroOption () = None
 let ifSuccessOption x = Some x
 

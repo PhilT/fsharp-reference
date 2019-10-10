@@ -1,6 +1,8 @@
-// # List
+(**
+# List
 
-// Ordered, immutable elements of the same type or base type.
+Ordered, immutable elements of the same type or base type.
+ *)
 
 let aList = [1; 2; 3]
 let anotherList = [
@@ -30,10 +32,12 @@ printfn "%A" aList.Tail.Head // Next element
 printfn "%A" List.Empty // New empty list
 
 
-// ## Recursion
+(**
+## Recursion
 
-// The following function uses an accumulator to ensure the last call is a call
-// to itself (tail recursive).
+The following function uses an accumulator to ensure the last call is a call
+to itself (tail recursive).
+ *)
 
 let sum2 list =
   let rec loop list acc =
@@ -43,10 +47,12 @@ let sum2 list =
   loop list 0
 
 
-// ## Module Functions
+(**
+## Module Functions
 
-// Detailed docs of these functions can be found at:
-// https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.list-module-%5bfsharp%5d
+Detailed docs of these functions can be found at:
+https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.list-module-%5bfsharp%5d
+ *)
 
 let head = List.head [1; 2; 3] // head = 1
 let tail = List.tail [1; 2; 3] // tail = [2; 3]

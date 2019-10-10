@@ -1,4 +1,6 @@
-// Nested namespaces:
+(**
+Nested namespaces:
+ *)
 
 namespace Outer
 type MyClass() =

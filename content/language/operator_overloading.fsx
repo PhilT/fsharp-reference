@@ -1,7 +1,9 @@
-// # Operator Overloading
+(**
+# Operator Overloading
 
-// Operators can be overloaded as `member`s of classes or records. They can
-// also be overloaded at the global level using `let`:
+Operators can be overloaded as `member`s of classes or records. They can
+also be overloaded at the global level using `let`:
+ *)
 
 type Vector(x: float, y: float) =
   do printfn "%f %f" x y
@@ -13,9 +15,11 @@ type SomeType =
 
 let inline (+?) (x: int) (y: int) = x + 2 * y
 
-// Existing operators can be overloaded but new, custom operators can
-// also be created using a combination of allowed operator characters.
+(**
+Existing operators can be overloaded but new, custom operators can
+also be created using a combination of allowed operator characters.
 
-// In order to make an unary operator (as opposed to binary) the operator must
-// be prefixed with `~` as in the example above, `(~-)`. This overloads the
-// `-` operator.
+In order to make an unary operator (as opposed to binary) the operator must
+be prefixed with `~` as in the example above, `(~-)`. This overloads the
+`-` operator.
+ *)

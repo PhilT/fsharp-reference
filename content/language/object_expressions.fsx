@@ -1,9 +1,11 @@
-// # Object Expressions
+(**
+# Object Expressions
 
-// Used to avoid the extra overhead of creating a new named type.
-// Minimize the number of types created in a program.
+Used to avoid the extra overhead of creating a new named type.
+Minimize the number of types created in a program.
 
-// Object expression that overrides `ToString` method
+Object expression that overrides `ToString` method
+ *)
 let obj1 = { new System.Object() with member x.ToString() = "F#" }
 printfn "%A" obj1
 
@@ -26,7 +28,9 @@ type IFirst =
 type ISecond =
   abstract H: unit -> unit
 
-// Object expression that implements 2 interfaces
+(**
+Object expression that implements 2 interfaces
+ *)
 let implementer() =
   { new ISecond with
       member this.H() = ()

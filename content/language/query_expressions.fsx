@@ -1,7 +1,9 @@
-// # Query Expressions
+(**
+# Query Expressions
 
-// Query a data source using LINQ
 
+Query a data source using LINQ
+ *)
 #r @"packages\sqlprovider\1.1.68\lib\netstandard2.0\FSharp.Data.SqlProvider.dll"
 open FSharp.Data.Sql
 
@@ -9,37 +11,47 @@ open FSharp.Data.Sql
 let RESOLUTION_PATH = __SOURCE_DIRECTORY__ + @".\packages\system.data.sqlite.core\1.0.111\lib\netstandard2.0"
 
 [<Literal>]
-let CONN_STRING = 
+let CONN_STRING =
   "Data Source=" + __SOURCE_DIRECTORY__ + @"/query_expressions.db;" + "Version=3;foreign keys=true"
 
 type Sql = SqlDataProvider<
-                Common.DatabaseProviderTypes.SQLITE, 
+                Common.DatabaseProviderTypes.SQLITE,
                 SQLiteLibrary = Common.SQLiteLibrary.SystemDataSQLite,
-                ConnectionString = CONN_STRING, 
-                ResolutionPath = RESOLUTION_PATH, 
+                ConnectionString = CONN_STRING,
+                ResolutionPath = RESOLUTION_PATH,
                 CaseSensitivityChange = Common.CaseSensitivityChange.ORIGINAL>
 
 
 let db = Sql.GetDataContext()
 
-// Table definition
+(**
+Table definition
+ *)
 type Customer = {
+
   Name: string
 }
 
-// Add some data
+(**
+Add some data
+ *)
 let customers = db.Main.Customers
+
 let row = customers.Create()
 row.Name <- "Joe Bloggs"
 db.SubmitUpdates()
 
-// Read some data
-let customerList = 
+(**
+Read some data
+ *)
+let customerList =
   db.Main.Customers
   |> Seq.map(fun c -> (c.Id, c.Name))
   |> Seq.toList
 
-// Finally, using LINQ with query expressions
+(**
+Finally, using LINQ with query expressions
+ *)
 let customersQuery =
   query {
     for customer in db.Main.Customers do
@@ -47,6 +59,8 @@ let customersQuery =
   }
   |> Seq.toList
 
-// Clean up
+(**
+Clean up
+ *)
 row.Delete()
 db.SubmitUpdates()

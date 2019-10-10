@@ -1,3 +1,5 @@
-// # Collection Types
+(**
+# Collection Types
+ *)
 
 // TODO

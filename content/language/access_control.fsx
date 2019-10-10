@@ -1,22 +1,24 @@
-// # Access Control
+(**
+# Access Control
 
-// The following access levels can be applied to modules, type, methods, value
-// definitions, functions, properties and explicit fields [TODO: What's an explicit field?]
+The following access levels can be applied to modules, type, methods, value
+definitions, functions, properties and explicit fields [TODO: What's an explicit field?]
 
-// * `public` - the entity can be accessed by all callers
-// * `internal` - the entity can only be accessed from the same assembly
-// * `private` - the entity can only be accessed from the enclosing type or module
-// * `protected` - not used by F# but when overriding a protected method it remains
-//                accessible only within the class and its descendants
+* `public` - the entity can be accessed by all callers
+* `internal` - the entity can only be accessed from the same assembly
+* `private` - the entity can only be accessed from the enclosing type or module
+* `protected` - not used by F# but when overriding a protected method it remains
+                accessible only within the class and its descendants
 
-// Specifiers are placed just before the name of the entity except
+Specifiers are placed just before the name of the entity except
 
-// Access specifiers cannot be used with `inherit` as they will have the same
-// accessibility as the enclosing type.
+Access specifiers cannot be used with `inherit` as they will have the same
+accessibility as the enclosing type.
 
-// TODO: Accessibility for Discriminated Unions
+TODO: Accessibility for Discriminated Unions
 
-// TODO: Accessibility for fields of a record type once page is fixed on docs.microsoft.com
+TODO: Accessibility for fields of a record type once page is fixed on docs.microsoft.com
+*)
 
 module AccessControl =
   module Module1 =

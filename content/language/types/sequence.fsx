@@ -1,8 +1,10 @@
-// # Sequence
+(**
+# Sequence
 
-// Lazy computed values. Data types such as lists, arrays, sets, and maps are
-// implicitly sequences as they all implement `IEnumerable<'T>` which is a
-// `seq<'T>`.
+Lazy computed values. Data types such as lists, arrays, sets, and maps are
+implicitly sequences as they all implement `IEnumerable<'T>` which is a
+`seq<'T>`.
+ *)
 
 Seq.empty // Creates an empty sequence
 Seq.singleton 10 // Creates a sequence of one element, 10
@@ -19,9 +21,11 @@ seq { for row in 0..width - 1 do
 let isPrime n = true
 seq { for n in 1..100 do if isPrime n then yield n } // if acts as a filter
 
-// `yield` generates a single element. Use `yield!` when generating multiple
-// elements that will be concatenated.
+(**
+`yield` generates a single element. Use `yield!` when generating multiple
+elements that will be concatenated.
 
-// ## Seq Module
+## Seq Module
 
-// https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.seq-module-%5bfsharp%5d
+https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.seq-module-%5bfsharp%5d
+ *)

@@ -1,6 +1,8 @@
-// # Enumeration
+(**
+# Enumeration
 
-// A set of related labels.
+A set of related labels.
+ *)
 
 type Color =
   | Red = 0

@@ -1,9 +1,11 @@
-// # Compiler Directives
+(**
+# Compiler Directives
 
-// ## Preprocessor Directives
+## Preprocessor Directives
 
-// For conditional compilation and setting compiler flags.
-// Symbols are defined in project settings or compiler options
+For conditional compilation and setting compiler flags.
+Symbols are defined in project settings or compiler options
+ *)
 
 #if MYSYMBOL
 let function1 x y : int = x * y
@@ -19,22 +21,29 @@ printfn "DEBUG not set"
 #endif
 
 
-// ## Line Directives
+(**
+## Line Directives
 
-// F# generation code can use this directive to indicate correct line numbers
-// from originating code.
+F# generation code can use this directive to indicate correct line numbers
+from originating code.
 
-// TODO: Need example
+TODO: Need example
 
-// ## Compiler Directives
+## Compiler Directives
 
-// Enables lightweight syntax. On by default See Verbose syntax for details.
+Enables lightweight syntax. On by default See Verbose syntax for details.
 
-// When off (not commonly used) uses keywords `begin`, `end`, `in` to indicate blocks
-// rather than indentation.
+When off (not commonly used) uses keywords `begin`, `end`, `in` to indicate blocks
+rather than indentation.
+ *)
+
 #light "on" // or just `#light`
 
 
-// # Compiler Options
+(**
+# Compiler Options
 
-// Command-line options provided to the compiler. See original language reference for details.
+Command-line options provided to the compiler. See original language reference for details.
+
+TODO
+ *)

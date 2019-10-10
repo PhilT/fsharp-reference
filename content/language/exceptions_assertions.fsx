@@ -1,9 +1,13 @@
-// # Exception
+(**
+# Exception
+ *)
 
 exception MyException of string
 exception MyTupleException of string * int
 
-// Use `raise`, `failwith`, `invalidArg` to raise an exception.
+(**
+Use `raise`, `failwith`, `invalidArg` to raise an exception.
+ *)
 
 let function1 x y =
   try
@@ -23,9 +27,11 @@ let caller x =
 
 caller 2
 
-// # Assertions
+(**
+# Assertions
 
-// Assertion checking when in Debug mode.
+Assertion checking when in Debug mode.
+ *)
 
 let x = 3
 assert (x < 5)

@@ -1,6 +1,8 @@
-// # Global
+(**
+# Global
 
-// Put names in the .NET top-level namespace:
+Put names in the .NET top-level namespace:
+ *)
 
 namespace global
 

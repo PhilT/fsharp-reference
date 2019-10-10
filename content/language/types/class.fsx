@@ -1,13 +1,15 @@
-// # Class
+(**
+# Class
 
-// Supports F# as an OO language. Mainly used when working closely with .NET
-// libraries.
+Supports F# as an OO language. Mainly used when working closely with .NET
+libraries.
 
-// Consider using discriminated unions or records when working with OO code.
+Consider using discriminated unions or records when working with OO code.
 
-// Class definition and primary constructor takes 2 arguments and 
-// defines self for the entire class
-type MyClass(x: int, y: int, data) as self = 
+Class definition and primary constructor takes 2 arguments and
+defines self for the entire class
+ *)
+type MyClass(x: int, y: int, data) as self =
   let someData = data
   do printfn "%d %d" x y // run some code on constructor instantiation
   do self.PrintMessage() // example of self being used to call a member function
@@ -18,7 +20,9 @@ type MyClass(x: int, y: int, data) as self =
 let myClass = MyClass()
 
 
-// ## Inheritance
+(**
+## Inheritance
+ *)
 
 type MyBase() =
   member this.Func1 x = x + 1
@@ -26,12 +30,14 @@ type MyBase() =
 type MyDerived() =
   inherit MyBase()
 
-// Private members of the base class such as let bindings and constructor
-// parameters cannot be accessed from the subclass.
+(**
+Private members of the base class such as let bindings and constructor
+parameters cannot be accessed from the subclass.
 
-// `base` is used to identify the base class. Like `super` in other languages.
+`base` is used to identify the base class. Like `super` in other languages.
 
-// Virtual methods and properties are defined as follows:
+Virtual methods and properties are defined as follows:
+ *)
 
 type MyClassBase() =
   let mutable z = 0
@@ -42,7 +48,9 @@ type MyClassDerived() =
   inherit MyClassBase()
   override u.Function1(a: int) = a + 1
 
-// ## Abstract Class
+(**
+## Abstract Class
+ *)
 
 [<AbstractClass>]
 type Shape2D(x0: float, y0: float) =
@@ -51,7 +59,7 @@ type Shape2D(x0: float, y0: float) =
 
   // This property cannot be overridden
   member this.CenterX with get() = x and set xval = x <- xval
-  
+
   // This property is abstract without implementation and must
   // be implemented in a sub-class
   abstract Area: float with get

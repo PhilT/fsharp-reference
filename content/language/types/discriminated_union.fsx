@@ -1,14 +1,16 @@
-// # Discriminated Unions
+(**
+# Discriminated Unions
 
-// Can be any one of a set of possible types. Can be used instead of small
-// object hierarchies.
+Can be any one of a set of possible types. Can be used instead of small
+object hierarchies.
 
-// Can also be a struct type with `[<Struct>]` attribute. These cannot use a
-// recursive type definition.
+Can also be a struct type with `[<Struct>]` attribute. These cannot use a
+recursive type definition.
 
-// Members such as properties and interfaces can also be added.
+Members such as properties and interfaces can also be added.
 
-// Here, `Shape` can be one of `Rectangle`, `Circle`, `Prism` case identifiers:
+Here, `Shape` can be one of `Rectangle`, `Circle`, `Prism` case identifiers:
+ *)
 
 type Shape =
   | Rectangle of width: float * length: float
@@ -19,9 +21,11 @@ let rect = Rectangle(length = 1.3, width = 10.0)
 let circle = Circle(1.0)
 let prism = Prism(5., 2.0, height = 3.0)
 
-// The `Option` core type is a discriminated union.
+(**
+The `Option` core type is a discriminated union.
 
-// The case identifiers can be used in pattern matching:
+The case identifiers can be used in pattern matching:
+ *)
 
 let getShapeHeight shape =
   match shape with
@@ -29,21 +33,26 @@ let getShapeHeight shape =
   | Circle(radius = r) -> 2. * r
   | Prism(height = h) -> h
 
-// Unwrapping the underlying value for a single type:
+(**
+Unwrapping the underlying value for a single type:
+ *)
 
 type ShaderProgram = | ShaderProgram of id: int
 let someFuncUsingShader shaderProgram =
   let (ShaderProgram id) = shaderProgram
   id
 
-// Unwrapping the value in function parameters:
-
+(**
+Unwrapping the value in function parameters:
+ *)
 let someFunction (ShaderProgram id) =
   () // function body
 
-//Tree data structures using `rec`
+(**
+Tree data structures using `rec`
 
-// Binary tree:
+Binary tree:
+ *)
 
 type Tree =
   | Tip
@@ -58,5 +67,7 @@ let rec sumTree tree =
 let myTree = Node(0, Node(1, Node(2, Tip, Tip), Node(3, Tip, Tip)), Node(4, Tip, Tip))
 let resultSumTree = sumTree myTree
 
-// Discriminated unions work well if the nodes in the tree are heterogeneous (of
-// different types).
+(**
+Discriminated unions work well if the nodes in the tree are heterogeneous (of
+different types).
+ *)

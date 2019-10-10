@@ -1,4 +1,6 @@
-// Recursive namespaces allow you to reference yet to be defined types:
+(**
+# Recursive namespaces allow you to reference yet to be defined types:
+ *)
 
 namespace rec MutualReferences
 
