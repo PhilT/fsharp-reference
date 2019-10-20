@@ -1,3 +1,4 @@
+(**
 * https://fsharp.org
 * https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/
 * https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/fsharp-core-library-reference
@@ -8,3 +9,4 @@
 * https://fsprojects.github.io/SQLProvider/
 * https://fsprojects.github.io/SQLProvider/core/sqlite.html
 * https://www.sqlite.org/lang.html
+ *)

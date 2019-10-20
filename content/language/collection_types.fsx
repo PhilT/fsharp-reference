@@ -1,5 +1,0 @@
-(**
-# Collection Types
- *)
-
-// TODO

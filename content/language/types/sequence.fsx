@@ -27,5 +27,5 @@ elements that will be concatenated.
 
 ## Seq Module
 
-https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.seq-module-%5bfsharp%5d
+https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.seq-module-[fsharp]
  *)

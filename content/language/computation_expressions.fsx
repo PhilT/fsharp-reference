@@ -1,8 +1,8 @@
 (**
 # Computation Expressions
 
-[Sequence Expressions](sequences.fsx), [Asynchronous Workflows](async_workflows.fsx) and
-[Query Expressions](query_expressions.fsx) are types of computation expressions.
+[Sequence Expressions](types/sequence.html), [Asynchronous Workflows](async_workflows.html) and
+[Query Expressions](query_expressions.html) are types of computation expressions.
 
 ## Logging all assignments
  *)

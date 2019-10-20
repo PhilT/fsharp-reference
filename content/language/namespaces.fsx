@@ -2,7 +2,7 @@
 # Namespaces
 
 .NET construct to attach a name to a group of program elements.
-can contain modules and types. Namespaces cannot contain
+Can contain modules and types. Namespaces cannot contain
 functions. Only modules contain functions.
  *)
 
@@ -13,3 +13,9 @@ type MyWidget1 =
 
 module WidgetsModule =
   let widgetName = "Widget2"
+
+(**
+* [Nested Namespaces](namespaces/nested.html)
+* [Recursive Namespaces](namespaces/recursive.html)
+* [Namespace/Module Shorthand](namespaces/shorthand.html)
+ *)

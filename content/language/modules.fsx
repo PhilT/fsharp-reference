@@ -4,6 +4,7 @@
 An F# construct for grouping values, types and functions.
 *)
 
+(** [modules/implicit.fsx](modules/implicit.html) *)
 #load "modules/implicit.fsx"
 let myX = Implicit.x
 
@@ -12,6 +13,7 @@ Local module declarations require indentation. These modules would also be
 implicitly grouped in a top-level module `Program` if the file is `program.fs`:
 *)
 
+(** [modules/local.fsx](modules/local.html) *)
 #load "modules/local.fsx"
 
 (**
