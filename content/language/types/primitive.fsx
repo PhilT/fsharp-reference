@@ -1,6 +1,8 @@
 (**
 # Primitive Types
 
+Basic F# types and links to the documentation for their associated .NET types.
+
 * F# Type     .NET Type
 * bool        [Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean?view=netcore-3.0)
 * byte        [Byte](https://docs.microsoft.com/en-us/dotnet/api/system.byte?view=netcore-3.0)

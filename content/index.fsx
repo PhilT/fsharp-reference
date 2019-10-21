@@ -1,5 +1,5 @@
 (**
-# F# Reference
+# Introduction
 
 This reference is a summary of the F# Language taken from
 the [Microsoft Language Reference](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/).
@@ -14,8 +14,8 @@ runs without errors on .NET Core 3.
 
 ## Main sections
 
-* [Language Reference](reference/index.html)
-* [Sites I referenced](references.html)
+* [Language Reference](language/index.html)
+* [Sites I've referenced](references.html)
 * [Tools & Platforms](tools.html)
 * [Install .NET Core](install.html)
 * [Install Neovim & plugins for F#](neovim.html)

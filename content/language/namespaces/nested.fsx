@@ -1,5 +1,5 @@
 (**
-Nested namespaces:
+# Nested namespaces
  *)
 
 namespace Outer

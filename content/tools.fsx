@@ -50,4 +50,8 @@ commands (just try converting a bunch of DOS files to Unix line-endings). GitBas
 allows us to run some commands, build stuff and it also means our scripts work
 cross-platform.
 
+Some commands are still better run in a native shell. For these the new Windows
+Terminal can be used. You can install it via the Windows App Store. It'll run
+either Powershell or CMD.
+
  *)

@@ -1,4 +1,5 @@
 (**
+# Namespace/Module Shorthand
 Namespace and module shorthand when declaring a single module in the file:
  *)
 

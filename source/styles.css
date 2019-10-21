@@ -97,6 +97,7 @@ table.pre td.lines {
 /*--------------------------------------------------------------------------*/
 
 body {
+  color: #333;
   font-family: Liberation Sans, Arial, sans-serif;
   padding-top: 0px;
   padding-bottom: 40px;
@@ -143,21 +144,13 @@ td.title, thead {
   font-weight:bold;
 }
 
+body {
+  display: flex;
+}
 /* Format the right-side menu */
 #menu {
-  margin-top:50px;
-  font-size:11pt;
-  padding-left:20px;
-}
-
-#menu .nav-header {
-  font-size:12pt;
-  color:#606060;
-  margin-top:20px;
-}
-
-#menu li {
-  line-height:25px;
+  font-size: 12px;
+  min-width: 250px;
 }
 
 /* Change font sizes for headings etc. */
