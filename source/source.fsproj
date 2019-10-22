@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="FSharp.Formatting.CommandTool" Version="3.1.0" />
+    <PackageReference Include="suave" Version="2.5.6" />
   </ItemGroup>
 
 </Project>

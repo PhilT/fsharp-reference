@@ -11,4 +11,5 @@
 * https://fsprojects.github.io/SQLProvider/
 * https://fsprojects.github.io/SQLProvider/core/sqlite.html
 * https://www.sqlite.org/lang.html
+* https://blog.markvincze.com/jumpstart-f-web-development-f-with-suave-io-on-net-core/
  *)

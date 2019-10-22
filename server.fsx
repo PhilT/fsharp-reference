@@ -4,7 +4,12 @@ open System.Text
 open System.IO
 
 let siteRoot = @"C:\Users\Phil\Sync\phil\code\fsharp-reference\output"
-let host = "http://localhost:8080/"
+let port = Environment.GetEnvironmentVariable("PORT")
+let host = match port with
+            | null -> "http://localhost:8080/"
+            | _ -> ("http://0.0.0.0:" + port + "/")
+
+printfn "Host set to %A" host
 
 let listener (handler:(HttpListenerRequest->HttpListenerResponse->Async<unit>)) =
     let hl = new HttpListener()
