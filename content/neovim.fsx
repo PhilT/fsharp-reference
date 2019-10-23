@@ -8,9 +8,9 @@ Once Chocolatey is installed you can install Neovim QT very easily. Open Powersh
 cinst neovim
 ```
 
-It's best to run Neovim from CMD or Powershell or a shortcut as Bash has some strange behaviour.
+It's best to run Neovim from CMD, Powershell or a shortcut as Bash has some strange behaviour.
 I've had crashes and certain plugins not working correctly (e.g. FZF). This is probably due to
-the plugin expecting Linux path names.
+the plugins expecting Linux path names.
 
 Run it with `nvim-qt`.
 
