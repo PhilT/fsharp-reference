@@ -3,11 +3,11 @@ open System.Net
 open System.Text
 open System.IO
 
-let siteRoot = @"C:\Users\Phil\Sync\phil\code\fsharp-reference\output"
-let port = Environment.GetEnvironmentVariable("PORT")
-let host = match port with
+let siteRoot = @"output"
+let hostFromEnv = Environment.GetEnvironmentVariable("HOST")
+let host = match hostFromEnv with
             | null -> "http://localhost:8080/"
-            | _ -> ("http://0.0.0.0:" + port + "/")
+            | _ -> hostFromEnv
 
 printfn "Host set to %A" host
 
@@ -23,8 +23,7 @@ let listener (handler:(HttpListenerRequest->HttpListenerResponse->Async<unit>)) 
     } |> Async.Start
 
 let output (req:HttpListenerRequest) =
-    let file = Path.Combine(siteRoot,
-                            Uri(host).MakeRelativeUri(req.Url).OriginalString)
+    let file = Path.Combine(siteRoot, req.Url.LocalPath.[1..])
     printfn "Requested : '%s'" file
     if (File.Exists file)
     then (File.ReadAllText(file), Path.GetExtension(file))

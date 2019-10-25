@@ -18,9 +18,9 @@ closely resembles .NET calling convention.
 The curried form is generally used when creating functions.
 
 The two forms can be mixed:
+ *)
 
 let function2 param1 (param2, param3) param4 = ()
- *)
 
 (**
 It's also possible to ignore parameters using the wildcard (`_`) pattern:
