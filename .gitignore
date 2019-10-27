@@ -1,4 +1,6 @@
+.fake
 bin
 obj
 output
 packages
+build.fsx.lock

@@ -2,5 +2,4 @@
 
 ## Building
 
-* `./clean.sh` - Removes the `output/` folder
-* `./build.sh` - Converts any out-of-date FSX files to HTML and places them into `output/`
+* `./build.ps1` - Converts FSX files to HTML and places them into `output/`

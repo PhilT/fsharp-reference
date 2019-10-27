@@ -2,18 +2,15 @@
 source https://api.nuget.org/v3/index.json
 source https://ci.appveyor.com/nuget/fsharp-formatting
 
-nuget Fake.IO.FileSystem
-nuget Fake.Core.Trace
-nuget FSharp.Data
-nuget Fable.React
-nuget FSharp.Literate //"
-
-let source = "../content"
-let output = "../output"
-let template = "template.html"
+nuget FSharp.Data 3.3.2
+nuget FSharp.Literate 3.1.0 //"
 
 open System.IO
 open FSharp.Literate
+
+let source = "../content"
+let output = "../output"
+let template = File.ReadAllText "template.html"
 
 let rec processFiles pattern dirs =
   if Seq.isEmpty dirs then Seq.empty else
@@ -40,15 +37,27 @@ let format (doc: LiterateDocument) =
 let toOutputPath (path: string) =
   path.Replace(source, output).Replace(".fsx", ".html")
 
+let wrap (content: string) =
+  template.Replace("{document}", content.Replace("\r\n", "\n"))
+
 let processFile path =
   let outputPath = toOutputPath path
+
+  Path.GetDirectoryName(outputPath)
+  |> Directory.CreateDirectory
+  |> ignore
 
   File.WriteAllText (outputPath,
     path
     |> File.ReadAllText
     |> parse
     |> format
+    |> wrap
   )
+
+  printf "."
 
 processFiles "*.fsx" [source]
 |> Seq.iter processFile
+
+printfn ""

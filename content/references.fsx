@@ -1,6 +1,8 @@
 (**
 # References
 
+## F#
+
 * https://fsharp.org
 * https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/
 * https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/fsharp-core-library-reference
@@ -12,4 +14,9 @@
 * https://fsprojects.github.io/SQLProvider/core/sqlite.html
 * https://www.sqlite.org/lang.html
 * https://blog.markvincze.com/jumpstart-f-web-development-f-with-suave-io-on-net-core/
+* https://thinkbeforecoding.com/post/2018/12/07/full-fsharp-blog
+
+## PowerShell
+
+* https://developer.rackspace.com/blog/powershell-101-from-a-linux-guy/
  *)

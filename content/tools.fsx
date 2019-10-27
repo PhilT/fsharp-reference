@@ -41,17 +41,17 @@ Vim does the emulations in other editors never seem quite as complete.
 
 * [Install Neovim & plugins for F#](neovim.html)
 
-### Git Bash for Windows
+### PowerShell & Windows Terminal
 
-At this time of writing Windows Subsystem for Linux is too slow to do real work.
-Version 2 is coming which will address the IO issues but we don't need a whole
-separate operating system. Powershell is too verbose and CMD is lacking sensible
-commands (just try converting a bunch of DOS files to Unix line-endings). GitBash
-allows us to run some commands, build stuff and it also means our scripts work
-cross-platform.
+I come from a Linux background (Well it was more like Windows -> Linux/Windows). So
+I have Bash built-in. However, on Windows it's just better to run things in CMD or
+PowerShell sometimes. CMD is very restrictive and some commands in PowerShell are verbose.
+However, I'd prefer to have one shell than having to keep switching. I still use
+Git Bash for Windows for some things (`dos2unix` anyone?!) but slowly figuring out
+things in PowerShell.
 
-Some commands are still better run in a native shell. For these the new Windows
-Terminal can be used. You can install it via the Windows App Store. It'll run
-either Powershell or CMD.
+There is a preview in the Windows App Store of Windows Terminal. GPU text rendering,
+Themes, tabs and UTF-8 appear to be the standout features. It's a pretty early build
+but seems to work well enough. For me, it's currently missing search.
 
  *)
