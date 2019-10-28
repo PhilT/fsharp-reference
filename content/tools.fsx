@@ -51,7 +51,7 @@ Git Bash for Windows for some things (`dos2unix` anyone?!) but slowly figuring o
 things in PowerShell.
 
 There is a preview in the Windows App Store of Windows Terminal. GPU text rendering,
-Themes, tabs and UTF-8 appear to be the standout features. It's a pretty early build
+a modern look & themes, tabs and UTF-8 appear to be the standout features. It's a pretty early build
 but seems to work well enough. For me, it's currently missing search.
 
  *)

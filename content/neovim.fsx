@@ -29,7 +29,12 @@ In `${XDG_CONFIG_HOME}/nvim/init.vim`:
 
 ```
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense engine with support for VSCode plugins
-Plug 'coc-extensions/coc-fsharp' " FSharp language server for coc-vim
+```
+
+Install the coc-fsharp plugin with the following:
+
+```
+nvim -c 'CocInstall -sync coc-fsharp|q'
 ```
 
 Also, for spellchecked multi-line comments, add the following (remove the
