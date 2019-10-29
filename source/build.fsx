@@ -47,15 +47,17 @@ let processFile path =
   |> Directory.CreateDirectory
   |> ignore
 
-  File.WriteAllText (outputPath,
-    path
-    |> File.ReadAllText
-    |> parse
-    |> format
-    |> wrap
-  )
+  if File.GetLastWriteTime(path) > File.GetLastWriteTime(outputPath)
+  then
+    File.WriteAllText (outputPath,
+      path
+      |> File.ReadAllText
+      |> parse
+      |> format
+      |> wrap
+    )
 
-  printf "."
+    printf "."
 
 processFiles "*.fsx" [source]
 |> Seq.iter processFile

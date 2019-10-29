@@ -23,11 +23,13 @@ let listener (handler:(HttpListenerRequest->HttpListenerResponse->Async<unit>)) 
     } |> Async.Start
 
 let output (req:HttpListenerRequest) =
-    let file = Path.Combine(siteRoot, req.Url.LocalPath.[1..])
-    printfn "Requested : '%s'" file
-    if (File.Exists file)
-    then (File.ReadAllText(file), Path.GetExtension(file))
-    else ("File does not exist!", file)
+    let requestedPath = req.Url.LocalPath.[1..]
+    printfn "Requested : '%s'" requestedPath
+    let actualPath = if requestedPath = "" then "index.html" else requestedPath
+    let actualPath = Path.Combine(siteRoot, actualPath)
+    if (File.Exists actualPath)
+    then (File.ReadAllText(actualPath), Path.GetExtension(actualPath))
+    else ("File does not exist!", actualPath)
 
 let contentTypeFor ext =
   match ext with

@@ -1,5 +1,4 @@
 (**
-
 ## Install Neovim QT via Chocolatey
 
 Once Chocolatey is installed you can install Neovim QT very easily. Open Powershell Admin console:
@@ -37,11 +36,15 @@ Install the coc-fsharp plugin with the following:
 nvim -c 'CocInstall -sync coc-fsharp|q'
 ```
 
-Also, for spellchecked multi-line comments, add the following (remove the
-space in `\* )`, it's just needed to format this document correctly):
+Also, for spellchecked multi-line comments, add the following:
 
 ```
-autocmd bufread *.fsx,*.fs syn region fsharpMultiLineComment start="(\*" end="\* )" contains=fsharpTodo,@Spell
+// Replace START and END with the following but remove the spaces
+// This is needed to format this document correctly.
+START="( \ *"
+END="\ * )"
+
+autocmd bufread *.fsx,*.fs syn region fsharpMultiLineComment start=START end=END contains=fsharpTodo,@Spell
 ```
 
  *)
