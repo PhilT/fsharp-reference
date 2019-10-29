@@ -7,38 +7,53 @@ nuget FSharp.Literate 3.1.0 //"
 
 open System.IO
 open FSharp.Literate
+open System.Text.RegularExpressions
 
 let source = "../content"
 let output = "../output"
 let template = File.ReadAllText "template.html"
 
-let rec processFiles pattern dirs =
+let filterDocument (file: string) =
+  match Path.GetExtension(file) with
+  | ".md" | ".fsx" -> true
+  | _ -> false
+
+let rec processFiles dirs =
   if Seq.isEmpty dirs then Seq.empty else
     seq {
-      yield! dirs |> Seq.collect (fun dir -> Directory.EnumerateFiles(dir, pattern))
-      yield! dirs |> Seq.collect Directory.EnumerateDirectories |> processFiles pattern
+      yield! dirs |> Seq.collect Directory.EnumerateFiles |> Seq.filter filterDocument
+      yield! dirs |> Seq.collect Directory.EnumerateDirectories |> processFiles
     }
-
-let parse source =
-  let doc =
-    let fsharpCoreDir = "-I:" + __SOURCE_DIRECTORY__ + "/../lib"
-    let systemRuntime = "-r:System.Runtime"
-    Literate.ParseScriptString(
-      source,
-      compilerOptions = systemRuntime + " " + fsharpCoreDir,
-      fsiEvaluator = FSharp.Literate.FsiEvaluator([|fsharpCoreDir|])
-    )
-
-  FSharp.Literate.Literate.FormatLiterateNodes(doc, OutputKind.Html, "", true, true)
 
 let format (doc: LiterateDocument) =
   Formatting.format doc.MarkdownDocument true OutputKind.Html
 
+let parseScript source =
+  let fsharpCoreDir = "-I:" + __SOURCE_DIRECTORY__ + "/../lib"
+  let systemRuntime = "-r:System.Runtime"
+
+  let doc = Literate.ParseScriptString(
+              source,
+              compilerOptions = systemRuntime + " " + fsharpCoreDir,
+              fsiEvaluator = FSharp.Literate.FsiEvaluator([|fsharpCoreDir|])
+            )
+
+  FSharp.Literate.Literate.FormatLiterateNodes(doc, OutputKind.Html, "", true, true)
+  |> format
+
+let parse (path: string) source =
+  match Path.GetExtension(path) with
+  | ".md" -> FSharp.Markdown.Markdown.TransformHtml source
+  | ".fsx" -> parseScript source
+
 let toOutputPath (path: string) =
-  path.Replace(source, output).Replace(".fsx", ".html")
+  Regex.Replace(path.Replace(source, output), ".fsx$|.md$", ".html")
 
 let wrap (content: string) =
   template.Replace("{document}", content.Replace("\r\n", "\n"))
+
+let writeFile outputPath content =
+  File.WriteAllText(outputPath, content)
 
 let processFile path =
   let outputPath = toOutputPath path
@@ -49,17 +64,15 @@ let processFile path =
 
   if File.GetLastWriteTime(path) > File.GetLastWriteTime(outputPath)
   then
-    File.WriteAllText (outputPath,
-      path
-      |> File.ReadAllText
-      |> parse
-      |> format
-      |> wrap
-    )
+    path
+    |> File.ReadAllText
+    |> parse path
+    |> wrap
+    |> writeFile outputPath
 
     printf "."
 
-processFiles "*.fsx" [source]
+processFiles [source]
 |> Seq.iter processFile
 
 printfn ""

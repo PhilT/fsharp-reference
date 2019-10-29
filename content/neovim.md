@@ -1,13 +1,12 @@
-(**
 ## Install Neovim QT via Chocolatey
 
-Once Chocolatey is installed you can install Neovim QT very easily. Open Powershell Admin console:
+Once Chocolatey is installed you can install Neovim QT very easily. Open PowerShell Admin console:
 
 ```
 cinst neovim
 ```
 
-It's best to run Neovim from CMD, Powershell or a shortcut as Bash has some strange behaviour.
+It's best to run Neovim from CMD, PowerShell or a shortcut as Bash has some strange behaviour.
 I've had crashes and certain plugins not working correctly (e.g. FZF). This is probably due to
 the plugins expecting Linux path names.
 
@@ -15,7 +14,7 @@ Run it with `nvim-qt`.
 
 ## Neovim Plugins
 
-Setting the `XDG_CONFIG_HOME` environment variable allows the neovim config
+Setting the `XDG_CONFIG_HOME` environment variable allows the Neovim configuration
 file to be placed in a sensible location.
 
 ```
@@ -39,12 +38,6 @@ nvim -c 'CocInstall -sync coc-fsharp|q'
 Also, for spellchecked multi-line comments, add the following:
 
 ```
-// Replace START and END with the following but remove the spaces
-// This is needed to format this document correctly.
-START="( \ *"
-END="\ * )"
-
-autocmd bufread *.fsx,*.fs syn region fsharpMultiLineComment start=START end=END contains=fsharpTodo,@Spell
+autocmd bufread *.fsx,*.fs syn region fsharpMultiLineComment start="(\*" end="\*)" contains=fsharpTodo,@Spell
 ```
 
- *)
