@@ -97,23 +97,27 @@ table.pre td.lines {
 /*--------------------------------------------------------------------------*/
 
 body {
-  color: #333;
-  font-family: Liberation Sans, Arial, sans-serif;
+  background-color: #2E3440;
+  color: #D8DEE9;
+  font-family: sans-serif;
+  margin: 0;
   padding-top: 0px;
   padding-bottom: 40px;
 }
 
 pre {
-    word-wrap: inherit;
+  word-wrap: inherit;
 }
 
 a, a:visited {
+  display: inline-block;
+  padding: 2px;
   text-decoration: none;
-  color: #9A710D;
+  color: #A3BE8C;
 }
 
 a:hover {
-  color: #FAB11D;
+  color: #ECEFF4;
 }
 
 /* Format the heading - nicer spacing etc. */
@@ -147,17 +151,42 @@ td.title, thead {
 body {
   display: flex;
 }
-/* Format the right-side menu */
+/* Format the menu */
 #menu {
-  font-size: 12px;
-  min-width: 250px;
+  min-width: 236px;
+  background-color: #242933;
+  padding: 8px;
 }
 #menu ul {
   padding-left: 0;
   margin-top: 0;
 }
+
+#menu h1 {
+  margin-top: 4px;
+  font-size: larger;
+}
+#menu h1 span {
+  color: #EBCB8B;
+}
 #menu h2 {
   margin-bottom: 4px;
+  font-size: inherit;
+  width: 100%;
+  background-color: #3B4252;
+  padding: 6px 2px;
+}
+
+#menu a, #menu a:visited {
+  width: 100%;
+  color: #E5E9F0;
+}
+#menu a:hover {
+  background-color: #4C566A;
+}
+
+#content {
+  padding: 8px;
 }
 
 ul {

@@ -1,6 +1,5 @@
 #r "paket:
 source https://api.nuget.org/v3/index.json
-source https://ci.appveyor.com/nuget/fsharp-formatting
 
 nuget FSharp.Data 3.3.2
 nuget FSharp.Literate 3.1.0 //"
@@ -29,22 +28,15 @@ let format (doc: LiterateDocument) =
   Formatting.format doc.MarkdownDocument true OutputKind.Html
 
 let parseScript source =
-  let fsharpCoreDir = "-I:" + __SOURCE_DIRECTORY__ + "/../lib"
-  let systemRuntime = "-r:System.Runtime"
-
-  let doc = Literate.ParseScriptString(
-              source,
-              compilerOptions = systemRuntime + " " + fsharpCoreDir,
-              fsiEvaluator = FSharp.Literate.FsiEvaluator([|fsharpCoreDir|])
-            )
+  let doc = Literate.ParseScriptString(source)
 
   FSharp.Literate.Literate.FormatLiterateNodes(doc, OutputKind.Html, "", true, true)
   |> format
 
 let parse (path: string) source =
   match Path.GetExtension(path) with
-  | ".md" -> FSharp.Markdown.Markdown.TransformHtml source
   | ".fsx" -> parseScript source
+  | _ -> FSharp.Markdown.Markdown.TransformHtml source
 
 let toOutputPath (path: string) =
   Regex.Replace(path.Replace(source, output), ".fsx$|.md$", ".html")
