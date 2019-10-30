@@ -15,6 +15,7 @@
 * https://www.sqlite.org/lang.html
 * https://blog.markvincze.com/jumpstart-f-web-development-f-with-suave-io-on-net-core/
 * https://thinkbeforecoding.com/post/2018/12/07/full-fsharp-blog
+* https://docs.microsoft.com/en-gb/dotnet/api/?view=netcore-3.0
 
 ## PowerShell
 

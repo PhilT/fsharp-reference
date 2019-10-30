@@ -1,0 +1,200 @@
+@font-face {
+  font-family: 'Cascadia Code Regular';
+  src: url('/assets/Cascadia.woff') format('woff');
+  src: url('/assets/Cascadia.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*--------------------------------------------------------------------------
+  Formatting for F# code snippets
+/*--------------------------------------------------------------------------*/
+
+
+span.s { color: var(--nord14); } /* strings --- and styles for other string related formats */
+
+span.pf { color: var(--nord11); } /* printf formatters */
+span.e { color: var(--nord13); } /* escaped chars */
+
+span.i { color: var(--nord4); } /* identifiers --- and styles for more specific identifier types */
+span.t { color: var(--nord7); } /* type or module */
+span.f { color: var(--nord8); } /* function */
+span.p { color: var(--nord9); } /* DU case or active pattern */
+
+span.k { color: var(--nord9); } /* keywords */
+span.c { color: var(--nord3); } /* comment */
+span.o { color: var(--nord9); } /* operators */
+span.n { color: var(--nord15); } /* numbers */
+span.l { color: var(--nord3); } /* line number */
+span.v { color:#d1d1d1; font-weight: bold; } /* mutable var or ref cell */
+span.inactive { color: var(--nord2); } /* inactive code */
+span.prep { color: var(--nord10); } /* preprocessor */
+span.fsi { color: var(--nord11); } /* fsi output */
+
+/* tool tip */
+div.tip {
+	background:#475b5f;
+  border-radius:4px;
+  font:11pt arial, sans-serif;
+	padding:6px 8px 6px 8px;
+	display:none;
+  color:#d1d1d1;
+  pointer-events:none;
+}
+table.pre pre {
+  padding:0px;
+  margin:0px;
+  border:none;
+}
+table.pre, pre.fssnip, pre {
+  line-height:13pt;
+  border:1px solid var(--standout-ui);
+  border-collapse:separate;
+  white-space:pre;
+  font: 14px 'Cascadia Code',monospace;
+  width:90%;
+  margin:10px 20px 20px 20px;
+  background-color: var(--panel);
+  padding:10px;
+  border-radius:5px;
+  color: var(--main-text);
+  max-width: none;
+}
+pre.fssnip code {
+  font: 14px 'Cascadia Code',monospace;
+}
+table.pre pre {
+  padding:0px;
+  margin:0px;
+  border-radius:0px;
+  width: 100%;
+}
+table.pre td {
+  padding:0px;
+  white-space:normal;
+  margin:0px;
+}
+table.pre td.lines {
+  width:30px;
+}
+
+/*--------------------------------------------------------------------------
+  Formatting for page & standard document content
+/*--------------------------------------------------------------------------*/
+
+:root {
+  --background: var(--nord0);
+  --panel: var(--nord1);
+  --active: var(--nord2);
+  --disable: var(--nord3);
+
+  --extra-ui: var(--nord4);
+  --main-text: var(--nord5);
+  --elevated-text: var(--nord6);
+
+  --standout-ui: var(--nord7);
+  --primary-ui: var(--nord8);
+  --secondary-ui: var(--nord9);
+  --tertiary-ui: var(--nord10);
+
+  --error: var(--nord11);
+  --advanced: var(--nord12);
+  --warning: var(--nord13);
+  --success: var(--nord14);
+  --rare: var(--nord15);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--main-text);
+  display: flex;
+  font-family: sans-serif;
+  margin: 0;
+  padding-top: 0px;
+  padding-bottom: 40px;
+}
+
+pre {
+  word-wrap: inherit;
+}
+
+a, a:visited {
+  display: inline-block;
+  padding: 2px;
+  text-decoration: none;
+  color: var(--success);
+}
+
+a:hover {
+  color: var(--warning);
+}
+
+/* Make table headings and td.title bold */
+td.title, thead {
+  font-weight:bold;
+}
+
+/* Format the menu */
+#menu {
+  background-color: var(--panel);
+  color: var(--disable);
+  min-width: 236px;
+  padding: 8px;
+}
+
+#menu ul {
+  padding-left: 0;
+  margin-top: 0;
+}
+
+#menu h1 {
+  margin-top: 4px;
+  font-size: larger;
+  color: var(--secondary-ui);
+}
+
+#menu h1 span {
+  color: var(--warning)
+}
+
+#menu h2 {
+  margin-bottom: 4px;
+  font-size: inherit;
+  width: 100%;
+  background-color: var(--tertiary-ui);
+  color: var(--elevated-text);
+  padding: 6px 2px;
+}
+
+#menu a {
+  padding: 4px;
+  width: 100%;
+}
+
+#menu a:hover {
+  background-color: var(--disable);
+}
+
+#menu a.current {
+  background-color: var(--background);
+  color: var(--elevated-text);
+}
+
+#content {
+  padding: 8px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/*--------------------------------------------------------------------------
+  Links
+/*--------------------------------------------------------------------------*/
+
+h1 a, h1 a:hover, h1 a:focus,
+h2 a, h2 a:hover, h2 a:focus,
+h3 a, h3 a:hover, h3 a:focus,
+h4 a, h4 a:hover, h4 a:focus,
+h5 a, h5 a:hover, h5 a:focus,
+h6 a, h6 a:hover, h6 a:focus { color : inherit; text-decoration : inherit; outline:none }

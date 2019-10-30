@@ -1,3 +1,14 @@
+window.addEventListener('DOMContentLoaded', (event) => {
+  let urlParts = document.location.toString().split('/')
+  let id = urlParts[urlParts.length - 1]
+    .replace(/_|#/, '-')
+    .replace('.html', '')
+    .toLowerCase()
+
+  document.getElementById(id).classList.add('current')
+});
+
+
 var currentTip = null;
 var currentTipElement = null;
 
