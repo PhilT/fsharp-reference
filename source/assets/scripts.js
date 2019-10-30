@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', (event) => {
   let urlParts = document.location.toString().split('/')
   let id = urlParts[urlParts.length - 1]
-    .replace(/_|#/, '-')
+    .replace(/_|#/g, '-')
     .replace('.html', '')
     .toLowerCase()
 
