@@ -8,10 +8,20 @@ All the websites I run, in one place!
 
 ## Building
 
-* `./build` - Converts FSX files to HTML and places them into `output/`
-* `./release` - Uploads `output/` files to S3
-* `./start <website>` - Run a local development web server
-    * website | port
-    * `electricvisions` | 9000
-    * `fsharp-reference` | 9001
-    * `matter-game` | 9002
+### `./build`
+
+Converts FSX files to HTML and places them into `output/`
+
+### `./start <website>` 
+
+Run a local development web server on one of the following ports:
+
+| website | port |
+| ------- | -------- |
+| `electricvisions`| 9000 |
+| `fsharp-reference`| 9001 |
+| `matter-game`| 9002 |
+
+### `./release`
+
+Uploads `output/` files to S3
