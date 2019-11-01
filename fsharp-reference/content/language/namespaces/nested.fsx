@@ -1,5 +1,8 @@
 (**
-# Nested namespaces
+---
+title: Nested namespaces
+description: Must be fully qualified, otherwise a new top-level namespace is created.
+---
  *)
 
 namespace Outer

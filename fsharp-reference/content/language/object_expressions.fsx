@@ -1,7 +1,9 @@
 (**
-# Object Expressions
+---
+title: Object Expressions
+description: Used to avoid the extra overhead of creating a new named type.
+---
 
-Used to avoid the extra overhead of creating a new named type.
 Minimize the number of types created in a program.
 
 Object expression that overrides `ToString` method

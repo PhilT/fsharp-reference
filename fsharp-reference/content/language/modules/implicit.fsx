@@ -1,7 +1,8 @@
 (**
-# Implicit
-
-A file, `implicit.fs` contains:
+---
+title: Implicit
+description: A file, `implicit.fs` contains:
+---
 *)
 
 let x = 40

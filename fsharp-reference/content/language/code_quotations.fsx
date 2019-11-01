@@ -1,7 +1,8 @@
 (**
-# Code Quotations
-
-Pass around F# code as a dynamic expression. Untyped quotations are a little faster to process.
+---
+title: Code Quotations
+description: Pass around F# code as a dynamic expression. Untyped quotations are a little faster to process.
+---
  *)
 
 open Microsoft.FSharp.Quotations

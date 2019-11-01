@@ -1,7 +1,11 @@
 (**
-# Simple Example
+---
+title: Simple Example
+description: Simple example
+---
 
 Run with `dotnet fsi example.fsx
+
  *)
 
 let hello str = sprintf "Hello, %s!!" str

@@ -1,8 +1,8 @@
 (**
-# Class
-
-Supports F# as an OO language. Mainly used when working closely with .NET
-libraries.
+---
+title: Class
+description: Supports F# as an OO language. Mainly used when working closely with .NET libraries.
+---
 
 Consider using discriminated unions or records when working with OO code.
 

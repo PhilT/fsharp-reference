@@ -1,12 +1,9 @@
 (**
-# Type Inference
+---
+title: Type Inference
+description: F# is statically typed. It tries to infer the type from usage. If the type cannot be inferred then type annotations need to be added.
+---
 
-F# is statically typed. It tries to infer the type from usage. If the
-type cannot be inferred then type annotations need to be added.
-*)
-
-
-(**
 Parameters `a`, `b` and return type are inferred to be `int`:
  *)
 

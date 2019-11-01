@@ -1,5 +1,8 @@
 (**
-# Compiler Directives
+---
+title: Compiler Directives
+description: Compiler directives
+---
 
 ## Preprocessor Directives
 

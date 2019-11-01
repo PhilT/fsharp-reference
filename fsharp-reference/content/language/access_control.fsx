@@ -1,7 +1,10 @@
 (**
-# Access Control
+---
+title: Access Control
+description: Access control.
+---
 
-The following access levels can be applied to modules, type, methods, value
+The following access levels can be applied to modules, types, methods, value
 definitions, functions, properties and explicit fields [TODO: What's an explicit field?]
 
 * `public` - the entity can be accessed by all callers
@@ -10,7 +13,7 @@ definitions, functions, properties and explicit fields [TODO: What's an explicit
 * `protected` - not used by F# but when overriding a protected method it remains
                 accessible only within the class and its descendants
 
-Specifiers are placed just before the name of the entity except
+Specifiers are placed just before the name of the entity except [TODO: Unfinished]
 
 Access specifiers cannot be used with `inherit` as they will have the same
 accessibility as the enclosing type.

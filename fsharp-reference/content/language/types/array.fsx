@@ -1,8 +1,8 @@
 (**
-# Array
-
-Ordered sets of mutable elements of the same type. Based on Array .NET Type.
-
+---
+title: Array
+description: Ordered sets of mutable elements of the same type. Based on Array .NET Type.
+---
 
 ## Creating
  *)

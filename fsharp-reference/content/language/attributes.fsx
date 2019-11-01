@@ -1,7 +1,10 @@
 (**
-# Attribute
+---
+title: Attribute
+description: Allow metadata to be applied to a construct.
+---
 
-Allow metadata to be applied to a construct. Attributes are a .NET
+Attributes are a .NET
 programming construct that enables an object attribute to be
 associated with a type.
  *)

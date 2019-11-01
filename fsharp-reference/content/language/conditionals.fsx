@@ -1,7 +1,8 @@
 (**
-# Conditional Expressions
-
-In F# conditionals are expressions, meaning they return a value.
+---
+title: Conditional Expressions
+description: In F# conditionals are expressions, meaning they return a value.
+---
  *)
 
 let test x y =

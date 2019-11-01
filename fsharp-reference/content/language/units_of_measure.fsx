@@ -1,7 +1,9 @@
 (**
-# Units of Measure
+---
+title: Units of Measure
+description: Floating point and signed values can have length, volume, mass, etc.
+---
 
-Floating point and signed values can have length, volume, mass, etc.
 This helps the compiler ensure types have the correct units.
 Used for compile-time checking only so no run-time penalty.
 

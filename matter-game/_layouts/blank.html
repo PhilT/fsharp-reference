@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="{{ site.encoding }}">
+    <meta name="author" content="{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <title>{% if page.title %} {{ page.title }} › {% endif %}{{ site.title }}</title>
+    <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url}}">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ '/main.css' | prepend: site.baseurl }}" rel="stylesheet">
+    {% feed_meta %}
+    {% if site.comments.disqus and page.comments %}<script src="//{{ site.comments.disqus }}.disqus.com/embed.js" async></script>{% endif %}
+  </head>
+  <body>
+    <header class="head">
+      <div>
+        <h1 class="logo">
+          <a href="{{ site.baseurl }}">{{ site.title }}</a>
+        </h1>
+        <nav id="menu">
+          <ul>
+            {% for path in site.navigation %}
+              <li>
+                {% assign node = site.pages | where: "path", path | first %}
+                <a href="{{ node.url | prepend: site.baseurl }}">
+                  {{ node.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+          <ul class="social">
+            {% for link_hash in site.links %}
+              {% for link in link_hash %}
+                <li>
+                  <a href="{{ link[1] }}">
+                    <i class="fa fa-{{ link[0] }}"></i>
+                  </a>
+                </li>
+              {% endfor %}
+            {% endfor %}
+          </ul>
+      </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="grid">
+        <div class="unit span-grid">
+          {{ content }}
+          {% if page.previous.url or page.next.url %}
+          <footer>
+              {% if page.next.url %}<a href="{{ page.next.url | prepend: site.baseurl }}">« {{ page.next.title }}</a>{% else %} <span></span> {% endif %}
+              {% if page.previous.url %}<a href="{{ page.previous.url | prepend: site.baseurl }}">{{ page.previous.title }} »</a>{% else %} <span></span> {% endif %}
+          </footer>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

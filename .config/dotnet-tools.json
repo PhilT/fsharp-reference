@@ -2,10 +2,10 @@
   "version": 1,
   "isRoot": true,
   "tools": {
-    "fake-cli": {
-      "version": "5.18.1",
+    "paket": {
+      "version": "5.227.0",
       "commands": [
-        "fake"
+        "paket"
       ]
     }
   }

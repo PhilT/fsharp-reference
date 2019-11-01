@@ -1,8 +1,9 @@
 (**
-# Pattern Matching
+---
+title: Pattern Matching
+description: Compare, decompose or extract data using `match`, function arguments, lambda expressions, `try...with` exception handlers.
+---
 
-Compare, decompose or extract data using `match`, function arguments,
-lambda expressions, `try...with` exception handlers.
 TODO: ensure we document try...with and lambda expressions
 
 

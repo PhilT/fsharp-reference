@@ -1,5 +1,8 @@
 (**
-# Introduction
+---
+title: Introduction
+description: A quick reference of F#.
+---
 
 This reference is a summary of the F# Language taken from
 the [Microsoft Language Reference](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/).

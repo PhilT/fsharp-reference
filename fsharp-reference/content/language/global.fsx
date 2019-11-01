@@ -1,7 +1,8 @@
 (**
-# Global
-
-Put names in the .NET top-level namespace:
+---
+title: Global
+description: Put names in the .NET top-level namespace.
+---
  *)
 
 namespace global

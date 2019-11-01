@@ -1,5 +1,8 @@
 (**
-# String
+---
+title: String
+description: Immutable text as a sequence of unicode characters.
+---
  *)
 
 printfn "Standard string with\n\tsome escape sequences"

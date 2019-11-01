@@ -1,8 +1,8 @@
 (**
-# Install .NET Core 3.0 SDK
-
-.NET Core 3.0 SDK includes F# Interactive (fsi.exe). This is a REPL like
-irb or node. Previous versions of .NET Core did not come with FSI.
+---
+title: Install .NET Core 3.0 SDK
+description: .NET Core 3.0 SDK includes F# Interactive (fsi.exe). This is a REPL like irb or node. Previous versions of .NET Core did not come with FSI.
+---
 
 It can be installed from Chocolatey:
 

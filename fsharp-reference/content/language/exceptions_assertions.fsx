@@ -1,5 +1,9 @@
 (**
-# Exception
+---
+title: Exceptions
+description: Exceptions
+---
+
  *)
 
 exception MyException of string

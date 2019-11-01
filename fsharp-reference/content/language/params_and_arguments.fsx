@@ -1,9 +1,9 @@
 (**
-# Parameters & Arguments
+---
+title: Parameters & Arguments
+description: The term *parameter* is used to describe the names for values that are expected to be supplied. The term *argument* is used for the values provided for each parameter.
+---
 
-The term *parameter* is used to describe the names for values that are
-expected to be supplied. The term *argument* is used for the values
-provided for each parameter.
  *)
 
 type SomeType =

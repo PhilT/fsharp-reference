@@ -1,5 +1,8 @@
 (**
-## Install Chocolatey
+---
+title: Install Chocolatey
+description: Install Chocolatey
+---
 
 The official way to install Chocolatey is to
 open Powershell and run the following command:

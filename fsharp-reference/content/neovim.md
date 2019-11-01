@@ -1,6 +1,9 @@
-## Install Neovim QT via Chocolatey
+---
+title: Install Neovim QT via Chocolatey
+description: Using Chocolatey package manager to install Neovim QT
+---
 
-Once Chocolatey is installed you can install Neovim QT very easily. Open PowerShell Admin console:
+Once [Chocolatey is installed](chocolatey.html) you can install Neovim QT very easily. Open PowerShell Admin console:
 
 ```
 cinst neovim

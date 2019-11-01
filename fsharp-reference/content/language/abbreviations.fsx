@@ -1,8 +1,8 @@
 (**
-# Type Abbreviations
-
-Give a type another name. Abbreviations are an F# concept only and
-not represented in .NET.
+---
+title: Type Abbreviations
+description: Give a type another name. Abbreviations are an F# concept only and not represented in .NET.
+---
 *)
 
 type SizeType = uint32

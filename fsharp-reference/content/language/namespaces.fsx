@@ -1,7 +1,9 @@
 (**
-# Namespaces
+---
+title: Namespaces
+description: .NET construct to attach a name to a group of program elements.
+---
 
-.NET construct to attach a name to a group of program elements.
 Can contain modules and types. Namespaces cannot contain
 functions. Only modules contain functions.
  *)

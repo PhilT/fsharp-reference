@@ -1,7 +1,8 @@
 (**
-# Namespace/Module Shorthand
-
-Namespace and module shorthand when declaring a single module in the file:
+---
+title: Namespace/Module Shorthand
+description: Namespace and module shorthand when declaring a single module in the file.
+---
  *)
 
 module Widgets.WidgetModule2

@@ -1,7 +1,9 @@
 (**
-# Resource Management
+---
+title: Resource Management
+description: `use` binding instead of `let` automatically calls `Dispose` on .NET types.
+---
 
-`use` binding instead of `let` automatically calls `Dispose` on .NET types.
 `using` function is another form. With `use`, `Dispose` is called at the
 end of the block. With `using`, `Dispose` is called at the end of the
 function. Prefer `use`.

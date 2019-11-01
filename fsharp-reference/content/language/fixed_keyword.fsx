@@ -1,7 +1,9 @@
 (**
-# Fixed Keyword
+---
+title: Fixed Keyword
+description: "Pin" a local onto the stack to prevent it from being collected or moved during GC.
+---
 
-"Pin" a local onto the stack to prevent it from being collected or moved during GC.
 Used for low-level programming.
  *)
 

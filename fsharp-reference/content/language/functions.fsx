@@ -1,7 +1,8 @@
 (**
-# Functions - function values, curried, anonymous
-
-Functions are defined with `let`
+---
+title: Functions - function values, curried, anonymous
+description: Functions are defined with `let`
+---
  *)
 
 let inc1 x = x + 1

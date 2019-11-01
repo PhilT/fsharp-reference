@@ -1,5 +1,8 @@
 (**
-# References
+---
+title: References
+description: Website used while creating this site.
+---
 
 ## F#
 

@@ -1,5 +1,8 @@
 (**
-## Tools and Platforms
+---
+title: # Tools and Platforms
+description: Operating system and tool choice and why.
+---
 
 ### F#
 

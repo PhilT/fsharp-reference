@@ -1,8 +1,8 @@
 (**
-# Structures
-
-More compact and efficient than classes. For types that have a small
-amount of data and simple behaviour. Structures are passed by value.
+---
+title: Structures
+description: More compact and efficient than classes. For types that have a small amount of data and simple behaviour. Structures are passed by value.
+---
 
 Structures are useful for frequently accessed data when the overhead of
 accessing the heap is a problem.

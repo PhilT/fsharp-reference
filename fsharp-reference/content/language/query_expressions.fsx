@@ -1,9 +1,11 @@
 (**
-# Query Expressions
+---
+title: Query Expressions
+description: Query a data source using LINQ
+---
 
 TODO: Needs to reference related files and figure out how to show them in docs.
 
-Query a data source using LINQ
  *)
 #r @"packages\sqlprovider\1.1.68\lib\netstandard2.0\FSharp.Data.SqlProvider.dll"
 open FSharp.Data.Sql

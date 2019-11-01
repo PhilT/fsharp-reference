@@ -1,5 +1,9 @@
 (**
-# Type Extensions
+---
+title: Type Extensions
+description: Type extensions
+---
+
  *)
 
 // TODO

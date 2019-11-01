@@ -1,7 +1,9 @@
 (**
-# Lazy Expressions
+---
+title: Lazy Expressions
+description: Execute (`Force`) only when the result is required.
+---
 
-Execute (`Force`) only when the result is required.
 Helps improve performance.
  *)
 

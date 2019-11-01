@@ -1,5 +1,8 @@
 (**
-# Literals
+---
+title: Literals
+description: Literals
+---
  *)
 
 86y // sbyte - signed 8-bit integer

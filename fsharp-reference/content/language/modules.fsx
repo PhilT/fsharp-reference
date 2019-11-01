@@ -1,7 +1,8 @@
 (**
-# Modules
-
-An F# construct for grouping values, types and functions.
+---
+title: Modules
+description: An F# construct for grouping values, types and functions.
+---
 *)
 
 (** [modules/implicit.fsx](modules/implicit.html) *)

@@ -1,5 +1,8 @@
 (**
-# Tuple
+---
+title: Tuple
+description: Small, ordered set of values.
+---
  *)
 
 (1, 2)
