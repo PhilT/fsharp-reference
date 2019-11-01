@@ -10,7 +10,7 @@ All the websites I run, in one place!
 
 ### `./build`
 
-Converts FSX files to HTML and places them into `output/`
+Converts FSX files to HTML and places them in `output/`
 
 ### `./start <website>` 
 
