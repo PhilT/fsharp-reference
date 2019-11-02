@@ -51,8 +51,20 @@ let processSite site =
     | ".fsx" -> (fm, parseScript source)
     | _ -> (fm, FSharp.Markdown.Markdown.TransformHtml source)
 
+  let replaceSourcePath(path: string) =
+    Regex.Replace(path, source, output)
+
+  let removeDate(path: string) =
+    Regex.Replace(path, "\d\d\d\d-\d\d-\d\d-", "")
+
+  let replaceExtension(path: string) =
+    Regex.Replace(path, ".fsx$|.md$", ".html")
+
   let toOutputPath (path: string) =
-    Regex.Replace(path.Replace(source, output), ".fsx$|.md$", ".html")
+    path
+    |> replaceSourcePath
+    |> removeDate
+    |> replaceExtension
 
   let replaceLineEndings (content: string) =
     content.Replace("\r\n", "\n")
