@@ -1,10 +1,9 @@
 ---
-title: "About"
+title: About
+description: My name is Phil A Thompson. I live in a van, somewhere in Europe with my lovely girlfriend, Claudi.
+created: 2018-11-09
+updated: 2019-11-03
 ---
-
-## Me
-
-My name is Phil A Thompson. I live in Surrey, England with my lovely girlfriend, Claudi.
 
 I love coding, snowboarding, reading, running, our dog (Colin), our cat (Choco), making things, learning, gaming, music, sci-fi movies.
 

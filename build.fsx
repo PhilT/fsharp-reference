@@ -25,17 +25,10 @@ let processSite site =
   let output = "output/" + site
   let template = File.ReadAllText (site + "/template.html")
 
-  let filterDocument (file: string) =
+  let filterDocumentType (file: string) =
     match Path.GetExtension(file) with
     | ".md" | ".fsx" -> true
     | _ -> false
-
-  let rec processFiles dirs =
-    if Seq.isEmpty dirs then Seq.empty else
-      seq {
-        yield! dirs |> Seq.collect Directory.EnumerateFiles |> Seq.filter filterDocument
-        yield! dirs |> Seq.collect Directory.EnumerateDirectories |> processFiles
-      }
 
   let format (doc: LiterateDocument) =
     Formatting.format doc.MarkdownDocument true OutputKind.Html
@@ -46,18 +39,16 @@ let processSite site =
     Literate.FormatLiterateNodes(doc, OutputKind.Html, "", true, true)
     |> format
 
-  let parse (path: string) (fm, source) =
-    match Path.GetExtension(path) with
-    | ".fsx" -> (fm, parseScript source)
-    | _ -> (fm, FSharp.Markdown.Markdown.TransformHtml source)
-
-  let replaceSourcePath(path: string) =
+  let replaceSourcePath (path: string) =
     Regex.Replace(path, source, output)
 
-  let removeDate(path: string) =
+  let removeOutputPath (path: string) =
+    Regex.Replace(path, output, "")
+
+  let removeDate (path: string) =
     Regex.Replace(path, "\d\d\d\d-\d\d-\d\d-", "")
 
-  let replaceExtension(path: string) =
+  let replaceExtension (path: string) =
     Regex.Replace(path, ".fsx$|.md$", ".html")
 
   let toOutputPath (path: string) =
@@ -74,20 +65,14 @@ let processSite site =
     | Some value -> sprintf "%s%s%s" prefix value suffix
     | None -> ""
 
-  let wrap (fm: Map<string, string>, content) =
-    template
-      .Replace("{title}", frontmatterItem fm "title" "" "")
-      .Replace("{description}", frontmatterItem fm "description" "" "")
-      .Replace("{document}", replaceLineEndings content)
-
   let writeFile outputPath content =
     File.WriteAllText(outputPath, content)
 
   let header (fm: Map<string, string>) =
     (frontmatterItem fm "title" "# " "\n\n") +
-      (frontmatterItem fm "created" "#### " "\n") +
-      (frontmatterItem fm "updated" "#### " "\n") +
-      (frontmatterItem fm "categories" "#### " "\n") +
+      (frontmatterItem fm "created" "##### Created: " "\n") +
+      (frontmatterItem fm "updated" "##### Updated: " "\n") +
+      (frontmatterItem fm "categories" "###### categories: " "\n") +
       (frontmatterItem fm "description" "" "\n\n")
 
   let splitContent content =
@@ -111,7 +96,25 @@ let processSite site =
     let fmMap = splitFrontmatter fm
     (fmMap, comment + "\n" + header fmMap + body)
 
-  let processFile path =
+  let parse (path: string) (fm, source) =
+    match Path.GetExtension(path) with
+    | ".fsx" -> (fm, parseScript source)
+    | _ -> (fm, FSharp.Markdown.Markdown.TransformHtml source)
+
+  let wrap (fm: Map<string, string>, content) =
+    template
+      .Replace("{title}", frontmatterItem fm "title" "" "")
+      .Replace("{description}", frontmatterItem fm "description" "" "")
+      .Replace("{document}", replaceLineEndings content)
+
+  let rec processFiles dirs =
+    if Seq.isEmpty dirs then Seq.empty else
+      seq {
+        yield! dirs |> Seq.collect Directory.EnumerateFiles |> Seq.filter filterDocumentType
+        yield! dirs |> Seq.collect Directory.EnumerateDirectories |> processFiles
+      }
+
+  let processFile (frontmatters: Map<string, Map<string, string>>) path =
     let outputPath = toOutputPath path
 
     Path.GetDirectoryName(outputPath)
@@ -121,15 +124,59 @@ let processSite site =
     if File.GetLastWriteTime(path) > File.GetLastWriteTime(outputPath)
     then
       printfn "Processing %s" path
-      path
-      |> File.ReadAllText
-      |> convertFrontMatter
+      let content = File.ReadAllText path
+      let (fm, content) = convertFrontMatter content
+
+      (fm, content)
       |> parse path
       |> wrap
       |> writeFile outputPath
 
+      frontmatters.Add(outputPath, fm)
+    else
+      frontmatters
+
+  let indexEntry index (path: string, fm: Map<string, string>) =
+    let url = path |> removeOutputPath
+    sprintf "%s
+    <article>
+    <h1><a href='%s'>%s</a></h1>
+    <h5>Created: %s</h5>
+    %s
+
+    <p>
+      %s
+      <a href='%s'>read more »</a>
+    </p>
+    </article>
+    " index
+      url
+      fm.["title"]
+      fm.["created"]
+      (frontmatterItem fm "updated" "<h5>Updated: " "</h5>\n")
+      fm.["description"]
+      url
+
+  let indexFrontmatter =
+    Map.empty.
+      Add("title", "matter-game.com").
+      Add("description", "A blog about the progress of Matter, a new game I'm working on. Topics such as JavaScript, 3D, physics, Real-time strategy (RTS) will be discussed as well as the games industry in general and how I hope to make it a better place.")
+
+  let generateIndexPage (frontmatters: Map<string, Map<string, string>>) =
+    let indexPath = output + "/index.html"
+    if (File.Exists indexPath) then
+      printfn "%s exists - skipping generation" indexPath
+    else
+      frontmatters
+      |> Map.toList
+      |> Seq.fold indexEntry ""
+      |> (fun content -> wrap (indexFrontmatter, content))
+      |> writeFile indexPath
+
+  // Need to add Map.empty to the start of the sequence so reduce has initial value
   processFiles [source]
-  |> Seq.iter processFile
+  |> Seq.fold processFile Map.empty
+  |> generateIndexPage
 
   printfn ""
 

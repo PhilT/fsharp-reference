@@ -49,15 +49,11 @@ We'll use functional programming and point-free style to solve a common problem.
 
 I'd normally write that like this:
 
-{% highlight javascript %}
-['1', '2', '3'].map(n => parseInt(n))
-{% endhighlight %}
+    ['1', '2', '3'].map(n => parseInt(n))
 
 Pretty concise, however the `n` in `parseInt(n)` is the point we want to remove. So, I thought, why not just pass the `parseInt` function straight to `map`?
 
-{% highlight javascript %}
-['1', '2', '3'].map(parseInt) // [ 1, NaN, NaN ]
-{% endhighlight %}
+    ['1', '2', '3'].map(parseInt) // [ 1, NaN, NaN ]
 
 Although this is now point-free, `map` passes an index as the second argument to `parseInt` which is the radix parameter.
 
@@ -67,27 +63,21 @@ Notice the use of the words <em>argument</em> and <em>parameter</em>. Something 
 
 To fix this we can create a little helper function.
 
-{% highlight javascript %}
-const unary = fn => arg => fn(arg)
-{% endhighlight %}
+    const unary = fn => arg => fn(arg)
 
 This function takes a function as it's parameter and returns another function that calls our passed in function parameter with the single argument.
 
 If ES6 arrow functions are not your thing:
 
-{% highlight javascript %}
-function unary (fn) {
-  return function (arg) {
-    return fn(arg)
-  }
-}
-{% endhighlight %}
+    function unary (fn) {
+      return function (arg) {
+        return fn(arg)
+      }
+    }
 
 Now we can do the following:
 
-{% highlight javascript %}
-['1', '2', '3'].map(unary(parseInt)) // [ 1, 2, 3 ]
-{% endhighlight %}
+    ['1', '2', '3'].map(unary(parseInt)) // [ 1, 2, 3 ]
 
 No more points! The only parameters here are functions.
 

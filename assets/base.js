@@ -5,7 +5,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
     .replace('.html', '')
     .toLowerCase()
 
-  document.getElementById(id).classList.add('current')
+  let element = document.getElementById(id)
+  if (element) {
+    element.classList.add('current')
+  } else {
+    document.getElementById('index').classList.add('current')
+  }
 });
 
 
