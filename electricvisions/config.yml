@@ -1,0 +1,8 @@
+title: electricvisions.com
+description: This is the website of Electric Visions Ltd. A software consultancy turned games company. Here you'll find articles on developing on Windows, .NET Core, F#, AWS and Serverless, Vim and some general stuff on writing games.
+
+links: # see http://fontawesome.io/icons/#brand for all possible icons
+  - linkedin: "https://www.linkedin.com/in/phil-a-thompson-83b64a2/"
+  - twitter: "https://twitter.com/PhilAThompson/"
+  - github: "https://github.com/PhilT"
+  - envelope: "mailto:phil@games-matter.com"

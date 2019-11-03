@@ -18,6 +18,8 @@ open System.IO
 open FSharp.Literate
 open System.Text.RegularExpressions
 
+let regexOptions = RegexOptions.Multiline ||| RegexOptions.Singleline
+
 let processSite site =
   printfn "Website: %s..." site
 
@@ -76,8 +78,7 @@ let processSite site =
       (frontmatterItem fm "description" "" "\n\n")
 
   let splitContent content =
-    let options = RegexOptions.Multiline ||| RegexOptions.Singleline
-    match Regex.Split(content, "^---\n", options) |> Array.toList with
+    match Regex.Split(content, "^---\n", regexOptions) |> Array.toList with
       | comment :: fm :: body :: _ -> (comment, fm, body)
       | _ -> ("", "", content)
 
@@ -157,20 +158,22 @@ let processSite site =
       fm.["description"]
       url
 
-  let indexFrontmatter =
+  let config =
+    let configText = File.ReadAllText (site + "/config.yml")
+    let config = Regex.Split (configText, "title: |description: |\n", regexOptions)
     Map.empty.
-      Add("title", "matter-game.com").
-      Add("description", "A blog about the progress of Matter, a new game I'm working on. Topics such as JavaScript, 3D, physics, Real-time strategy (RTS) will be discussed as well as the games industry in general and how I hope to make it a better place.")
+      Add("title", config.[1]).
+      Add("description", config.[3])
 
   let generateIndexPage (frontmatters: Map<string, Map<string, string>>) =
     let indexPath = output + "/index.html"
-    if (File.Exists indexPath) then
-      printfn "%s exists - skipping generation" indexPath
+    if (config.["title"] = "(none)") then
+      printfn "No title in config for %s - skipping generation" site
     else
       frontmatters
       |> Map.toList
       |> Seq.fold indexEntry ""
-      |> (fun content -> wrap (indexFrontmatter, content))
+      |> (fun content -> wrap (config, content))
       |> writeFile indexPath
 
   // Need to add Map.empty to the start of the sequence so reduce has initial value

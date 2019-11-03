@@ -1,27 +1,8 @@
 title: "games-matter.com"
-author: "Phil A Thompson"
 description:
   A blog about the progress of Matter, a new game I'm working on. Topics such as
   JavaScript, 3D, physics, Real-time strategy (RTS) will be discussed as well
   as the games industry in general and how I hope to make it a better place.
-more: "read more »"
-url: "https://games-matter.com"
-baseurl: ""
-paginate: 2
-permalink: pretty
-excerpt_separator: "\n\n"
-
-style:
-  minimalist: false
-  dark: false
-
-navigation:
-  - index.html
-  - archive.html
-  - about.md
-
-comments:
-  disqus: "games-matter-com"
 
 links: # see http://fontawesome.io/icons/#brand for all possible icons
   - linkedin: "https://www.linkedin.com/in/phil-a-thompson-83b64a2/"
@@ -29,6 +10,3 @@ links: # see http://fontawesome.io/icons/#brand for all possible icons
   - github: "https://github.com/PhilT"
   - envelope: "mailto:phil@games-matter.com"
 
-defaults: [{scope: {path: ""}, values: {layout: "default"}}, {scope: {path: "", type: "posts"}, values: {comments: true}}]
-sass: {style: expanded}
-plugins: [jekyll-feed, jekyll-paginate]
