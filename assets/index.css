@@ -1,0 +1,28 @@
+article {
+  background-color: var(--panel);
+  padding: 8px;
+  margin: 8px 0;
+}
+
+article h1 {
+  margin: 0;
+}
+
+article h1 a,
+article h1 a:visited {
+  color: var(--main-text);
+}
+
+article header {
+  display: flex;
+  justify-content: space-between;
+}
+
+article header .timestamps {
+  color: var(--nord7);
+  font-family: monospace;
+  font-size: small;
+  font-weight: bold;
+  text-align: right;
+  width: 11em;
+}

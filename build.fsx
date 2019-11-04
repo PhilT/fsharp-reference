@@ -122,28 +122,33 @@ let processSite site =
     |> Directory.CreateDirectory
     |> ignore
 
+    let content = File.ReadAllText path
+    let (fm, content) = convertFrontMatter content
+
     if File.GetLastWriteTime(path) > File.GetLastWriteTime(outputPath)
     then
       printfn "Processing %s" path
-      let content = File.ReadAllText path
-      let (fm, content) = convertFrontMatter content
 
       (fm, content)
       |> parse path
       |> wrap
       |> writeFile outputPath
-
-      frontmatters.Add(outputPath, fm)
     else
-      frontmatters
+      printfn "Up-to-date %s" path
+
+    frontmatters.Add(outputPath, fm)
 
   let indexEntry index (path: string, fm: Map<string, string>) =
     let url = path |> removeOutputPath
     sprintf "%s
     <article>
-    <h1><a href='%s'>%s</a></h1>
-    <h5>Created: %s</h5>
-    %s
+    <header>
+      <h1><a href='%s'>%s</a></h1>
+      <div class='timestamps'>
+        <span class='created'>Created: %s</span>
+        <span class='updated'>%s</span>
+      </div>
+    </header>
 
     <p>
       %s
@@ -154,10 +159,11 @@ let processSite site =
       url
       fm.["title"]
       fm.["created"]
-      (frontmatterItem fm "updated" "<h5>Updated: " "</h5>\n")
+      (frontmatterItem fm "updated" "Updated: " "")
       fm.["description"]
       url
 
+  // FIXME: No Internet to get proper Yaml lib
   let config =
     let configText = File.ReadAllText (site + "/config.yml")
     let config = Regex.Split (configText, "title: |description: |\n", regexOptions)
