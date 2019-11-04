@@ -8,5 +8,5 @@ cp -r -force assets/* output/fsharp-reference/assets
 cp -r -force assets/* output/matter-game/assets
 cp -r -force matter-game/assets output/matter-game
 
-dotnet fsi build.fsx
+dotnet fsi src/build.fsx
 echo Done.
