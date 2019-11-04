@@ -1,4 +1,5 @@
 #load "libs.fsx"
+#load "pathutils.fsx"
 
 open System.IO
 open FSharp.Literate
@@ -26,24 +27,6 @@ let processSite site =
 
     Literate.FormatLiterateNodes(doc, OutputKind.Html, "", true, true)
     |> format
-
-  let replaceSourcePath (path: string) =
-    Regex.Replace(path, source, output)
-
-  let removeOutputPath (path: string) =
-    Regex.Replace(path, output, "")
-
-  let removeDate (path: string) =
-    Regex.Replace(path, "\d\d\d\d-\d\d-\d\d-", "")
-
-  let replaceExtension (path: string) =
-    Regex.Replace(path, ".fsx$|.md$", ".html")
-
-  let toOutputPath (path: string) =
-    path
-    |> replaceSourcePath
-    |> removeDate
-    |> replaceExtension
 
   let replaceLineEndings (content: string) =
     content.Replace("\r\n", "\n")
@@ -102,7 +85,7 @@ let processSite site =
       }
 
   let processFile (frontmatters: Map<string, Map<string, string>>) path =
-    let outputPath = toOutputPath path
+    let outputPath = Pathutils.toOutputPath source output path
 
     Path.GetDirectoryName(outputPath)
     |> Directory.CreateDirectory
@@ -125,7 +108,7 @@ let processSite site =
     frontmatters.Add(outputPath, fm)
 
   let indexEntry index (path: string, fm: Map<string, string>) =
-    let url = path |> removeOutputPath
+    let url = path |> Pathutils.removeOutputPath output
     sprintf "%s
     <article>
     <header>

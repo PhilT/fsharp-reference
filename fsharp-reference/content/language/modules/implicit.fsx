@@ -12,4 +12,9 @@ Then it has an implicit module declaration of:
 
     module Implicit
     let x = 40
+
+*)
+
+(**
+« Back to [Modules](../modules.html)
 *)
