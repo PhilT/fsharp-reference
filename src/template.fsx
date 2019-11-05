@@ -5,7 +5,7 @@
 
 open System.IO
 
-let template site = File.ReadAllText (site + "/template.html")
+let load site = File.ReadAllText (site + "/template.html")
 
 let replaceLineEndings (content: string) =
   content.Replace("\r\n", "\n")
@@ -13,8 +13,8 @@ let replaceLineEndings (content: string) =
 let write outputPath content =
   File.WriteAllText(outputPath, content)
 
-let wrap site (fm: Map<string, string>, content) =
-  (template site)
+let wrap (template: string) (fm: Map<string, string>, content) =
+  template
     .Replace("{title}", Frontmatter.item fm "title" "" "")
     .Replace("{description}", Frontmatter.item fm "description" "" "")
     .Replace("{document}", replaceLineEndings content)

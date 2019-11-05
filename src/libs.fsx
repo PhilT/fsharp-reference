@@ -1,7 +1,10 @@
-#I "../packages/FSharp.Compiler.Service/lib/netstandard2.0"
-#I "../packages/FSharp.Literate/lib/netstandard2.0"
+#I "../packages/FSharp.Data/lib/netstandard2.0"
+#r "FSharp.Data.dll"
 
+#I "../packages/FSharp.Compiler.Service/lib/netstandard2.0"
 #r "FSharp.Compiler.Service.dll"
+
+#I "../packages/FSharp.Literate/lib/netstandard2.0"
 #r "FSharp.Formatting.Common.dll"
 #r "FSharp.Markdown.dll"
 #r "FSharp.CodeFormat.dll"

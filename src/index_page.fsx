@@ -1,21 +1,13 @@
 module IndexPage
 
-#load "pathutils.fsx"
 #load "frontmatter.fsx"
+#load "pathutils.fsx"
 #load "template.fsx"
 
 open System.IO
 open System.Text.RegularExpressions
 
 let regexOptions = RegexOptions.Multiline ||| RegexOptions.Singleline
-
-// FIXME: No Internet to get proper Yaml lib
-let loadConfig site =
-  let configText = File.ReadAllText (site + "/config.yml")
-  let config = Regex.Split (configText, "title: |description: |\n", regexOptions)
-  Map.empty.
-    Add("title", config.[1]).
-    Add("description", config.[3])
 
 let indexEntry output index (path: string, fm: Map<string, string>) =
   let url = path |> Pathutils.removeOutputPath output
@@ -42,14 +34,13 @@ let indexEntry output index (path: string, fm: Map<string, string>) =
     fm.["description"]
     url
 
-let generate output site (frontmatters: Map<string, Map<string, string>>) =
-  let config = loadConfig site
+let generate output template (config: Map<string, string>) (frontmatters: Map<string, Map<string, string>>) =
   let indexPath = output + "/index.html"
-  if (config.["title"] = "(none)") then
-    printfn "No title in config for %s - skipping generation" site
+  if (config.["title"] = "") then
+    printfn "No title in config, skipping generation"
   else
     frontmatters
     |> Map.toList
     |> Seq.fold (indexEntry output) ""
-    |> (fun content -> Template.wrap site (config, content))
+    |> (fun content -> Template.wrap template (config, content))
     |> Template.write indexPath

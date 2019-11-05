@@ -1,17 +1,26 @@
 #load "libs.fsx"
-#load "pathutils.fsx"
-#load "index_page.fsx"
+
 #load "frontmatter.fsx"
+#load "index_page.fsx"
+#load "pathutils.fsx"
 #load "template.fsx"
 
-open System.IO
+open FSharp.Data
 open FSharp.Literate
+open System.IO
 open System.Text.RegularExpressions
 
-let regexOptions = RegexOptions.Multiline ||| RegexOptions.Singleline
+let loadConfig site =
+  (JsonValue.Load (__SOURCE_DIRECTORY__ + "/../" + site + "/config.json")).Properties()
+  |> Array.filter (fun (_, v) -> match v with JsonValue.String _ -> true | _ -> false)
+  |> Array.map (fun (k, v) -> (k, v.AsString()))
+  |> Map.ofArray
 
 let processSite site =
   printfn "Website: %s..." site
+
+  let config = loadConfig site
+  let template = Template.load site
 
   let source = site + "/content"
   let output = "output/" + site
@@ -29,35 +38,6 @@ let processSite site =
 
     Literate.FormatLiterateNodes(doc, OutputKind.Html, "", true, true)
     |> format
-
-  let header (fm: Map<string, string>) =
-    (Frontmatter.item fm "title" "# " "\n\n") +
-      (Frontmatter.item fm "created" "##### Created: " "\n") +
-      (Frontmatter.item fm "updated" "##### Updated: " "\n") +
-      (Frontmatter.item fm "categories" "###### categories: " "\n") +
-      (Frontmatter.item fm "description" "" "\n\n")
-
-  let splitContent content =
-    match Regex.Split(content, "^---\n", regexOptions) |> Array.toList with
-      | comment :: fm :: body :: _ -> (comment, fm, body)
-      | _ -> ("", "", content)
-
-  let keyValueTuple = function
-    | [|key; value|] -> (key, value)
-    | _ -> ("", "")
-
-  // TODO: Move to frontmatter.fsx
-  let splitFrontmatter (str: string) =
-    str.Split "\n"
-    |> Array.filter (fun s -> s <> "")
-    |> Array.map (fun s -> s.Split ": " |> keyValueTuple)
-    |> Map.ofArray
-
-  // TODO: Move to frontmatter.fsx
-  let convertFrontMatter content =
-    let (comment, fm, body) = splitContent content
-    let fmMap = splitFrontmatter fm
-    (fmMap, comment + "\n" + header fmMap + body)
 
   let parse (path: string) (fm, source) =
     match Path.GetExtension(path) with
@@ -79,7 +59,7 @@ let processSite site =
     |> ignore
 
     let content = File.ReadAllText path
-    let (fm, content) = convertFrontMatter content
+    let (fm, content) = Frontmatter.convertToHeading content
 
     if File.GetLastWriteTime(path) > File.GetLastWriteTime(outputPath)
     then
@@ -87,17 +67,16 @@ let processSite site =
 
       (fm, content)
       |> parse path
-      |> Template.wrap site
+      |> Template.wrap template
       |> Template.write outputPath
     else
       printfn "Up-to-date %s" path
 
     frontmatters.Add(outputPath, fm)
 
-  // Need to add Map.empty to the start of the sequence so reduce has initial value
   processFiles [source]
   |> Seq.fold processFile Map.empty
-  |> IndexPage.generate output site
+  |> IndexPage.generate output template config
 
   printfn ""
 
