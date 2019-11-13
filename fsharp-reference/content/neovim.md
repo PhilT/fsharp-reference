@@ -1,9 +1,15 @@
 ---
-title: Install Neovim QT via Chocolatey
-description: Using Chocolatey package manager to install Neovim QT
+title: Neovim QT
+description: Neovim QT gives you 16 million colour support and originally had some other advantages, however, Vim has caught up. However, for Windows, I still find Neovim QT to be the better option right now.
+created: 2019-11-13
 ---
 
-Once [Chocolatey is installed](chocolatey.html) you can install Neovim QT very easily. Open PowerShell Admin console:
+Setting up Vim for F# development can be slightly harder than say VS Code or
+Visual Studio but I've found less issues with it once running. I find VS Code and
+Visual Studio sluggish and buggy in comparison. Vim emulators can be found in
+most editors these days but if you're a real Vim user you'll find them lacking. 
+
+Once [Chocolatey is installed](chocolatey.html) you can install Neovim QT very easily. Open PowerShell Admin console and type:
 
 ```
 cinst neovim
@@ -11,7 +17,7 @@ cinst neovim
 
 It's best to run Neovim from CMD, PowerShell or a shortcut as Bash has some strange behaviour.
 I've had crashes and certain plugins not working correctly (e.g. FZF). This is probably due to
-the plugins expecting Linux path names.
+the plugins expecting Linux path names or just oddness with MinGW.
 
 Run it with `nvim-qt`.
 

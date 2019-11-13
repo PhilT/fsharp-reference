@@ -37,7 +37,7 @@ let indexEntry output index (path: string, fm: Map<string, string>) =
 let generate output template (config: Map<string, string>) (frontmatters: Map<string, Map<string, string>>) =
   let indexPath = output + "/index.html"
   if (config.["title"] = "") then
-    printfn "No title in config, skipping generation"
+    printfn "No title in config, skipping generation of Index page"
   else
     frontmatters
     |> Map.toList

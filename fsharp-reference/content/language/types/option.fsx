@@ -1,7 +1,8 @@
 (**
-# Option
-
-An Option is an optional value.
+---
+title: Option
+description: An Option is an optional value.
+---
 
 The Option type supports the following properties and methods:
 

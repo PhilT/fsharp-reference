@@ -1,4 +1,3 @@
-(**
 ---
 title: Introduction
 description: This reference is a summary of the F# Language taken from the [Microsoft Language Reference](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/).
@@ -18,19 +17,18 @@ This summary tries to cover all the language concepts without repeating content 
 explanations. It's also written in a compilable format to ensure all example code
 runs without errors. It also attempts to put more emphasis on functional concepts.
 
-## Roadmap
+## Road map
 
 More updates are coming and guides will be added to cover topics such as functional
 programming and testing as well as a searchable core library reference.
 
 Comments are also planned.
 
-## Main sections
+## F# Version
 
-* [Language Reference](language/index.html)
-* [Sites I've referenced](references.html)
-* [Tools & Platforms](tools.html)
-* [Install .NET Core](install.html)
-* [Install Neovim & plugins for F#](neovim.html)
+All examples run on version 4.7 but will be updated as new versions are
+released.
 
- *)
+## Issues, Help, Comms, Development
+
+[fsharp-reference GitHub](https://github.com/PhilT/websites)

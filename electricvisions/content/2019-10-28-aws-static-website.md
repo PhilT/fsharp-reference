@@ -3,7 +3,7 @@ title: Create a Static Website on AWS with Custom Domain over HTTPS
 description: Some notes on quickly setting up a static website with a custom apex & www domain over HTTPS/TLS using Amazon S3, Route 53, CloudFront and Let's Encrypt Certificate Authority.
 created: 2019-10-28
 updated:
-categories:
+categories: deployment aws
 ---
 
 It's a great way to start on your Serverless journey.

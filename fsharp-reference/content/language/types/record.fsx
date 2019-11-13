@@ -1,9 +1,11 @@
 (**
-# Record
+---
+title: Record
+description: Aggregate of named values optionally with members.
+---
 
-Aggregate of named values optionally with members. Simpler than classes,
-they lack interface implementation and inheritance, constructors and hidden
-fields. They be reference types (default) or structs.
+Simpler than classes, they lack interface implementation and inheritance,
+constructors and hidden fields. They be reference types (default) or structs.
  *)
 
 open System

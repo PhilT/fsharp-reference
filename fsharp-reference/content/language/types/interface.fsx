@@ -1,15 +1,16 @@
 (**
-# Interface
+---
+title: Interface
+description: A set of abstract members that would be implemented in a Class.
+---
 
-A set of abstract members that would be implemented in a Class.
-
-Interface
+Interface:
  *)
 type IPrintable =
   abstract member Print: unit -> unit
 
 (**
-Implementation
+Implementation:
  *)
 type SomeClass(x: int, y: float) =
   interface IPrintable with

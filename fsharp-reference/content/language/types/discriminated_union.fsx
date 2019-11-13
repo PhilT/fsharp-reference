@@ -1,8 +1,8 @@
 (**
-# Discriminated Unions
-
-Can be any one of a set of possible types. Can be used instead of small
-object hierarchies.
+---
+title: Discriminated Unions
+description: Can be any one of a set of possible types. Can be used instead of small object hierarchies.
+---
 
 Can also be a struct type with `[<Struct>]` attribute. These cannot use a
 recursive type definition.

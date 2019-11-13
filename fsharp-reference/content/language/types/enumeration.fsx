@@ -1,7 +1,8 @@
 (**
-# Enumeration
-
-A set of related labels.
+---
+title: Enumeration
+description: A set of related labels.
+---
  *)
 
 type Color =

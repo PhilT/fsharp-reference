@@ -1,7 +1,8 @@
 (**
-# Result
-
-Useful for writing error-tolerant code.
+---
+title: Result
+description: Useful for writing error-tolerant code.
+---
  *)
 
 type Details = { Name: string; Email: string }

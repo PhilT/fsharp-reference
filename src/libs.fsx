@@ -11,6 +11,9 @@
 #r "FSharp.Literate.dll"
 #r "FSharp.MetadataFormat.dll"
 
+#I "../packages/Expecto/lib/netstandard2.0"
+#r "Expecto"
+
 // HACK: force usage of Fsharp.Compiler.Services
 // or the indirect reference from FSharp.Literate will fail to load
 let dummy (pos: FSharp.Compiler.Range.pos) =

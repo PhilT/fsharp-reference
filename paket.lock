@@ -1,5 +1,8 @@
 NUGET
   remote: https://www.nuget.org/api/v2
+    Expecto (8.12)
+      FSharp.Core (>= 4.3.4) - restriction: || (>= net461) (>= netstandard2.0)
+      Mono.Cecil (>= 0.10.3) - restriction: || (>= net461) (>= netstandard2.0)
     FSharp.Compiler.Service (27.0.1)
       FSharp.Core (>= 4.5.2) - restriction: || (>= net45) (>= netstandard2.0)
       System.Collections.Immutable (>= 1.5) - restriction: || (>= net45) (>= netstandard2.0)
@@ -29,6 +32,7 @@ NUGET
       System.Memory (>= 4.5.3) - restriction: || (&& (< net46) (< netcoreapp2.0) (>= netstandard2.0) (< xamarinios) (< xamarinmac)) (&& (>= netcoreapp2.0) (< netcoreapp2.1)) (>= uap10.1)
       System.Security.AccessControl (>= 4.6) - restriction: || (&& (>= monoandroid) (< netstandard2.0)) (>= monotouch) (&& (< net46) (>= netstandard2.0)) (>= net461) (>= netcoreapp2.0) (>= xamarinios) (>= xamarinmac) (>= xamarintvos) (>= xamarinwatchos)
       System.Security.Principal.Windows (>= 4.6) - restriction: || (&& (>= monoandroid) (< netstandard2.0)) (>= monotouch) (&& (< net46) (>= netstandard2.0)) (>= net461) (>= netcoreapp2.0) (>= xamarinios) (>= xamarinmac) (>= xamarintvos) (>= xamarinwatchos)
+    Mono.Cecil (0.11.1) - restriction: || (>= net461) (>= netstandard2.0)
     NETStandard.Library (2.0.3) - restriction: && (< monoandroid) (< monotouch) (< net45) (>= netstandard1.0) (< netstandard2.0) (< win8) (< wp8) (< wpa81) (< xamarintvos) (< xamarinwatchos)
       Microsoft.NETCore.Platforms (>= 1.1) - restriction: || (&& (>= net45) (< netstandard1.3)) (&& (< net45) (>= netstandard1.1) (< netstandard1.2) (< win8)) (&& (< net45) (>= netstandard1.2) (< netstandard1.3) (< win8) (< wpa81)) (&& (< net45) (>= netstandard1.3) (< netstandard1.4) (< win8) (< wpa81)) (&& (< net45) (>= netstandard1.4) (< netstandard1.5) (< win8) (< wpa81)) (&& (< net45) (>= netstandard1.5) (< netstandard1.6) (< win8) (< wpa81)) (&& (< net45) (>= netstandard1.6) (< netstandard2.0) (< win8) (< wpa81)) (&& (< net45) (>= netstandard2.0)) (&& (>= net46) (< netstandard1.4)) (>= net461) (>= netcoreapp2.0) (&& (>= netstandard1.0) (< portable-net45+win8+wpa81)) (&& (< netstandard1.0) (>= portable-net45+win8) (< win8)) (&& (< netstandard1.0) (< portable-net45+win8) (>= portable-net45+win8+wpa81)) (&& (< netstandard1.0) (>= portable-net45+win8+wp8+wpa81) (< portable-net45+win8+wpa81)) (&& (< netstandard1.0) (>= win8)) (&& (< netstandard1.3) (< win8) (>= wpa81)) (&& (< netstandard1.5) (>= uap10.0)) (>= uap10.1) (>= wp8)
       Microsoft.Win32.Primitives (>= 4.3) - restriction: || (&& (< net45) (>= netstandard1.3) (< netstandard1.4) (< win8) (< wpa81)) (&& (< net45) (>= netstandard1.4) (< netstandard1.5) (< win8) (< wpa81)) (&& (< net45) (>= netstandard1.5) (< netstandard1.6) (< win8) (< wpa81)) (&& (< net45) (>= netstandard1.6) (< netstandard2.0) (< win8) (< wpa81)) (&& (>= net46) (< netstandard1.4)) (&& (< netstandard1.5) (>= uap10.0) (< uap10.1))

@@ -1,7 +1,8 @@
 (**
-# List
-
-Ordered, immutable elements of the same type or base type.
+---
+title: List
+description: Ordered, immutable elements of the same type or base type.
+---
  *)
 
 let aList = [1; 2; 3]

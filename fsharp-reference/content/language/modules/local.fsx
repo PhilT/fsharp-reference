@@ -1,6 +1,8 @@
 (**
-2 nested local module declarations. To access this from another module the
-implicit declaration would need to prefix the call.
+---
+title: Local
+description: A file, `local.fs` contains a nested local module declaration. To access this from another module the implicit declaration would need to prefix the call.
+---
 
 e.g. `Local.Outer.Inner.xFunc 10`
  *)
