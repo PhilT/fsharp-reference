@@ -13,7 +13,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
   }
 });
 
-
 // Currently not working
 
 var currentTip = null;

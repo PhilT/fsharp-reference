@@ -1,6 +1,6 @@
 ---
 title: Project Reboot - Going all in on F#
-description: Whoah! Over a year since I posted updates! Selling our house and moving into a van is busy work! In that time I've had a chance to reflect on my
+description: Whoah! Over a year since I posted updates! Selling our house and all our stuff and moving into a van is time consuming! In that time I've had a chance to re-evaluate some of the choices I made when starting this project.
 created: 2019-11-06
 updated:
 categories: f# functional netcore
@@ -11,12 +11,14 @@ feeling the performance still wasn't quite there for the number of cubes I
 wanted to work with. Sure, there are optimisations that can be done but I
 didn't want to have to deal with that from the start. The final straw came
 when I realised that real-time ray tracing would be a great addition to my game.
+If I wanted the latest and greatest I'd need to use a compiled language.
 
 I previously looked at F# as an option but discounted it due to it's reliance
 on Visual Studio and the command-line tooling being somewhat immature along
 with having to learn another language. However, with the potential performance
 issues I was facing with JavaScript, I took another look. .NET Core 3 has just
-been released which adds F# Interactive, WinForms apps and a few other things.
+been released which adds F# Interactive and the tooling generally seems to be
+improving.
 
 I decided to take the plunge and over the last few months I've been slowly
 getting up to speed with the language. There is also the extra hurdle of

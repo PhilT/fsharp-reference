@@ -33,6 +33,8 @@ let contentTypeFor ext =
   | ".css" -> "text/css"
   | ".js" -> "text/javascript"
   | ".webp" -> "image/webp"
+  | ".svg" -> "image/svg+xml"
+  | ".ico" -> "image/x-icon"
   | _ -> "text/plain"
 
 let output (req:HttpListenerRequest) =

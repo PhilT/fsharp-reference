@@ -1,14 +1,39 @@
-@font-face {
-  font-family: 'Cascadia Code Regular';
-  src: url('/assets/Cascadia.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+/* RESET */
+
+ul, li, a, img {
+  padding: 0;
+  margin: 0;
+}
+
+/* VARIABLES */
+
+:root {
+  --code-font: 14px monospace;
+
+  --background: var(--nord0);
+  --panel: var(--nord1);
+  --active: var(--nord2);
+  --disable: var(--nord3);
+
+  --extra-ui: var(--nord4);
+  --main-text: var(--nord5);
+  --elevated-text: var(--nord6);
+
+  --standout-ui: var(--nord7);
+  --primary-ui: var(--nord8);
+  --secondary-ui: var(--nord9);
+  --tertiary-ui: var(--nord10);
+
+  --error: var(--nord11);
+  --advanced: var(--nord12);
+  --warning: var(--nord13);
+  --success: var(--nord14);
+  --rare: var(--nord15);
 }
 
 /*--------------------------------------------------------------------------
   Formatting for F# code snippets
 /*--------------------------------------------------------------------------*/
-
 
 span.s { color: var(--nord14); } /* strings --- and styles for other string related formats */
 
@@ -50,7 +75,7 @@ table.pre, pre.fssnip, pre {
   border:1px solid var(--standout-ui);
   border-collapse:separate;
   white-space:pre;
-  font: 14px 'Cascadia Code',monospace;
+  font: var(--code-font);
   width:90%;
   margin:10px 20px 20px 20px;
   background-color: var(--panel);
@@ -60,7 +85,7 @@ table.pre, pre.fssnip, pre {
   max-width: none;
 }
 pre.fssnip code {
-  font: 14px 'Cascadia Code',monospace;
+  font: 14px monospace;
 }
 table.pre pre {
   padding:0px;
@@ -81,28 +106,6 @@ table.pre td.lines {
   Formatting for page & standard document content
 /*--------------------------------------------------------------------------*/
 
-:root {
-  --background: var(--nord0);
-  --panel: var(--nord1);
-  --active: var(--nord2);
-  --disable: var(--nord3);
-
-  --extra-ui: var(--nord4);
-  --main-text: var(--nord5);
-  --elevated-text: var(--nord6);
-
-  --standout-ui: var(--nord7);
-  --primary-ui: var(--nord8);
-  --secondary-ui: var(--nord9);
-  --tertiary-ui: var(--nord10);
-
-  --error: var(--nord11);
-  --advanced: var(--nord12);
-  --warning: var(--nord13);
-  --success: var(--nord14);
-  --rare: var(--nord15);
-}
-
 body {
   background-color: var(--background);
   color: var(--main-text);
@@ -118,11 +121,10 @@ pre {
 }
 
 code {
-  font: 14px 'Cascadia Code',monospace;
+  font: var(--code-font);
 }
 
 a, a:visited {
-  display: inline-block;
   text-decoration: none;
   color: var(--success);
 }
@@ -152,6 +154,20 @@ td.title, thead {
   padding: 8px;
 }
 
+[tooltip]:before {
+  opacity: 0;
+}
+
+[tooltip]:hover:before {
+  background-color: var(--disable);
+  color: var(--warning);
+  content: attr(tooltip);
+  margin-top: 1.9em;
+  opacity: 1;
+  padding: 4px;
+  position: absolute;
+}
+
 #menu ul {
   list-style-type: none;
   padding-left: 0;
@@ -162,7 +178,12 @@ td.title, thead {
   padding-left: 1em;
 }
 
+#menu header {
+  display: flex;
+}
+
 #menu h1 {
+  margin-left: 1em;
   margin-top: 4px;
   margin-bottom: 1em;
   font-size: larger;
@@ -182,6 +203,7 @@ td.title, thead {
 }
 
 #menu a {
+  display: block;
   color: var(--tertiary-ui);
   font-size: smaller;
   padding: 4px;
@@ -202,6 +224,11 @@ td.title, thead {
   padding: 8px 16px;
 }
 
+#content img {
+  float: right;
+  margin: 1em;
+}
+
 /*--------------------------------------------------------------------------
   Links
 /*--------------------------------------------------------------------------*/
@@ -217,7 +244,31 @@ h6 a, h6 a:hover, h6 a:focus { color : inherit; text-decoration : inherit; outli
   Images
 /*--------------------------------------------------------------------------*/
 
-img {
-  float: right;
-  margin: 1em;
+
+/* Social Icons */
+
+#social {
+  margin-bottom: 1em;
+}
+
+#social ul {
+  display: flex;
+  width: 100%;
+}
+
+#social li,
+#social a {
+  display: block;
+  height: 32px;
+}
+
+#social a {
+  padding: 2px 4px;
+  width: auto;
+}
+
+#social img,
+img.logo {
+  width: 32px;
+  height: 32px;
 }

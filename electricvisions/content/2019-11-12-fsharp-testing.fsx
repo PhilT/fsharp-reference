@@ -1,5 +1,3 @@
-#r "../../packages/Expecto/lib/netstandard2.0/Expecto"
-
 (**
 ---
 title: F# Testing - Expecto
@@ -38,6 +36,8 @@ All we need to begin with is Expecto itself.
 
   Time for a "Hello world" example:
  *)
+
+#r "../../packages/Expecto/lib/netstandard2.0/Expecto"
 
 open Expecto
 
@@ -97,10 +97,13 @@ generally have a single expectation and the text of that is usually enough.
 However, there is a workaround. As suggested by the creator:
 *)
 
-module ExpectLite =
+module Expect =
   let equal a b = b |> Expect.equal "" a
 
 (**
+This would mean a proliferation of new functions mirroring the old so for now
+will stick with the standard syntax unless my OCD gets the better of me.
+
 For testing my project we'll need to run all the tests in the project. This
 can be done by marking tests with the `Tests` attribute:
 *)
@@ -119,6 +122,11 @@ let main args =
   runTestsInAssemblyWithCLIArgs [] args
 
 (**
+This brings up another issue. A handy feature in Expecto is `Test.shuffle`.
+However, it requires you pass it a list of tests. This rules it out from
+being used with the above `runTestsInAssembly*` functions. This limits it's
+usefulness. However, as we're starting out I'm okay with this. It's a great
+potential PR for the project.
 
 Integrations with BenchmarkDotNet, FsCheck and Hopac can be added to
 `paket.dependencies`:

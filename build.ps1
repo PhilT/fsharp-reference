@@ -8,5 +8,9 @@ cp -r -force assets/* output/fsharp-reference/assets
 cp -r -force assets/* output/matter-game/assets
 cp -r -force matter-game/assets output/matter-game
 
+cp -force electricvisions/favicon.ico output/electricvisions
+cp -force fsharp-reference/favicon.ico output/fsharp-reference
+cp -force matter-game/favicon.ico output/matter-game
+
 dotnet fsi src/build.fsx
 echo Done.

@@ -7,8 +7,6 @@ module IndexPage
 open System.IO
 open System.Text.RegularExpressions
 
-let regexOptions = RegexOptions.Multiline ||| RegexOptions.Singleline
-
 let indexEntry output index (path: string, fm: Map<string, string>) =
   let url = path |> Pathutils.removeOutputPath output
   sprintf "%s
@@ -36,11 +34,17 @@ let indexEntry output index (path: string, fm: Map<string, string>) =
 
 let generate output template (config: Map<string, string>) (frontmatters: Map<string, Map<string, string>>) =
   let indexPath = output + "/index.html"
+
   if (config.["title"] = "") then
     printfn "No title in config, skipping generation of Index page"
   else
+    let dateSort (_, (map: Map<string, string>)) =
+      if map.ContainsKey("updated") then map.["updated"]
+      else map.["created"]
+
     frontmatters
     |> Map.toList
+    |> List.sortByDescending dateSort
     |> Seq.fold (indexEntry output) ""
     |> (fun content -> Template.wrap template (config, content))
     |> Template.write indexPath
