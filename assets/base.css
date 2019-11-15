@@ -136,6 +136,11 @@ a:hover {
 h1 {
   margin-bottom: 0;
 }
+
+h2 {
+  margin-top: 2em;
+}
+
 h5 {
   margin: 4px 0;
   color: var(--nord7);
@@ -271,4 +276,18 @@ h6 a, h6 a:hover, h6 a:focus { color : inherit; text-decoration : inherit; outli
 img.logo {
   width: 32px;
   height: 32px;
+}
+
+h5,
+.timestamps {
+  color: var(--standout-ui);
+  font-family: monospace;
+  font-size: small;
+  font-weight: bold;
+  width: 11em;
+  min-width: 11em;
+}
+
+.timestamps {
+  text-align: right;
 }

@@ -1,0 +1,36 @@
+:root {
+  --very-dark: #0f263b;
+  --dark: #1e4d79;
+  --medium: #1e4d79;
+  --light: #01afd6;
+  --light-grey: #dee3e5;
+  --grey: #b6c0cb;
+
+  --background: var(--grey);
+  --panel: var(--light-grey);
+  /* --active: */
+  --disable: var(--medium);
+
+  /* --extra-ui: var(--); */
+  --main-text: var(--dark);
+  --elevated-text: var(--light);
+
+  --standout-ui: var(--dark);
+  /* --primary-ui: var(--nord8); */
+  --secondary-ui: var(--medium);
+  --tertiary-ui: var(--light);
+
+  --error: var(--nord11);
+  --advanced: var(--nord12);
+  --warning: var(--nord13);
+  --success: var(--nord14);
+  --rare: var(--nord15);
+}
+
+ul {
+  list-style-type: none;
+}
+
+#menu a {
+  padding: 8px 4px;
+}

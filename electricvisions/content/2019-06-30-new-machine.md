@@ -6,7 +6,7 @@ updated:
 categories:
 ---
 
-## Here's how I set it up.
+## Here's how I set it up
 
 I'm not a huge fan of Windows. It does the job, it's where I started however
 Linux automation has been around for decades. Microsoft are slowly catching up
