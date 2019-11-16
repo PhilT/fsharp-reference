@@ -44,6 +44,7 @@ let generate output template (config: Map<string, string>) (frontmatters: Map<st
 
     frontmatters
     |> Map.toList
+    |> List.filter (fun (_, map) -> map.ContainsKey("created"))
     |> List.sortByDescending dateSort
     |> Seq.fold (indexEntry output) ""
     |> (fun content -> Template.wrap template (config, content))

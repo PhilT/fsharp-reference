@@ -1,0 +1,11 @@
+#content img {
+  margin: 1em;
+}
+
+img[alt="ZorlandC"]{
+  float: right;
+}
+
+img[alt="Destroyed blocks"] {
+  width: 95%
+}

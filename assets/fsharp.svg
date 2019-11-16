@@ -35,7 +35,7 @@
      inkscape:snap-global="true"
      inkscape:snap-to-guides="true"
      inkscape:zoom="1.0289025"
-     inkscape:cx="-305.47432"
+     inkscape:cx="119.73604"
      inkscape:cy="223.28732"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
@@ -95,7 +95,7 @@
      id="layer3"
      inkscape:label="Layer 1" /><g
      aria-label="f#"
-     transform="scale(0.98935161,1.010763)"
+     transform="matrix(0.98935161,0,0,1.2656087,0,-60.613962)"
      style="font-style:normal;font-weight:normal;font-size:431.6852417px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#112b3a;fill-opacity:1;stroke:none;stroke-width:2.24836087"
      id="text4549"><path
        d="m 187.07752,85.297034 v 49.534196 h -41.7352 q -16.01957,0 -22.34308,5.90195 -6.32352,5.69116 -6.32352,20.02446 v 16.44114 h 64.49985 v 53.96065 H 116.67572 V 413.27664 H 41.21512 V 231.15943 H 3.6956019 V 177.19878 H 41.21512 v -16.44114 q 0,-38.57344 21.499948,-56.91163 21.499949,-18.548976 66.607682,-18.548976 z"
