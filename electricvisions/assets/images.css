@@ -1,11 +1,12 @@
 #content img {
+  width: 95%;
   margin: 1em;
 }
 
-img[alt="ZorlandC"]{
+#content img[alt="ZorlandC"]{
+  width: auto;
   float: right;
 }
 
 img[alt="Destroyed blocks"] {
-  width: 95%
 }

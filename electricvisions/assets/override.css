@@ -22,8 +22,8 @@
 
   --error: var(--nord11);
   --advanced: var(--nord12);
-  --warning: var(--nord13);
-  --success: var(--nord14);
+  --warning: var(--medium);
+  --success: var(--light);
   --rare: var(--nord15);
 }
 

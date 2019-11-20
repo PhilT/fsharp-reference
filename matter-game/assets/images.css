@@ -1,0 +1,8 @@
+#content img {
+  margin: 1em;
+  width: 95%
+}
+
+img[alt="ZorlandC"]{
+  float: right;
+}
