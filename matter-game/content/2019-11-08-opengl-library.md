@@ -41,10 +41,10 @@ completion but then I (re)discovered...
 
 ### Silk.NET
 
-This library is still under development but it's is moving fast and
+This library is still under development but it's moving fast and
 some of it's developers are from OpenTK. It seems modern and it's the only
 library whose example ran under .NET Core out of the box for me. Support
-and comms also seem top notch and the library is at Preview 2 stage as of
+and comms also seem top notch and the library is at Preview 3 stage as of
 writing this.
 
 The only step not mentioned in the README is copying of the
@@ -58,7 +58,7 @@ So I decided to try integrating Silk.NET with F#.
 Checking their [announcements channel on discord](https://discord.gg/VkYSmgQ)
 they have a number of Nuget packages available.
 
-What I ended up doing was converting the existing C# examples from Silk.NET
+I decided to test the library by converting the existing C# examples from Silk.NET
 GitHub repo into F#. See [my repo](https://github.com/PhilT/silk.net-examples-fsharp)
 for the full source code.
 
@@ -81,24 +81,18 @@ anyway.
 
     mkdir silk.net-examples-fsharp
     cd silk.net-examples-fsharp
-    dotnet new tool-manifest
-    dotnet tool install paket
-    dotnet paket init
-    dotnet paket add silk.net.windowing --version 1.0.0-preview3
-    dotnet paket add silk.net.opengl --version 1.0.0-preview3
-    dotnet paket add silk.net.input --version 1.0.0-preview3
-
-    mkdir blank_window
-    cd blank_window
-    ac paket.references FSharp.Core
-    ac paket.references Silk.NET.Windowing
-    dotnet new console -lang f#
-
 
 ### Blank Window example nailed
 
-The Blank Window example went fairly well. F# automatically handles Action
-delegates if you pass them though a lambda.
+We just need the Windowing package for this one. 
+
+    mkdir blank_window
+    cd blank_window
+    dotnet new console -lang f#
+    dotnet add package Silk.NET.Windowing -v 1.0.0-preview3
+
+It went well. F# automatically handles `Action` delegates if you pass them 
+though a lambda.
 
     window.add_Move (fun position -> printfn "Moving %A" position)
 
@@ -116,8 +110,9 @@ to a C# method. Getting a pointer to an array is straightforward with the
     use floatPtr = fixed vertices
 
 This is where I wish the documentation for F# Core library was more current
-(ticket raised in docs.microsoft.com). It turns out F# 4.5 added the `toVoidPtr`
-function to the `NativePtr` module. I was then able to add:
+(ticket raised in docs.microsoft.com). It turns out the `toVoidPtr`
+function was added to F# 4.5 ([See details](https://github.com/fsharp/fslang-design/blob/master/FSharp-4.5/FS-1053-span.md)). 
+I was then able to add:
 
     let voidPtr = floatPtr |> NativePtr.toVoidPtr
     gl.BufferData(GLEnum.ArrayBuffer, size, voidPtr, GLEnum.StaticDraw)
