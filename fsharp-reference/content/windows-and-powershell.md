@@ -7,6 +7,14 @@ It's the original home of .NET and it's currently the best platform for writing 
 playing games. This summary has currently been tested on Windows 10 only. Setup
 instructions assume Windows and PowerShell.
 
+### Windows Terminal
+
+There is a preview in the Windows App Store of Windows Terminal. GPU text 
+rendering, a modern look & themes, tabs, split panes(!) and UTF-8 appear to be
+the standout features. It's a pretty early build but seems to work well enough.
+It's currently missing search and there are some redraw issues in Vim when resizing
+the terminal ([tracking issue](https://github.com/microsoft/terminal/issues/1465#thread-subscription-status)). 
+
 ### PowerShell
 
 I come from a Linux background (Well it was more like Windows -> Linux/Windows). So
@@ -72,10 +80,4 @@ Run a PowerShell script called `build.ps1` in the current directory
 ```powershell
 ./build
 ```
-
-### Windows Terminal
-
-There is a preview in the Windows App Store of Windows Terminal. GPU text rendering,
-a modern look & themes, tabs and UTF-8 appear to be the standout features. It's a pretty early build
-but seems to work well enough. For me, it's currently missing search.
 
