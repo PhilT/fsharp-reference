@@ -3,12 +3,12 @@
 title: F# Testing - Expecto
 description: Test or Behaviour Driven Development has been a staple in my workflow for years. Now that I've got some familiarity with F# it's time to get serious.
 created: 2019-11-12
-updated:
+updated: 2019-11-23
 categories: f# testing
 ---
 
 .NET has a bunch of testing tools such as xUnit, NUNit and MSTest. However,
-this is F# so we can do better!
+this is F# so I wanted something a little more idiomatic.
 
 ## Expecto Patron...
 
@@ -131,11 +131,30 @@ potential PR for the project.
 Integrations with BenchmarkDotNet, FsCheck and Hopac can be added to
 `paket.dependencies`:
 
-  ```powershell
-    ac paket.dependencies nuget Expecto.BenchmarkDotNet
-    ac paket.dependencies nuget Expecto.FsCheck
-    ac paket.dependencies nuget Expecto.Hopac
+```powershell
+ac paket.dependencies nuget Expecto.BenchmarkDotNet
+ac paket.dependencies nuget Expecto.FsCheck
+ac paket.dependencies nuget Expecto.Hopac
 
-    dotnet paket install
-  ```
+dotnet paket install
+```
+
+## Integrating with .NET
+
+We can make Expecto play nicely with the `dotnet` CLI by adding a couple of
+packages. This also removes the need for a `Program.cs` entrypoint file as it's
+generated automatically.
+
+```powershell
+ac paket.dependencies nuget Microsoft.NET.Test.Sdk
+ac paket.dependencies nuget YoloDev.Expecto.TestSdk
+
+dotnet paket install
+```
+
+Then you can run tests with the `dotnet` command:
+
+```powershell
+dotnet test
+```
  *)

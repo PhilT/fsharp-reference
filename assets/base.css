@@ -1,4 +1,5 @@
-/* RESET */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 
 ul, li, a, img {
   padding: 0;
@@ -8,8 +9,6 @@ ul, li, a, img {
 /* VARIABLES */
 
 :root {
-  --code-font: 14px monospace;
-
   --background: var(--nord0);
   --panel: var(--nord1);
   --active: var(--nord2);
@@ -29,6 +28,21 @@ ul, li, a, img {
   --warning: var(--nord13);
   --success: var(--nord14);
   --rare: var(--nord15);
+
+  --code-font: 14px monospace;
+  --code-color: var(--nord5);
+  --code-background: var(--panel);
+  --code-border: var(--standout-ui);
+  --menu-hover: var(--disable);
+  --article-index: var(--panel);
+  --links: var(--success);
+  --links-hover: var(--warning);
+  --tooltip-background: var(--disable);
+  --tooltip-text: var(--warning);
+  --minor-info: var(--active);
+
+
+  --menu-width: 280px;
 }
 
 /*--------------------------------------------------------------------------
@@ -59,7 +73,7 @@ span.fsi { color: var(--nord11); } /* fsi output */
 div.tip {
 	background:#475b5f;
   border-radius:4px;
-  font:11pt arial, sans-serif;
+  font: 11pt "Open Sans", sans-serif;
 	padding:6px 8px 6px 8px;
 	display:none;
   color:#d1d1d1;
@@ -72,13 +86,13 @@ table.pre pre {
 }
 table.pre, pre.fssnip, pre {
   line-height:13pt;
-  border:1px solid var(--standout-ui);
+  border:1px solid var(--code-border);
   border-collapse:separate;
   white-space:pre;
   font: var(--code-font);
-  width:90%;
-  margin:10px 20px 20px 20px;
-  background-color: var(--panel);
+  width:100%;
+  margin: 0;
+  background-color: var(--code-background);
   padding:10px;
   border-radius:5px;
   color: var(--main-text);
@@ -86,7 +100,7 @@ table.pre, pre.fssnip, pre {
 }
 pre.fssnip code {
   font: 14px monospace;
-  background-color: var(--panel);
+  background-color: var(--code-background);
 }
 table.pre pre {
   padding:0px;
@@ -103,6 +117,11 @@ table.pre td.lines {
   width:30px;
 }
 
+table.pre code, table.pre pre, pre code {
+  background: none;
+  padding: 0;
+}
+
 /*--------------------------------------------------------------------------
   Formatting for page & standard document content
 /*--------------------------------------------------------------------------*/
@@ -111,7 +130,7 @@ body {
   background-color: var(--background);
   color: var(--main-text);
   display: flex;
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin: 0;
   padding-top: 0px;
   padding-bottom: 40px;
@@ -123,25 +142,23 @@ pre {
 
 code {
   font: var(--code-font);
-  background-color: var(--panel);
-  padding: 2px 4px;
+  color: var(--code-color);
+  background-color: var(--code-background);
+  padding: 1px 4px;
+  border-radius: 3px;
 }
 
 a, a:visited {
   text-decoration: none;
-  color: var(--success);
+  color: var(--links);
 }
 
 a:hover {
-  color: var(--warning);
+  color: var(--links-hover);
 }
 
-h5 {
-  color: var(--nord7);
-}
-
-h1, h5, h6 {
-  margin: 0;
+h1 {
+  margin-top: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -149,8 +166,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-  margin-top: 4em;
-  margin-bottom: 0;
+  margin-top: 2em;
 }
 
 /* Make table headings and td.title bold */
@@ -162,8 +178,12 @@ td.title, thead {
 #menu {
   background-color: var(--panel);
   color: var(--disable);
-  min-width: 236px;
-  padding: 8px;
+  min-width: var(--menu-width);
+  position: fixed;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 [tooltip]:before {
@@ -171,13 +191,19 @@ td.title, thead {
 }
 
 [tooltip]:hover:before {
-  background-color: var(--disable);
-  color: var(--warning);
+  background-color: var(--tooltip-background);
+  border-radius: 0 4px 4px 4px;
+  color: var(--tooltip-text);
+  font-size: small;
   content: attr(tooltip);
-  margin-top: 36px;
+  margin-top: 48px;
   opacity: 1;
-  padding: 4px;
+  padding: 4px 16px;
   position: absolute;
+}
+
+#menu header {
+  padding: 8px;
 }
 
 #menu ul {
@@ -223,18 +249,30 @@ td.title, thead {
 }
 
 #menu a:hover {
-  background-color: var(--disable);
+  background-color: var(--menu-hover);
 }
 
 #menu a.current {
   background-color: var(--background);
   color: var(--elevated-text);
+  border-radius: 4px 0 0 4px;
 }
 
 #content {
+  margin-left: var(--menu-width);
   max-width: 1024px;
   line-height: 1.5em;
-  padding: 32px;
+  padding: 64px;
+}
+
+#content header,
+article header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.categories {
+  color: var(--minor-info);
 }
 
 /*--------------------------------------------------------------------------
@@ -248,27 +286,38 @@ h4 a, h4 a:hover, h4 a:focus,
 h5 a, h5 a:hover, h5 a:focus,
 h6 a, h6 a:hover, h6 a:focus { color : inherit; text-decoration : inherit; outline:none }
 
+/* Subject Index */
+
+#subjects {
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: auto;
+}
+
 
 /* Social Icons */
 
 #social {
-  margin-bottom: 1em;
+  width: 100%;
+  padding: 32px 0;
 }
 
 #social ul {
   display: flex;
+  justify-content: space-around;
   width: 100%;
 }
 
 #social li,
 #social a {
   display: block;
-  height: 32px;
 }
 
 #social a {
-  padding: 2px 4px;
+  height: 32px;
+  padding: 4px;
   width: auto;
+  border-radius: 4px;
 }
 
 #social img,
@@ -277,16 +326,13 @@ img.logo {
   height: 32px;
 }
 
-h5,
 .timestamps {
-  color: var(--standout-ui);
-  font-family: monospace;
+  color: var(--main-text);
   font-size: small;
   font-weight: bold;
   width: 11em;
   min-width: 11em;
-}
-
-.timestamps {
+  line-height: normal;
   text-align: right;
 }
+

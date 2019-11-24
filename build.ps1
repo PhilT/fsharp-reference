@@ -6,8 +6,9 @@ mkdir -f output/matter-game/assets | Out-Null
 cp -r -force assets/* output/electricvisions/assets
 cp -r -force assets/* output/fsharp-reference/assets
 cp -r -force assets/* output/matter-game/assets
-cp -r -force matter-game/assets output/matter-game
 cp -r -force electricvisions/assets output/electricvisions
+cp -r -force fsharp-reference/assets output/fsharp-reference
+cp -r -force matter-game/assets output/matter-game
 
 cp -force electricvisions/favicon.ico output/electricvisions
 cp -force fsharp-reference/favicon.ico output/fsharp-reference

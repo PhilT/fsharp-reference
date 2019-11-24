@@ -112,7 +112,7 @@ document.addEventListener('click', (event) => {
   // Ground
   const ground = B.MeshBuilder.CreateGround('', { height: 20000, width: 20000, subdivisions: 2 }, scene)
   const groundMaterial = new B.StandardMaterial()
-  groundMaterial.diffuseTexture = new B.Texture('../grid.png')
+  groundMaterial.diffuseTexture = new B.Texture('../grid.webp')
   groundMaterial.diffuseTexture.uScale = 1000
   groundMaterial.diffuseTexture.vScale = 1000
   ground.material = groundMaterial

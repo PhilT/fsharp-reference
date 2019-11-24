@@ -11,116 +11,123 @@
 
   <link rel="stylesheet" href="/assets/nord.css">
   <link rel="stylesheet" href="/assets/base.css">
+  <link rel="stylesheet" href="/assets/override.css">
   <script type="text/javascript" src="/assets/base.js"></script>
 </head>
 
 <body>
   <div id="menu">
     <header>
+      <img class="logo" src="/assets/fsharp.svg">
       <h1>fsharp-reference.com</h1>
     </header>
+    <nav id="subjects">
+      <ul>
+        <li><a id="index" href="/index.html">Introduction</a></li>
+        <li><a id="references" href="/references.html">References</a></li>
+        <li><a id="windows-and-powershell" href="/windows-and-powershell.html">Windows 10 & PowerShell</a></li>
+        <li><a id="chocolatey" href="/chocolatey.html">Chocolatey</a></li>
+        <li><a id="dotnetsdk" href="/dotnetsdk.html">.NET Core SDK</a></li>
+        <li><a id="neovim" href="/neovim.html">Neovim</a></li>
+        <li><a id="example" href="/example.html">A Simple Example</a></li>
+      </ul>
+      <h2>Core Concepts</h2>
+      <ul>
+        <li><a id="operators" href="/language/operators.html">Operators</a></li>
+        <li><a id="functions" href="/language/functions.html">Functions</a></li>
+        <li><a id="literals" href="/language/literals.html">Literals</a></li>
+        <li><a id="modules" href="/language/modules.html">Modules</a></li>
+        <li>
+          <ul>
+            <li><a id="implicit" href="/language/modules/implicit.html">Implicit</a></li>
+            <li><a id="local" href="/language/modules/local.html">Local</a></li>
+          </ul>
+        </li>
+        <li><a id="namespaces" href="/language/namespaces.html">Namespaces</a></li>
+        <li>
+          <ul>
+            <li><a id="nested" href="/language/namespaces/nested.html">Nested</a></li>
+            <li><a id="recursive" href="/language/namespaces/recursive.html">Recursive</a></li>
+            <li><a id="shorthand" href="/language/namespaces/shorthand.html">Shorthand</a></li>
+          </ul>
+        </li>
+        <li><a id="params-and-arguments" href="/language/params_and_arguments.html">Parameters &amp; Arguments</a></li>
+        <li><a id="pattern-matching" href="/language/pattern_matching.html">Pattern Matching</a></li>
+        <li><a id="type-inference" href="/language/type_inference.html">Type Inference</a></li>
+      </ul>
+      <h2>Functional Types</h2>
+      <ul>
+        <li><a id="array" href="/language/types/array.html">Array</a></li>
+        <li><a id="discriminated-union" href="/language/types/discriminated_union.html">Discriminated Union</a></li>
+        <li><a id="enumeration" href="/language/types/enumeration.html">Enumeration</a></li>
+        <li><a id="list" href="/language/types/list.html">List</a></li>
+        <li><a id="option" href="/language/types/option.html">Option</a></li>
+        <li><a id="primitive" href="/language/types/primitive.html">Primitive Types</a></li>
+        <li><a id="record" href="/language/types/record.html">Record</a></li>
+        <li><a id="result" href="/language/types/result.html">Result</a></li>
+        <li><a id="sequence" href="/language/types/sequence.html">Sequence</a></li>
+        <li><a id="string" href="/language/types/string.html">String</a></li>
+        <li><a id="tuple" href="/language/types/tuple.html">Tuple</a></li>
+        <li><a id="unit" href="/language/types/unit.html">Unit</a></li>
+      </ul>
+      <h2>Object Oriented Types</h2>
+      <ul>
+        <li><a id="class" href="/language/types/class.html">Class</a></li>
+        <li><a id="delegate" href="/language/types/delegate.html">Delegate</a></li>
+        <li><a id="interface" href="/language/types/interface.html">Interface</a></li>
+        <li><a id="structure" href="/language/types/structure.html">Structure</a></li>
+      </ul>
+      <h2>Other Concepts</h2>
+      <ul>
+        <li><a id="abbreviations" href="/language/abbreviations.html">Abbreviations</a></li>
+        <li><a id="access-control" href="/language/access_control.html">Access Control</a></li>
+        <li><a id="async-workflows" href="/language/async_workflows.html">Async Workflows</a></li>
+        <li><a id="attributes" href="/language/attributes.html">Attributes</a></li>
+        <li><a id="caller-info" href="/language/caller_info.html">Caller Info</a></li>
+        <li><a id="casting-and-conversions" href="/language/casting_and_conversions.html">Casting And Conversions</a></li>
+        <li><a id="code-quotations" href="/language/code_quotations.html">Code Quotations</a></li>
+        <li><a id="compiler" href="/language/compiler.html">Compiler</a></li>
+        <li><a id="computation-expressions" href="/language/computation_expressions.html">Computation Expressions</a></li>
+        <li><a id="conditionals" href="/language/conditionals.html">Conditionals</a></li>
+        <li><a id="excpetions-assertions" href="/language/exceptions_assertions.html">Exceptions &amp; Assertions</a></li>
+        <li><a id="fixed-keyword" href="/language/fixed_keyword.html">The <code>Fixed</code> Keyword</a></li>
+        <li><a id="flexible-types" href="/language/flexible_types.html">Flexible Types</a></li>
+        <li><a id="global" href="/language/global.html"><code>global</code></a></li>
+        <li><a id="lazy-expressions" href="/language/lazy_expressions.html">Lazy Expressions</a></li>
+        <li><a id="loops" href="/language/loops.html">Loops</a></li>
+        <li><a id="object-expressions" href="/language/object_expressions.html">Object Expressions</a></li>
+        <li><a id="operator-overloading" href="/language/operator_overloading.html">Operator Overloading</a></li>
+        <li><a id="query-expressions" href="/language/query_expressions.html">Query Expressions</a></li>
+        <li><a id="reference-cell" href="/language/reference_cell.html">Reference Cell</a></li>
+        <li><a id="slices" href="/language/slices.html">Slices</a></li>
+        <li><a id="source-line-file-directory" href="/language/source_line_file_directory.html">Source Identifiers</a></li>
+        <li><a id="type-extensions" href="/language/type_extensions.html">Type Extensions</a></li>
+        <li><a id="units-of-measure" href="/language/units_of_measure.html">Units Of Measure</a></li>
+        <li><a id="misc-resource-management" href="/language/misc.html#Resource-Management">Resource Management</a></li>
+        <li><a id="misc-imports" href="/language/misc.html#Imports">Imports</a></li>
+        <li><a id="misc" href="/language/misc.html#Signatures">Signatures</a></li>
+        <li><a id="misc-xml-documentation" href="/language/misc.html#XML-Documentation">XML Documentation</a></li>
+      </ul>
+    </nav>
     <nav id="social">
       <ul>
-        <li tooltip="electricvisions.com">
-          <a href="https://electricvisions.com"><img src="/assets/electricvisions.svg"></a>
+        <li>
+          <a href="https://electricvisions.com"><img src="/assets/electricvisions-mono.svg"></a>
         </li>
-        <li tooltip="Matter game site">
-          <a href="https://matter-game.com"><img src="/assets/matter.svg"></a>
+        <li>
+          <a href="https://matter-game.com"><img src="/assets/matter-mono.svg"></a>
         </li>
-        <li tooltip="GitHub page to my websites">
-          <a href="https://github.com/PhilT/websites"><img src="/assets/github.svg"></a>
+        <li>
+          <a href="https://github.com/PhilT"><img src="/assets/github.webp"></a>
         </li>
-        <li tooltip="Linkedin">
+        <li>
           <a href="https://www.linkedin.com/in/phil-a-thompson-83b64a2/"><img src="/assets/linkedin.svg"></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/PhilAThompson"><img src="/assets/twitter.svg"></a>
         </li>
       </ul>
     </nav>
-    <ul>
-      <li><a id="index" href="/index.html">Introduction</a></li>
-      <li><a id="references" href="/references.html">References</a></li>
-      <li><a id="windows-and-powershell" href="/windows-and-powershell.html">Windows 10 & PowerShell</a></li>
-      <li><a id="chocolatey" href="/chocolatey.html">Chocolatey</a></li>
-      <li><a id="dotnetsdk" href="/dotnetsdk.html">.NET Core SDK</a></li>
-      <li><a id="neovim" href="/neovim.html">Neovim</a></li>
-      <li><a id="example" href="/example.html">A Simple Example</a></li>
-    </ul>
-    <h2>Core Concepts</h2>
-    <ul>
-      <li><a id="operators" href="/language/operators.html">Operators</a></li>
-      <li><a id="functions" href="/language/functions.html">Functions</a></li>
-      <li><a id="literals" href="/language/literals.html">Literals</a></li>
-      <li><a id="modules" href="/language/modules.html">Modules</a></li>
-      <li>
-        <ul>
-          <li><a id="implicit" href="/language/modules/implicit.html">Implicit</a></li>
-          <li><a id="local" href="/language/modules/local.html">Local</a></li>
-        </ul>
-      </li>
-      <li><a id="namespaces" href="/language/namespaces.html">Namespaces</a></li>
-      <li>
-        <ul>
-          <li><a id="nested" href="/language/namespaces/nested.html">Nested</a></li>
-          <li><a id="recursive" href="/language/namespaces/recursive.html">Recursive</a></li>
-          <li><a id="shorthand" href="/language/namespaces/shorthand.html">Shorthand</a></li>
-        </ul>
-      </li>
-      <li><a id="params-and-arguments" href="/language/params_and_arguments.html">Parameters &amp; Arguments</a></li>
-      <li><a id="pattern-matching" href="/language/pattern_matching.html">Pattern Matching</a></li>
-      <li><a id="type-inference" href="/language/type_inference.html">Type Inference</a></li>
-    </ul>
-    <h2>Functional Types</h2>
-    <ul>
-      <li><a id="array" href="/language/types/array.html">Array</a></li>
-      <li><a id="discriminated-union" href="/language/types/discriminated_union.html">Discriminated Union</a></li>
-      <li><a id="enumeration" href="/language/types/enumeration.html">Enumeration</a></li>
-      <li><a id="list" href="/language/types/list.html">List</a></li>
-      <li><a id="option" href="/language/types/option.html">Option</a></li>
-      <li><a id="primitive" href="/language/types/primitive.html">Primitive Types</a></li>
-      <li><a id="record" href="/language/types/record.html">Record</a></li>
-      <li><a id="result" href="/language/types/result.html">Result</a></li>
-      <li><a id="sequence" href="/language/types/sequence.html">Sequence</a></li>
-      <li><a id="string" href="/language/types/string.html">String</a></li>
-      <li><a id="tuple" href="/language/types/tuple.html">Tuple</a></li>
-      <li><a id="unit" href="/language/types/unit.html">Unit</a></li>
-    </ul>
-    <h2>Object Oriented Types</h2>
-    <ul>
-      <li><a id="class" href="/language/types/class.html">Class</a></li>
-      <li><a id="delegate" href="/language/types/delegate.html">Delegate</a></li>
-      <li><a id="interface" href="/language/types/interface.html">Interface</a></li>
-      <li><a id="structure" href="/language/types/structure.html">Structure</a></li>
-    </ul>
-    <h2>Other Concepts</h2>
-    <ul>
-      <li><a id="abbreviations" href="/language/abbreviations.html">Abbreviations</a></li>
-      <li><a id="access-control" href="/language/access_control.html">Access Control</a></li>
-      <li><a id="async-workflows" href="/language/async_workflows.html">Async Workflows</a></li>
-      <li><a id="attributes" href="/language/attributes.html">Attributes</a></li>
-      <li><a id="caller-info" href="/language/caller_info.html">Caller Info</a></li>
-      <li><a id="casting-and-conversions" href="/language/casting_and_conversions.html">Casting And Conversions</a></li>
-      <li><a id="code-quotations" href="/language/code_quotations.html">Code Quotations</a></li>
-      <li><a id="compiler" href="/language/compiler.html">Compiler</a></li>
-      <li><a id="computation-expressions" href="/language/computation_expressions.html">Computation Expressions</a></li>
-      <li><a id="conditionals" href="/language/conditionals.html">Conditionals</a></li>
-      <li><a id="excpetions-assertions" href="/language/exceptions_assertions.html">Exceptions &amp; Assertions</a></li>
-      <li><a id="fixed-keyword" href="/language/fixed_keyword.html">The <code>Fixed</code> Keyword</a></li>
-      <li><a id="flexible-types" href="/language/flexible_types.html">Flexible Types</a></li>
-      <li><a id="global" href="/language/global.html"><code>global</code></a></li>
-      <li><a id="lazy-expressions" href="/language/lazy_expressions.html">Lazy Expressions</a></li>
-      <li><a id="loops" href="/language/loops.html">Loops</a></li>
-      <li><a id="object-expressions" href="/language/object_expressions.html">Object Expressions</a></li>
-      <li><a id="operator-overloading" href="/language/operator_overloading.html">Operator Overloading</a></li>
-      <li><a id="query-expressions" href="/language/query_expressions.html">Query Expressions</a></li>
-      <li><a id="reference-cell" href="/language/reference_cell.html">Reference Cell</a></li>
-      <li><a id="slices" href="/language/slices.html">Slices</a></li>
-      <li><a id="source-line-file-directory" href="/language/source_line_file_directory.html">Source Identifiers</a></li>
-      <li><a id="type-extensions" href="/language/type_extensions.html">Type Extensions</a></li>
-      <li><a id="units-of-measure" href="/language/units_of_measure.html">Units Of Measure</a></li>
-      <li><a id="misc-resource-management" href="/language/misc.html#Resource-Management">Resource Management</a></li>
-      <li><a id="misc-imports" href="/language/misc.html#Imports">Imports</a></li>
-      <li><a id="misc" href="/language/misc.html#Signatures">Signatures</a></li>
-      <li><a id="misc-xml-documentation" href="/language/misc.html#XML-Documentation">XML Documentation</a></li>
-    </ul>
   </div>
   <div id="content">
     {document}

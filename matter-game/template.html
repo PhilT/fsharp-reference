@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/assets/base.css">
   <link rel="stylesheet" href="/assets/images.css">
   <link rel="stylesheet" href="/assets/index.css">
+  <link rel="stylesheet" href="/assets/override.css">
 
   <script type="text/javascript" src="/assets/base.js"></script>
 </head>
@@ -23,36 +24,41 @@
       <img class="logo" src="/assets/matter.svg">
       <h1>matter-game.com</h1>
     </header>
+    <nav id="subjects">
+      <ul>
+        <li><a id="about" href="/about.html">About</a></li>
+        <li><a id="index" href="/index.html">Index</a></li>
+      </ul>
+      <h2>Articles</h2>
+      <ul>
+        <li><a id="library-implemented-in-fsharp" href="/library-implemented-in-fsharp.html">Library Implemented in F#</a></li>
+        <li><a id="opengl-library" href="/opengl-library.html">OpenGL Library Choice</a></li>
+        <li><a id="project-reboot-all-in-on-fsharp" href="/project-reboot-all-in-on-fsharp.html">Project Reboot - Going all in on F#</a></li>
+        <li><a id="code-style-fp" href="/code-style-fp.html">Code Style And FP</a></li>
+        <li><a id="more-physics" href="/more-physics.html">More Physics</a></li>
+        <li><a id="physics-engines" href="/physics-engines.html">Physics Engines</a></li>
+        <li><a id="language-and-framework" href="/language-and-framework.html">Language and Framework</a></li>
+      </ul>
+    </nav>
     <nav id="social">
       <ul>
-        <li tooltip="electricvisions.com">
-          <a href="https://electricvisions.com"><img src="/assets/electricvisions.svg"></a>
+        <li>
+          <a href="https://electricvisions.com"><img src="/assets/electricvisions-mono.svg"></a>
         </li>
-        <li tooltip="F# Quick Reference site">
+        <li>
           <a href="https://fsharp-reference.com"><img src="/assets/fsharp.svg"></a>
         </li>
-        <li tooltip="GitHub page to my websites">
-          <a href="https://github.com/PhilT/websites"><img src="/assets/github.svg"></a>
+        <li>
+          <a href="https://github.com/PhilT"><img src="/assets/github.webp"></a>
         </li>
-        <li tooltip="Linkedin">
+        <li>
           <a href="https://www.linkedin.com/in/phil-a-thompson-83b64a2/"><img src="/assets/linkedin.svg"></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/PhilAThompson"><img src="/assets/twitter.svg"></a>
         </li>
       </ul>
     </nav>
-    <ul>
-      <li><a id="about" href="/about.html">About</a></li>
-      <li><a id="index" href="/index.html">Index</a></li>
-    </ul>
-    <h2>Articles</h2>
-    <ul>
-      <li><a id="library-implemented-in-fsharp" href="/library-implemented-in-fsharp.html">Library Implemented in F#</a></li>
-      <li><a id="opengl-library" href="/opengl-library.html">OpenGL Library Choice</a></li>
-      <li><a id="project-reboot-all-in-on-fsharp" href="/project-reboot-all-in-on-fsharp.html">Project Reboot - Going all in on F#</a></li>
-      <li><a id="code-style-fp" href="/code-style-fp.html">Code Style And FP</a></li>
-      <li><a id="more-physics" href="/more-physics.html">More Physics</a></li>
-      <li><a id="physics-engines" href="/physics-engines.html">Physics Engines</a></li>
-      <li><a id="language-and-framework" href="/language-and-framework.html">Language and Framework</a></li>
-    </ul>
   </div>
   <div id="content">
     {document}

@@ -23,10 +23,14 @@ let item (fm: Map<string, string>) key prefix suffix =
   | None -> ""
 
 let header (fm: Map<string, string>) =
-  (item fm "title" "# " "\n\n") +
-    (item fm "created" "##### Created: " "\n") +
-    (item fm "updated" "##### Updated: " "\n") +
-    (item fm "categories" "###### categories: " "\n") +
+  "<header>\n" +
+    (item fm "title" "# " "\n") +
+    "<div class='timestamps'>\n" +
+    (item fm "created" "<span class='created'>Created: " "</span>\n") +
+    (item fm "updated" "<span class='updated'>Updated: " "</span>\n") +
+    "</div>\n" +
+    "</header>\n" +
+    (item fm "categories" "<div class='categories'>categories: " "</div>\n\n") +
     (item fm "description" "" "\n\n")
 
 let convertToHeading content =

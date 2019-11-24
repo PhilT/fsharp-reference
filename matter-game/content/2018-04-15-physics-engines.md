@@ -8,7 +8,7 @@ categories: javascript webgl, physics
 
 **UPDATE**: Samuel tweaked my wall demo and it's now keeping up with the big boys! I need to run a few more tests before making a final decision but I guess the key thing is to abstract it away and then it makes switching much easier. The BabylonJS plugins are great for this so that will certainly be a factor.
 
-![Collapsing wall physics engine test](/assets/enginetest/engine_test.png)
+![Collapsing wall physics engine test](/assets/enginetest/engine_test.webp)
 
 Last week I noticed that Samuel Girardin had released an alpha version of Energy.js, a partially manual JavaScript port of the Open Dynamics Engine. I hacked together a quick plugin using the examples from Samuel's [Github repo](https://github.com/samuelgirardin/Energy.js) and voilà! Energy.js is not performing quite as I'd hoped but it's early days and I've not really played around with the parameters much so take it with a pinch of salt.
 

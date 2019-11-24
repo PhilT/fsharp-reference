@@ -1,19 +1,23 @@
 :root {
-  --very-dark: #0f263b;
-  --dark: #1e4d79;
-  --medium: #1e4d79;
-  --light: #01afd6;
-  --light-grey: #dee3e5;
-  --grey: #b6c0cb;
+  --very-dark: #031119;
+  --dark: #131e30;
+  --medium: #13556a;
+  --light: #6f9db3;
+  --accent1: #fc6a55;
+  --accent2: #fdc79c;
+  --sky: #95c4d9;
+  --white: #e5e9f0;
+  --pale: rgba(149, 196, 217, 0.5); /* Same as sky */
+  --logo-color: #00a6d7;
 
-  --background: var(--grey);
-  --panel: var(--light-grey);
+  --background: var(--white);
+  --panel: var(--dark);
   /* --active: */
-  --disable: var(--medium);
+  --disable: var(--dark);
 
   /* --extra-ui: var(--); */
-  --main-text: var(--dark);
-  --elevated-text: var(--light);
+  --main-text: var(--very-dark);
+  --elevated-text: var(--accent1);
 
   --standout-ui: var(--dark);
   /* --primary-ui: var(--nord8); */
@@ -25,6 +29,17 @@
   --warning: var(--medium);
   --success: var(--light);
   --rare: var(--nord15);
+
+  --menu-hover: var(--medium);
+  --code-color: var(--dark);
+  --code-background: var(--pale);
+  --code-border: var(--light);
+  --article-index: var(--pale);
+  --links: var(--accent1);
+  --links-hover: var(--accent2);
+  --tooltip-background: var(--medium);
+  --tooltip-text: var(--light);
+  --minor-info: var(--light);
 }
 
 ul {
@@ -33,4 +48,17 @@ ul {
 
 #menu a {
   padding: 8px 4px;
+}
+
+#menu h1 {
+  color: var(--logo-color);
+}
+
+a {
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--links);
+  background-color: var(--links-hover);
 }
