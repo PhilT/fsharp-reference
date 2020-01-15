@@ -9,20 +9,26 @@ instructions assume Windows and PowerShell.
 
 ### Windows Terminal
 
-There is a preview in the Windows App Store of Windows Terminal. GPU text 
-rendering, a modern look & themes, tabs, split panes(!) and UTF-8 appear to be
-the standout features. It's a pretty early build but seems to work well enough.
-It's currently missing search and there are some redraw issues in Vim when resizing
-the terminal ([tracking issue](https://github.com/microsoft/terminal/issues/1465#thread-subscription-status)). 
+I launch nvim directly which uses cmd by default. However, I have shortcuts to
+launch a powershell terminal in Neovim. However, Windows Terminal development is
+progressing nicely.
+
+There is a preview in the Windows App Store of Windows Terminal which gets
+updated. GPU text rendering, a modern look & themes, tabs, split panes(!) and
+UTF-8 appear to be the standout features. It's a pretty early build but seems
+to work well enough. It's currently missing search and there are some redraw
+issues when resizing the terminal
+([tracking issue](https://github.com/microsoft/terminal/issues/4200))
+particularly in *Vim.
 
 ### PowerShell
 
-I come from a Linux background (Well it was more like Windows -> Linux/Windows). So
-I'm a Bash guy. However, on Windows it's just better to run things in CMD or
-PowerShell sometimes. CMD is very restrictive and some commands in PowerShell are verbose.
-However, I'd prefer to use one shell rather than keep switching. I still use
-Git Bash for Windows for some things (`dos2unix` anyone?!) but slowly figuring out
-things in PowerShell.
+I come from a Linux background (Well it was more like Windows -> Linux/Windows).
+So I'm a Bash guy. However, on Windows it's just better to run things in CMD or
+PowerShell sometimes. CMD is very restrictive and some commands in PowerShell are
+verbose. However, I'd prefer to use one shell rather than keep switching. I still
+use Git Bash for Windows for some things (`dos2unix` anyone?!) but slowly figuring
+out things in PowerShell.
 
 Powershell aliases a lot of commands from Linux which helps with the transition.
 Notice that I'm also using forward slashes. Windows is fine with this and will
@@ -35,7 +41,7 @@ especially in scripts.
 Here are a list of commands that got me going with PowerShell:
 
 Remove directory and all files and subdirectories recursively. Works without
-`-force` unless you're dealing with directories that start with a `.`.
+`-force` unless you're dealing with directories that start with a `.` (dot).
 
 ```powershell
 rm -r -force <directory>

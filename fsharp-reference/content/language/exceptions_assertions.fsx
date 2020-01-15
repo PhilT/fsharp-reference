@@ -1,8 +1,10 @@
 (**
 ---
 title: Exceptions
-description: Exceptions
+description: TODO: Description
 ---
+
+TODO: Some detail
 
  *)
 

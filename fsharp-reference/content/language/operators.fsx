@@ -1,7 +1,7 @@
 (**
 ---
 title: Operators
-description:
+description: Supported operators in the F# language.
 ---
 
 ## Arithmetic Operators

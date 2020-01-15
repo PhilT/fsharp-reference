@@ -1,8 +1,10 @@
 (**
 ---
 title: Operator Overloading
-description: Operators can be overloaded as `member`s of classes or records. They can also be overloaded at the global level using `let`:
+description: Operators can be overloaded as `member`s of classes or records.
 ---
+
+They can also be overloaded at the global level using `let`:
  *)
 
 type Vector(x: float, y: float) =

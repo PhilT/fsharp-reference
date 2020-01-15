@@ -1,8 +1,10 @@
 (**
 ---
 title: Computation Expressions
-description: [Sequence Expressions](types/sequence.html), [Asynchronous Workflows](async_workflows.html) and [Query Expressions](query_expressions.html) are types of computation expressions.
+description: TODO: Describe
 ---
+
+[Sequence Expressions](types/sequence.html), [Asynchronous Workflows](async_workflows.html) and [Query Expressions](query_expressions.html) are types of computation expressions.
 
 ## Logging all assignments
  *)

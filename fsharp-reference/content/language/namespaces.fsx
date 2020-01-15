@@ -1,23 +1,25 @@
 (**
 ---
 title: Namespaces
-description: .NET construct to attach a name to a group of program elements.
+description: A .NET construct to attach a name to a group of program elements to avoid naming conflicts when used with other libraries.
 ---
 
-Can contain modules and types. Namespaces cannot contain
-functions. Only modules contain functions.
+Can contain modules and types but not functions.
+
+Reasonably sized applications and libraries should consider this approach to
+avoid naming conflicts with other libraries and aid organization of modules
+and types.
+
  *)
 
-namespace Widgets
+namespace MyAppName
 
-type MyWidget1 =
-  member this.WidgetName = "Widget1"
+type Vector = {
+  x: float
+  y: float
+}
 
-module WidgetsModule =
-  let widgetName = "Widget2"
+module Vector =
+  let create () =
+    { x = 0.0; y = 0.0 }
 
-(**
-* [Nested Namespaces](namespaces/nested.html)
-* [Recursive Namespaces](namespaces/recursive.html)
-* [Namespace/Module Shorthand](namespaces/shorthand.html)
- *)

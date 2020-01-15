@@ -3,6 +3,9 @@
 title: String
 description: Immutable text as a sequence of unicode characters.
 ---
+
+Some examples:
+
  *)
 
 printfn "Standard string with\n\tsome escape sequences"

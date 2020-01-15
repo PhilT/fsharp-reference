@@ -13,6 +13,7 @@ description: Websites referenced while creating this site.
 * https://stackoverflow.com/questions/4765279/how-can-i-add-attributes-to-a-public-method-in-an-f-type
 * https://docs.microsoft.com/en-us/dotnet/api/?view=netcore-3.0
 * https://fsharpforfunandprofit.com/posts/computation-expressions-intro
+* https://fsharpforfunandprofit.com/posts/organizing-functions/
 * https://fsprojects.github.io/SQLProvider/
 * https://fsprojects.github.io/SQLProvider/core/sqlite.html
 * https://www.sqlite.org/lang.html

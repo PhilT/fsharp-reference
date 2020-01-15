@@ -1,8 +1,10 @@
 (**
 ---
 title: Nested namespaces
-description: Must be fully qualified, otherwise a new top-level namespace is created.
+description: They can be nested multiple levels.
 ---
+
+Must be fully qualified, otherwise a new top-level namespace is created.
  *)
 
 namespace Outer

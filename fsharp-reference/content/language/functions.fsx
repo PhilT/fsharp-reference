@@ -1,8 +1,10 @@
 (**
 ---
 title: Functions - function values, curried, anonymous
-description: Functions are defined with `let`
+description: A core unit of program execution.
 ---
+
+Functions are defined with `let`
  *)
 
 let inc1 x = x + 1

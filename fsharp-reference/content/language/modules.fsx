@@ -3,7 +3,17 @@
 title: Modules
 description: An F# construct for grouping values, types and functions.
 ---
+
+This is the primrary code organization construct in F#. Libraries and multi-file
+applications require all files to start with a namespace or module definition.
+
+One recomendation is to use a top-level namespace followed by the module name.
+For example:
 *)
+
+module MyApp.MyModule
+
+let
 
 (** [modules/implicit.fsx](modules/implicit.html) *)
 #load "modules/implicit.fsx"

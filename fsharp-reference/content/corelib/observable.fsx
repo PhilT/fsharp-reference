@@ -106,7 +106,8 @@ module Scan =
   printfn "# Scan"
   type Counter = { value: string }
   let task, source = createTimer DefaultInterval
-  let collector state _ =
+  let collector state (x: System.Timers.ElapsedEventArgs) =
+    printfn "%A" x.SignalTime.Millisecond
     { value = state.value + "." }
   let state = { value = "" }
 
