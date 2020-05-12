@@ -38,11 +38,12 @@ window.addEventListener('DOMContentLoaded', () => {
   })
 })
 
-window.onpopstate = function(event) {
+window.addEventListener('popstate', event => {
   let id = event.state.id
   loadPage(id)
   highlightMenuItem(id)
-}
+
+})
 
 async function loadPage(id) {
   let response = await fetch(`/content${id}.html`)

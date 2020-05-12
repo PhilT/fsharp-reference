@@ -3,5 +3,5 @@ ul {
 }
 
 #subjects {
-  border: 1px solid var(--primary-ui);
+  border: 2px solid var(--primary-ui);
 }

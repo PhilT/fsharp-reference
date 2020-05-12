@@ -4,6 +4,7 @@
   --very-dark: #031119;
   --dark: #131e30;
   --medium: #13556a;
+  --desaturated: #0F303B;
   --light: #6f9db3;
   --accent1: #fc6a55;
   --accent2: #fdc79c;
@@ -14,8 +15,8 @@
 
   --background: var(--white);
   --panel: var(--dark);
-  /* --active: */
-  --disable: var(--dark);
+  --active: var(--medium);
+  --border: var(--dark);
 
   /* --extra-ui: var(--); */
   --main-text: var(--very-dark);
@@ -32,7 +33,7 @@
   --success: var(--light);
   --rare: var(--nord15);
 
-  --menu-hover: var(--medium);
+  --menu-hover: var(--desaturated);
   --code-color: var(--dark);
   --code-background: #d1e1e8;
   --code-border: var(--light);
@@ -62,5 +63,9 @@ a {
 
 a:hover {
   color: var(--links);
-  background-color: var(--links-hover);
+  background-color: var(--pale);
+}
+
+#menu a.current {
+  color: var(--accent1);
 }
