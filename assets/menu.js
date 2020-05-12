@@ -23,7 +23,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   let page = document.location.pathname.replace(/\.html$/, '')
   page = page == '/' ? window.mainPage : page
-  console.log(page)
 
   loadPage(page)
   window.history.replaceState({ id: page }, findTitle(page), page + '.html')
