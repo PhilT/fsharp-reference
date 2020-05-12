@@ -1,4 +1,5 @@
 .fake
+.paket/load
 bin
 obj
 output
