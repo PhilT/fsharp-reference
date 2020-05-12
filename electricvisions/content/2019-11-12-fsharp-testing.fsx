@@ -3,7 +3,7 @@
 title: F# Testing - Expecto
 description: Test or Behaviour Driven Development has been a staple in my workflow for years. Now that I've got some familiarity with F# it's time to get serious.
 created: 2019-11-12
-updated: 2019-11-23
+updated: 2020-02-18
 categories: f# testing
 ---
 
@@ -50,12 +50,12 @@ test "A simple test" {
 (**
 Nice!
 
-We'll need to know a few more features in order to get started with testing
+I'll need to know a few more features in order to get started with testing
 in my project.
 
 ## Grouping tests
 
-You can use `testlist` to group a bunch of tests. `testList` can be nested.
+`testlist` can be used to group a bunch of tests. `testList` can be nested.
 *)
 
 testList "Group of tests" [
@@ -102,9 +102,9 @@ module Expect =
 
 (**
 This would mean a proliferation of new functions mirroring the old so for now
-will stick with the standard syntax unless my OCD gets the better of me.
+I'll stick with the standard syntax unless my OCD gets the better of me.
 
-For testing my project we'll need to run all the tests in the project. This
+For testing my project I'll need to run all the tests in the project. This
 can be done by marking tests with the `Tests` attribute:
 *)
 
@@ -157,4 +157,8 @@ Then you can run tests with the `dotnet` command:
 ```powershell
 dotnet test
 ```
+
+However, I don't like the output this generates so I'm sticking with the manual
+`Program.cs` file so I can run the project with `dotnet run`. `dotnet test` would
+still be useful for CI, though.
  *)

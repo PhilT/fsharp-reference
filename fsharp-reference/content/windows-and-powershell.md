@@ -1,11 +1,8 @@
 ---
 title: Windows 10 and PowerShell
-description: Gaming platform of choice
+description: It's the original home of .NET and it's currently the best platform for writing and playing games. This summary has currently been tested on Windows 10 only. Setup instructions assume Windows and PowerShell.
 ---
 
-It's the original home of .NET and it's currently the best platform for writing and
-playing games. This summary has currently been tested on Windows 10 only. Setup
-instructions assume Windows and PowerShell.
 
 ### Windows Terminal
 
@@ -19,7 +16,7 @@ UTF-8 appear to be the standout features. It's a pretty early build but seems
 to work well enough. It's currently missing search and there are some redraw
 issues when resizing the terminal
 ([tracking issue](https://github.com/microsoft/terminal/issues/4200))
-particularly in *Vim.
+particularly in *Vim*.
 
 ### PowerShell
 
@@ -75,7 +72,7 @@ man <command>
 man mkdir
 ```
 
-Copy over existing file (
+Copy over existing file
 
 ```powershell
 cp -r -force <source> <destination>
@@ -86,4 +83,11 @@ Run a PowerShell script called `build.ps1` in the current directory
 ```powershell
 ./build
 ```
+
+Permanently set an environment variable
+
+```powershell
+setx TERM xterm-256color
+```
+
 

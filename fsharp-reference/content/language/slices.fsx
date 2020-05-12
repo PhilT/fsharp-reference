@@ -81,10 +81,10 @@ printfn "%A" twoByTwo
 open System
 
 type ArraySegment<'TItem> with
-    member segment.GetSlice(start, finish) =
-        let start = defaultArg start 0
-        let finish = defaultArg finish segment.Count
-        ArraySegment(segment.Array, segment.Offset + start, finish - start)
+  member segment.GetSlice(start, finish) =
+    let start = defaultArg start 0
+    let finish = defaultArg finish segment.Count
+    ArraySegment(segment.Array, segment.Offset + start, finish - start)
 
 let arr = ArraySegment [| 1 .. 10 |]
 let slice = arr.[2..5] //[ 3; 4; 5]

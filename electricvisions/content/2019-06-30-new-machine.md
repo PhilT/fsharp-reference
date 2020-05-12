@@ -49,10 +49,11 @@ faff to re-verify some of the games.
 
 ## Development Setup
 
-* Run Neovim.reg under code_archive/_windows
-* Run env_vars.cmd under code_archive/_windows
+* Run Neovim.reg under `code_archive/_windows` (Need to move)
+* Run `env_vars.cmd` under `code_archive/_windows` (Need to move)
 * Restart after installing everything to get envs set and start docker
 
 Run Neovim then `:PlugInstall`, restart it and due to my sync folder
 containing Neovim config (location set in Env Vars XDG_CONFIG) it'll
 install all the plugins and have nvim customizations set.
+

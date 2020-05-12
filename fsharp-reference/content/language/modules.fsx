@@ -13,7 +13,7 @@ For example:
 
 module MyApp.MyModule
 
-let
+let publicFuncInMyModule () = 0
 
 (** [modules/implicit.fsx](modules/implicit.html) *)
 #load "modules/implicit.fsx"

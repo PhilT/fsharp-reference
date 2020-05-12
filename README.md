@@ -12,7 +12,7 @@ All the websites I run, in one place!
 
 Converts FSX files to HTML and places them in `output/`
 
-### `./start <website>` 
+### `./start <website>`
 
 Run a local development web server on one of the following ports:
 
@@ -25,3 +25,8 @@ Run a local development web server on one of the following ports:
 ### `./release`
 
 Uploads `output/` files to S3
+
+## Dependencies
+
+Add new dependencies to paket.dependencies and run `dotnet paket install`
+

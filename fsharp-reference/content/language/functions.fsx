@@ -91,11 +91,12 @@ Call native functions (platform invoke).
 Assuming the following C++ DLL:
 ```
 #include <stdio.h>
-extern "C" void __declspec(dllexport) HelloWorld()
-{
+extern "C" void __declspec(dllexport) HelloWorld() {
    printf("Hello world, invoked by F#!\n");
 }
 ```
+
+External functions can be called like:
  *)
 
 open System.Runtime.InteropServices

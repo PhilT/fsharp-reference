@@ -2,9 +2,12 @@
 title: Create a Static Website on AWS
 description: Some notes on quickly setting up a static website with a custom apex & www domain over HTTPS/TLS using Amazon S3, Route 53, CloudFront and Let's Encrypt Certificate Authority.
 created: 2019-10-28
-updated:
-categories: deployment aws
+updated: 2020-04-29
+categories: deployment aws static
+
 ---
+
+## Preamble
 
 My plan is to add some application functionality using AWS Lambda at some point
 so it seemed like a useful exercise to host the static content using AWS.
@@ -152,21 +155,20 @@ script to make it a one step process for apex and www domains on Windows.
 git clone https://github.com/PhilT/certbot-s3front
 cd certbot-s3front
 docker build . -t certbot-s3front
-cp env.example.ps1 env.ps1
 ```
 
-Edit the `env.ps1`.
+If you haven't yet setup `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment
+variables you can do this once with:
 
-1. Enter your `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` unless it's already
-in your environment (in which case just remove these lines)
-1. Enter your domain name for `DOMAIN`
-1. Enter the `CLOUDFRONT_DESTRIBUTION_ID` created in the previous section
+```
+setx AWS_ACCESS_KEY_ID <Your Amazon AWS_ACCESS_KEY_ID>
+setx AWS_SECRET_ACCESS_KEY <Your Amazon AWS_SECRET_ACCESS_KEY>
+```
 
 Run the following to verify and send the certificates to CloudFront:
 
 ```
-./env
-./install
+./install <your.domain.com> <your CLOUDFRONT_DESTRIBUTION_ID>
 ```
 
 ## Back to CloudFront

@@ -6,16 +6,17 @@ created: 2019-11-13
 
 I was, until recently, using Neovim-QT. However, after having some trouble with a
 plugin not rendering floating windows correctly I took a look at neovim in
-Windows Terminal. Turns out it's noticeably faster, especially on startup. This 
+Windows Terminal. Turns out it's noticeably faster, especially on startup. This
 coupled with Windows Terminal's support for splitting panes and I'm sticking with
 the console.
 
 Setting up Vim for F# development can be slightly harder than say VS Code or
 Visual Studio but I've found less issues with it once running. I find VS Code and
 Visual Studio sluggish and buggy in comparison. Vim emulators can be found in
-most editors these days but if you're a real Vim user you'll find them lacking. 
+most editors these days but if you're a real Vim user you'll find them lacking.
 
-Once [Chocolatey is installed](chocolatey.html) you can install Neovim very easily. Open PowerShell Admin console and type:
+Once [Chocolatey is installed](chocolatey.html) you can install Neovim very easily.
+Open PowerShell Admin console and type:
 
 ```
 cinst neovim

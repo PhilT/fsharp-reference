@@ -78,11 +78,13 @@ type DuplexType =
 
 type Connection(?rate0: int, ?duplex0: DuplexType) =
   let duplex = defaultArg duplex0 Full
-  let mutable rate = match rate0 with
-                      | Some rate1 -> rate1
-                      | None -> match duplex with
-                                | Full -> 9600
-                                | Half -> 4800
+  let mutable rate =
+    match rate0 with
+    | Some rate1 -> rate1
+    | None ->
+      match duplex with
+        | Full -> 9600
+      | Half -> 4800
 
 let conn1 = Connection(duplex0 = Full)
 let conn2 = Connection(300, Half)

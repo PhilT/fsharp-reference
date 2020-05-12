@@ -17,12 +17,14 @@ let RESOLUTION_PATH = __SOURCE_DIRECTORY__ + @".\packages\system.data.sqlite.cor
 let CONN_STRING =
   "Data Source=" + __SOURCE_DIRECTORY__ + @"/query_expressions.db;" + "Version=3;foreign keys=true"
 
-type Sql = SqlDataProvider<
-                Common.DatabaseProviderTypes.SQLITE,
-                SQLiteLibrary = Common.SQLiteLibrary.SystemDataSQLite,
-                ConnectionString = CONN_STRING,
-                ResolutionPath = RESOLUTION_PATH,
-                CaseSensitivityChange = Common.CaseSensitivityChange.ORIGINAL>
+type Sql =
+  SqlDataProvider<
+    Common.DatabaseProviderTypes.SQLITE,
+    SQLiteLibrary = Common.SQLiteLibrary.SystemDataSQLite,
+    ConnectionString = CONN_STRING,
+    ResolutionPath = RESOLUTION_PATH,
+      CaseSensitivityChange = Common.CaseSensitivityChange.ORIGINAL
+  >
 
 
 let db = Sql.GetDataContext()
@@ -31,7 +33,6 @@ let db = Sql.GetDataContext()
 Table definition
  *)
 type Customer = {
-
   Name: string
 }
 

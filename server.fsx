@@ -6,6 +6,7 @@ open System.Text.RegularExpressions
 
 let website = Array.last fsi.CommandLineArgs
 let siteRoot = "output/" + website
+let pageRoot = siteRoot + "/index.html"
 let port = match website with
             | "electricvisions" -> "9000"
             | "fsharp-reference" -> "9001"
@@ -47,7 +48,7 @@ let output (req:HttpListenerRequest) =
   let contentType = contentTypeFor ext
   let content = if File.Exists actualPath
                 then File.ReadAllBytes(actualPath)
-                else [||]
+                else File.ReadAllBytes(pageRoot)
 
   (content, contentType)
 

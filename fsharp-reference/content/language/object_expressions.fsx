@@ -15,10 +15,10 @@ printfn "%A" obj1
 let delimiter(delim1: string, delim2: string, value: string) =
   { new System.IFormattable with
       member x.ToString(format: string, provider: System.IFormatProvider) =
-        if format = "D" then
-          delim1 + value + delim2
-          else
-            value
+      if format = "D" then
+        delim1 + value + delim2
+      else
+        value
   }
 
 let obj2 = delimiter("{", "}", "Bananas!")

@@ -1,18 +1,3 @@
-window.addEventListener('DOMContentLoaded', (event) => {
-  let urlParts = document.location.toString().split('/')
-  let id = urlParts[urlParts.length - 1]
-    .replace(/_|#/g, '-')
-    .replace('.html', '')
-    .toLowerCase()
-
-  let element = document.getElementById(id)
-  if (element) {
-    element.classList.add('current')
-  } else {
-    document.getElementById('index').classList.add('current')
-  }
-});
-
 // Currently not working
 
 var currentTip = null;

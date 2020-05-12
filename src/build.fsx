@@ -23,7 +23,7 @@ let processSite site =
   let template = Template.load site
 
   let source = site + "/content"
-  let output = "output/" + site
+  let output = "output/" + site + "/content"
 
   let filterDocumentType (file: string) =
     match Path.GetExtension(file) with
