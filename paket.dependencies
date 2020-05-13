@@ -1,5 +1,6 @@
 source https://www.nuget.org/api/v2
 nuget FSharp.Literate
-nuget FSharp.Data
+nuget Newtonsoft.Json
 nuget Expecto
 nuget FSharp.Control.Reactive.Testing
+nuget FSharp.Compiler.Service

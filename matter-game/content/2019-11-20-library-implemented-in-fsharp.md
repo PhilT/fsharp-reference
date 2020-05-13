@@ -3,7 +3,7 @@ title: Cube rendering library in F#
 description: I finally reimplemented my basic cube rendering library in F# and OpenGL from JavaScript and WebGL.
 created: 2019-11-20
 updated:
-categories: f# opengl silk.net
+keywords: f# opengl silk.net
 ---
 
 ![1 million cubes](/assets/cube-demo.webp)

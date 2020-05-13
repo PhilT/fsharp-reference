@@ -3,7 +3,7 @@ title: Code Style and Functional Programming
 description: In this article I discuss my choice of coding style and also touch on functional programming. It's something I've been studying for a while and I'm slowly trying to introduce into my work. Both these things will affect the style of code I post on this blog.
 created: 2018-07-08
 updated:
-categories: javascript functional standard
+keywords: javascript functional standard
 ---
 
 ## Code Style

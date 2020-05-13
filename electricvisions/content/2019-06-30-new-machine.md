@@ -3,7 +3,7 @@ title: Windows, .NET Core, Neovim, F#, Games
 description: I just took delivery of my new Razer Blade Pro to take with me on my travels.
 created: 2019-06-30
 updated:
-categories:
+keywords:
 ---
 
 ## Here's how I set it up

@@ -11,7 +11,7 @@ ul {
 }
 :root {
   --black: #222222;
-  --white: #ffffff;
+  --white: #dddddd;
   --bright: #00a7e1;
   --dark: #003459;
   --dull: #007ea7;
@@ -301,7 +301,7 @@ article header {
   justify-content: space-between;
 }
 
-.categories {
+.keywords {
   color: var(--minor-info);
 }
 

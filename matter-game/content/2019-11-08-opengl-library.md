@@ -3,7 +3,7 @@ title: OpenGL Library Choice
 description: WebGL interfaces directly with JavaScript, OpenGL is natively C. So we need some bindings in F# or C# to allow us to interface with OpenGL. To add further complications we also need to handle Window initialization which can get pretty tricky when dealing with multiple platforms.
 created: 2019-11-08
 updated:
-categories: f# opengl silk.net opentk opengl.net netcore
+keywords: f# opengl silk.net opentk opengl.net netcore
 ---
 
 ## Requirements
@@ -84,14 +84,14 @@ anyway.
 
 ### Blank Window example nailed
 
-We just need the Windowing package for this one. 
+We just need the Windowing package for this one.
 
     mkdir blank_window
     cd blank_window
     dotnet new console -lang f#
     dotnet add package Silk.NET.Windowing -v 1.0.0-preview3
 
-It went well. F# automatically handles `Action` delegates if you pass them 
+It went well. F# automatically handles `Action` delegates if you pass them
 though a lambda.
 
     window.add_Move (fun position -> printfn "Moving %A" position)
@@ -111,7 +111,7 @@ to a C# method. Getting a pointer to an array is straightforward with the
 
 This is where I wish the documentation for F# Core library was more current
 (ticket raised in docs.microsoft.com). It turns out the `toVoidPtr`
-function was added to F# 4.5 ([See details](https://github.com/fsharp/fslang-design/blob/master/FSharp-4.5/FS-1053-span.md)). 
+function was added to F# 4.5 ([See details](https://github.com/fsharp/fslang-design/blob/master/FSharp-4.5/FS-1053-span.md)).
 I was then able to add:
 
     let voidPtr = floatPtr |> NativePtr.toVoidPtr

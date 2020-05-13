@@ -4,7 +4,7 @@ title: F# Testing - Expecto
 description: Test or Behaviour Driven Development has been a staple in my workflow for years. Now that I've got some familiarity with F# it's time to get serious.
 created: 2019-11-12
 updated: 2020-02-18
-categories: f# testing
+keywords: f# testing
 ---
 
 .NET has a bunch of testing tools such as xUnit, NUNit and MSTest. However,
@@ -129,7 +129,7 @@ usefulness. However, as we're starting out I'm okay with this. It's a great
 potential PR for the project.
 
 Integrations with BenchmarkDotNet, FsCheck and Hopac can be added to
-`paket.dependencies`:
+`paket.dependencies` (ac - Add-Content):
 
 ```powershell
 ac paket.dependencies nuget Expecto.BenchmarkDotNet

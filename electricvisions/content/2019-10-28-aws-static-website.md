@@ -3,7 +3,7 @@ title: Create a Static Website on AWS
 description: Some notes on quickly setting up a static website with a custom apex & www domain over HTTPS/TLS using Amazon S3, Route 53, CloudFront and Let's Encrypt Certificate Authority.
 created: 2019-10-28
 updated: 2020-04-29
-categories: deployment aws static
+keywords: deployment aws static website lets encrypt cert cloud s3
 
 ---
 
