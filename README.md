@@ -12,7 +12,9 @@ All the websites I run, in one place!
 Compile the F# project in `src`
 
 #### `./run`
-Converts FSX files to HTML and places them in `output/`
+Converts FSX files to HTML and places them in `output/`. Also, generates the
+article index for electricvisions and matter-game and the index menu data for
+fsharp-reference.
 
 #### `./start <website>`
 Run a local development web server on one of the following ports:
