@@ -2,7 +2,7 @@
 ---
 title: Implicit Modules
 description: Only works for single file apps and interactive FSX files.
-keywords:
+keywords: fsx interactive
 ---
 
 If a file, `implicit.fsx` contains:

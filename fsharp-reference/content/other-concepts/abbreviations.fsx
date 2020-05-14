@@ -2,6 +2,7 @@
 ---
 title: Type Abbreviations
 description: Give a type another name. Abbreviations are an F# concept only and not represented in .NET.
+keywords: alias
 ---
 
 TODO: Need a bit more detail here.

@@ -2,6 +2,7 @@
 ---
 title: Unit
 description: A type used when a return value is of no interest e.g. the return type of `printf` is `unit`.
+keywords: void ignore return type
 ---
 
 Similar to the `void` type is C# and C++.

@@ -2,7 +2,7 @@
 ---
 title: Operators
 description: Supported operators in the F# language.
-keywords:
+keywords: not & | < > ~ shift and or
 ---
 
 ## Arithmetic Operators

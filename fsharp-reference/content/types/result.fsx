@@ -2,6 +2,7 @@
 ---
 title: Result
 description: Useful for writing error-tolerant code.
+keywords: match error
 ---
  *)
 

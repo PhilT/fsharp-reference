@@ -2,6 +2,7 @@
 ---
 title: Import Declarations
 description: Use `open` to avoid having to type the fully qualified name including namespace and module names.
+keywords: import open core collections namespace
 ---
 
 *)
@@ -23,5 +24,8 @@ automatically open it when the parent module or namespace is opened.
 
 `RequireQualifiedAccess` attribute can be specified to enforce qualified
 name to be used even if the module/namespace is opened.
+
+Overuse of `open` is discouraged as it can lead to code that is difficult to reason
+about due to not working which library it came from.
 
 *)

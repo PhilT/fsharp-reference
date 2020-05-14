@@ -2,7 +2,7 @@
 ---
 title: The Global Namespace
 description: Refer to it with the keyword `global`
-keywords:
+keywords: toplevel
 ---
 Can be useful when needing to define types in an associated module but
 don't want a top-level namespace. However, it's recommended to define a

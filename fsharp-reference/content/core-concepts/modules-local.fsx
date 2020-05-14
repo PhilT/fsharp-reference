@@ -14,6 +14,3 @@ module Outer =
   module Inner =
     let xFunc x = x + 10
 
-(**
-« Back to [Modules](../modules.html)
- *)

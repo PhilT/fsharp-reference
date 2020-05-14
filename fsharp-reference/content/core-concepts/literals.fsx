@@ -2,6 +2,7 @@
 ---
 title: Literals
 description: Note that hexidecimal characters are not case-sensitive but type identifiers are.
+keywords: hex octal binary conversion casting types
 ---
 
 Below these literals are casted but this is not necessary. It's just to
@@ -52,7 +53,7 @@ let ReadWrite = System.IO.FileAccess.Read ||| System.IO.FileAccess.Write
 let numbers = (0x9f, 0o77, 0b10101)
 
 (**
-## Use Underscores for readability
+## Use underscores for readability
 
  *)
 

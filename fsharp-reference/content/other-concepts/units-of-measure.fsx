@@ -2,6 +2,7 @@
 ---
 title: Units of Measure
 description: Floating point and signed values can have length, volume, mass, etc.
+keywords: float signed cm lg ml kilo mile metre
 ---
 
 This helps the compiler ensure types have the correct units.

@@ -2,6 +2,7 @@
 ---
 title: Attribute
 description: Allow metadata to be applied to a construct.
+keywords: metadata function method assembly module type constructor field parameter return
 ---
 
 Attributes are a .NET

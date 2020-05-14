@@ -2,9 +2,10 @@
 ---
 title: Resource Management
 description: `use` binding instead of `let` automatically calls `Dispose` on .NET types.
+keywords: use using dispose
 ---
 
-`using` function is another form. With `use`, `Dispose` is called at the
+The `using` function is another form of `use`. With `use`, `Dispose` is called at the
 end of the block. With `using`, `Dispose` is called at the end of the
 function. Prefer `use`.
  *)
@@ -25,6 +26,6 @@ let writefile2 filename obj =
 
 writefile2 "abc.txt" "Hello File World!"
 
-// TODO: There is a note on computation expressions. I haven't come across these yet
+// TODO: Add a note on computation expressions.
 
 

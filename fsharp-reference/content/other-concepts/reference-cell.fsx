@@ -1,7 +1,8 @@
 (**
 ---
 title: Reference Cell
-description: Storage locations that enable mutable values with reference semantics (TODO: What does this mean?).
+description: Storage locations that enable mutable values with reference semantics.
+keywords: set get mutable
 ---
 
 Create a new reference cell

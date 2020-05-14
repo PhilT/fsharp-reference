@@ -2,6 +2,7 @@
 ---
 title: Structures
 description: More compact and efficient than classes. For types that have a small amount of data and simple behaviour. Structures are passed by value.
+keywords: class record readonly discriminated union
 ---
 
 Structures are useful for frequently accessed data when the overhead of

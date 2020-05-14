@@ -2,6 +2,7 @@
 ---
 title: Recursive Namespaces
 description: Allow you to reference yet to be defined types and modules.
+keywords: mutual module
 ---
 
 All types and modules within the namespace will be marked as recursive to

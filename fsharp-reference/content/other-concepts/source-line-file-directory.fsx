@@ -1,7 +1,8 @@
 (**
 ---
 title: Source Line, File, Directory Identifiers
-description: These all respect the #line directive (See [Compiler Directives](compiler.fsx)).
+description: These all respect the #line directive (See [Compiler Directives](/other-concepts/compiler.html)).
+keywords: number
 ---
 
 Current line number

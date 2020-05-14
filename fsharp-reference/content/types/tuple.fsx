@@ -2,6 +2,7 @@
 ---
 title: Tuple
 description: Small, ordered set of values.
+keywords: pattern match deconstruct
 ---
  *)
 

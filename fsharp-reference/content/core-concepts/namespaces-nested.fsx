@@ -2,7 +2,7 @@
 ---
 title: Nested Namespaces
 description: They can be nested multiple levels.
-keywords:
+keywords: module
 ---
 
 Must be fully qualified, otherwise a new top-level namespace is created.

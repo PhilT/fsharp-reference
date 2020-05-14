@@ -1,8 +1,7 @@
-(**
 ---
 title: References
 description: Websites referenced while creating this site.
-keywords:
+keywords: powershell sqlite language url
 ---
 
 ## F#
@@ -25,4 +24,3 @@ keywords:
 ## PowerShell
 
 * https://developer.rackspace.com/blog/powershell-101-from-a-linux-guy/
- *)

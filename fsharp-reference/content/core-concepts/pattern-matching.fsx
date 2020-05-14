@@ -2,6 +2,7 @@
 ---
 title: Pattern Matching
 description: Compare, decompose or extract data using `match`, function arguments, lambda expressions, `try...with` exception handlers.
+keywords: compare decompose extract data function lambda try with constant identifier variable as or and list array cons type active null wildcard
 ---
 
 TODO: ensure we document try...with and lambda expressions

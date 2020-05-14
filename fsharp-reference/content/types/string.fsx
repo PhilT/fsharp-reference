@@ -2,6 +2,7 @@
 ---
 title: String
 description: Immutable text as a sequence of unicode characters.
+keywords: immutable text escape quote
 ---
 
 Some examples:

@@ -2,6 +2,7 @@
 title: Neovim
 description: Neovim gives you 16 million colour support and originally had some other advantages but Vim caught up. However, for Windows, I still find Neovim to be the better option right now.
 created: 2019-11-13
+keywords: ide development editor vscode visual studio
 ---
 
 I was, until recently, using Neovim-QT. However, after having some trouble with a

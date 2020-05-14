@@ -1,7 +1,7 @@
 (**
 ---
 title: Enumeration
-description: A set of related labels.
+description: A set of related labels with an associated integer value.
 keywords: discriminated union
 ---
  *)

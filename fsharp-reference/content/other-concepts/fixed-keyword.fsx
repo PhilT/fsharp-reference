@@ -2,6 +2,7 @@
 ---
 title: Fixed Keyword
 description: "Pin" a local onto the stack to prevent it from being collected or moved during GC.
+keywords: pin stack gc garbage collection
 ---
 
 Used for low-level programming.

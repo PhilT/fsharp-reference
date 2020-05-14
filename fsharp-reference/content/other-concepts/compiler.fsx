@@ -2,6 +2,7 @@
 ---
 title: Compiler Directives
 description: Compiler directives
+keywords: preprocessor directive conditional flag symbol line option
 ---
 
 ## Preprocessor Directives

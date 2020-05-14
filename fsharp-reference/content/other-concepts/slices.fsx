@@ -2,6 +2,7 @@
 ---
 title: Slices
 description: A subset of a data type. Like an indexer but for multiple values.
+keywords: subset substring string list array 2d
 ---
 
 Strings, lists, arrays and 2D arrays have built-in support

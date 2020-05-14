@@ -2,10 +2,13 @@
 ---
 title: Record
 description: Aggregate of named values optionally with members.
+keywords: struct immutable with copy update pattern match rec anonymous
 ---
 
 Simpler than classes, they lack interface implementation and inheritance,
 constructors and hidden fields. They be reference types (default) or structs.
+A typical F# application would be made up of lots of records. They are a basic
+structure of data oriented design.
  *)
 
 open System

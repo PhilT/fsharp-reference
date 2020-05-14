@@ -1,7 +1,8 @@
 (**
 ---
 title: Loops
-description: Iterate over code.
+description: Iterate over code. Prefer the functional equivalents such as `map` and `fold` of collection types such as `List`, `Map` and `Seq`.
+keywords: for .. to in while do list seq map
 ---
 
 ## for...to Expression

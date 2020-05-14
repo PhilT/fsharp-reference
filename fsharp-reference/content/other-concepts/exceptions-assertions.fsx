@@ -2,6 +2,7 @@
 ---
 title: Exceptions
 description: TODO: Description
+keywords: raise failwith invalidArg try catch assert
 ---
 
 TODO: Some detail

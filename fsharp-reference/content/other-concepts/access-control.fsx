@@ -2,6 +2,7 @@
 ---
 title: Access Control
 description: Access control.
+keywords: public internal private protected level keyword module type method value function field properties discriminated union
 ---
 
 The following access levels can be applied to modules, types, methods, value

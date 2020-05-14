@@ -1,8 +1,8 @@
 (**
 ---
-title: Namespace/Module Shorthand
+title: Namespace and Module Shorthand
 description: Namespace and module shorthand when declaring a single module in the file.
-keywords:
+keywords: module
 ---
  *)
 

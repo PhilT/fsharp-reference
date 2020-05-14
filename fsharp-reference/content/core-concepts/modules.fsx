@@ -2,6 +2,7 @@
 ---
 title: Modules
 description: An F# construct for grouping values, types and functions.
+keywords: type function namespace outer group rec
 ---
 
 This is the primrary code organization construct in F#. Libraries and multi-file
@@ -11,7 +12,7 @@ One recomendation is to use a top-level namespace followed by the module name.
 For example:
 *)
 
-module MyApp.MyModule
+module MyApp.MyModule // namespace: MyApp, module: MyModule
 
 let publicFuncInMyModule () = 0
 

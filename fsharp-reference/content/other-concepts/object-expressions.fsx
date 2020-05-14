@@ -2,6 +2,7 @@
 ---
 title: Object Expressions
 description: Used to avoid the extra overhead of creating a new named type.
+keywords: class type anonymous member
 ---
 
 Minimize the number of types created in a program.

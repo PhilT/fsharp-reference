@@ -2,6 +2,7 @@
 ---
 title: Namespaces
 description: A .NET construct to attach a name to a group of program elements to avoid naming conflicts when used with other libraries.
+keywords: module type structure organization
 ---
 
 Can contain modules and types but not functions.

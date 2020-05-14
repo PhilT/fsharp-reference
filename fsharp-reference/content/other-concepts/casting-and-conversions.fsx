@@ -2,6 +2,7 @@
 ---
 title: Casting & Conversions
 description: Casting & conversions.
+keywords: conversion operators object type enum discriminated union
 ---
 
 ## Arithmetic Types

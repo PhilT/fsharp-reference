@@ -2,6 +2,7 @@
 ---
 title: Lazy Expressions
 description: Execute (`Force`) only when the result is required.
+keywords: performance
 ---
 
 Helps improve performance.

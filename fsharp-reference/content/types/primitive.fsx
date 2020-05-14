@@ -2,6 +2,7 @@
 ---
 title: Primitive Types
 description: Basic F# types and links to the documentation for their associated .NET types.
+keywords: bool byte int native char string decimal unit float single double
 ---
 
 * F# Type     .NET Type

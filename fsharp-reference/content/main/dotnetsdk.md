@@ -1,5 +1,5 @@
 ---
-title: .NET Core 3.0 SDK
+title: .NET Core 3.1 SDK
 description: It appears to be the future direction of .NET. It makes sense in order to support multiple operating systems. One of the great features of version 3 is that it ships with F# Interactive, a shell to run F# scripts without first compiling them. Similar to Node's REPL or Ruby's IRB and Pry.
 ---
 

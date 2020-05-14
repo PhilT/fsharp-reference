@@ -4,7 +4,7 @@ title: List
 description: Ordered, immutable elements of the same type or base type.
 created:
 updated:
-keywords:
+keywords: immutable head tail cons
 ---
  *)
 

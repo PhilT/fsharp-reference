@@ -2,6 +2,7 @@
 ---
 title: Simple Example
 description: Simple example
+keywords: hello world
 ---
 
 Run with `dotnet fsi example.fsx

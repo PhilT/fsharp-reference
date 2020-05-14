@@ -2,6 +2,7 @@
 ---
 title: Sequence
 description: Lazy computed values.
+keywords: lazy list array set map computation
 ---
 
 Data types such as lists, arrays, sets, and maps are implicitly sequences as they all implement `IEnumerable<'T>` which is a `seq<'T>`.

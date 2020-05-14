@@ -2,6 +2,7 @@
 ---
 title: Query Expressions
 description: Query a data source using LINQ
+keywords: linq sql data source
 ---
 
 TODO: Needs to reference related files and figure out how to show them in docs.

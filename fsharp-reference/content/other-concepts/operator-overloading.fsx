@@ -2,6 +2,7 @@
 ---
 title: Operator Overloading
 description: Operators can be overloaded as `member`s of classes or records.
+keywords: class record member
 ---
 
 They can also be overloaded at the global level using `let`:

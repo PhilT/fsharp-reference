@@ -2,9 +2,10 @@
 ---
 title: Computation Expressions
 description: TODO: Describe
+keywords: sequence query as continuations
 ---
 
-[Sequence Expressions](types/sequence.html), [Asynchronous Workflows](async_workflows.html) and [Query Expressions](query_expressions.html) are types of computation expressions.
+[Sequence Expressions](/types/sequence.html), [Asynchronous Workflows](/other-concepts/async_workflows.html) and [Query Expressions](/other-concepts/query_expressions.html) are types of computation expressions.
 
 ## Logging all assignments
  *)
@@ -32,6 +33,7 @@ implements IDisposable (same use as `use`).
 
 
 ## Handling divide by zero
+
 Handle a series of divide operations, shortcutting if
 any divide by zero
  *)
