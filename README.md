@@ -8,12 +8,13 @@ All the websites I run, in one place!
 
 ## Building
 
-### `./build`
+#### `./build`
+Compile the F# project in `src`
 
+#### `./run`
 Converts FSX files to HTML and places them in `output/`
 
-### `./start <website>`
-
+#### `./start <website>`
 Run a local development web server on one of the following ports:
 
 | website | port |

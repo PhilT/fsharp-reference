@@ -24,15 +24,13 @@ than too many options.
 
 ## Roadmap
 
-More updates are coming and guides will be added to cover topics such as functional
-programming and testing as well as a searchable core library reference.
-
-Comments are also planned.
+* Complete all TODOs in pages
+* Add commenting
 
 ## F# Version
 
-All examples run on version 4.7 but will be updated as new versions are
-released.
+All examples run on version 4.7, using .NET Core 3.1 but will be updated as new
+versions are released.
 
 ## Issues, Help, Comms, Development
 
