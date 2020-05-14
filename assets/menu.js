@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
   renderMenu(menuDiv, window.menu)
 
   let page = document.location.pathname.replace(/\.html$/, '')
-  page = page == '/' ? '/main/index' : page
+  page = page == '/' ? (window.mainPage || '/main/index') : page
 
   loadPage(page)
   window.history.replaceState({ id: page }, findTitle(page), page + '.html')
@@ -36,9 +36,10 @@ function addTitleToKeywords() {
 }
 
 function filterTitles(term) {
+  term = term.toLowerCase()
   let sections = window.menu.map(section => {
-    console.log(section)
-    let pages = section.pages.filter(page => page.keywords.some(k => k.match(term || ".*")))
+    let pages = section.pages.filter(page =>
+      page.keywords.some(k => k.match(term || ".*")))
     return { ...section, pages }
   }).filter( section => section.pages.length > 0 )
 
@@ -77,7 +78,6 @@ window.addEventListener('popstate', event => {
 })
 
 async function loadPage(id) {
-  console.log("Load: " + `/content${id}.html`)
   let response = await fetch(`/content${id}.html`)
   let content = document.getElementById('content')
   content.innerHTML = await response.text()
