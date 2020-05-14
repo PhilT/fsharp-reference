@@ -13,9 +13,11 @@ window.addEventListener('DOMContentLoaded', () => {
   scrollToMenuItem(page)
 
   let input = document.querySelector('#search input')
-  input.addEventListener('keyup', event => {
-    renderMenu(menuDiv, filterTitles(event.target.value))
-  })
+  if (input) {
+    input.addEventListener('keyup', event => {
+      renderMenu(menuDiv, filterTitles(event.target.value))
+    })
+  }
 
   menuDiv.addEventListener('click', event => {
     let id = event.target.id
