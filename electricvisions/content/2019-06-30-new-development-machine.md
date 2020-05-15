@@ -1,5 +1,5 @@
 ---
-title: Windows, .NET Core, Neovim, F#, Games
+title: New Development Machine
 description: I just took delivery of my new Razer Blade Pro to take with me on my travels.
 created: 2019-06-30
 updated:

@@ -1,6 +1,6 @@
 (**
 ---
-title: F# Testing - Expecto
+title: Automated Testing In F# With Expecto
 description: Test or Behaviour Driven Development has been a staple in my workflow for years. Now that I've got some familiarity with F# it's time to get serious.
 created: 2019-11-12
 updated: 2020-02-18

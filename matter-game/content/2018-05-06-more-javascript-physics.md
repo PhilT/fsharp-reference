@@ -1,5 +1,5 @@
 ---
-title: More Physics
+title: More JavaScript Physics
 description: Physics will play an important role in this game and the performance of the physics engine is a crucial factor. I've spent a bit more time tweaking the comparison and trying out ideas.
 created: 2018-05-06
 updated:

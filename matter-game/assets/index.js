@@ -16,8 +16,8 @@ window.menu = [
       { id: "opengl-library", name: 'OpenGL Library Choice', keywords: [] },
       { id: "project-reboot-all-in-on-fsharp", name: 'Project Reboot - Going all in on F#', keywords: [] },
       { id: "code-style-fp", name: 'Code Style And FP', keywords: [] },
-      { id: "more-physics", name: 'More Physics', keywords: [] },
-      { id: "physics-engines", name: 'Physics Engines', keywords: [] },
+      { id: "more-javascript-physics", name: 'More JavaScript Physics', keywords: [] },
+      { id: "javascript-physics-engines", name: 'JavaScript Physics Engines', keywords: [] },
       { id: "language-and-framework", name: 'Language and Framework', keywords: [] }
     ]
   }
