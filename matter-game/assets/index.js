@@ -1,4 +1,5 @@
 window.mainPage = '/index'
+window.socialLinks = true
 window.menu = [
   {
     heading: 'Main',

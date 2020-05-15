@@ -4,14 +4,15 @@ window.addEventListener('DOMContentLoaded', () => {
   let menuDiv = document.getElementById('subjects')
   renderMenu(menuDiv, window.menu)
 
-  let page = document.location.pathname.replace(/\.html$/, '')
-  page = page == '/' ? (window.mainPage || '/main/index') : page
+  let id = document.location.pathname.replace(/\.html$/, '')
+  id = id == '/' ? (window.mainPage || '/main/index') : id
 
+  // TODO DRY up this code
+  let page = findTitle(id)
   loadPage(page)
-  let title = findTitle(page)
-  window.history.replaceState({ id: page, title }, title, page + '.html')
-  highlightMenuItem(page)
-  scrollToMenuItem(page)
+  window.history.replaceState(page, page.title, id + '.html')
+  highlightMenuItem(id)
+  scrollToMenuItem(id)
 
   let input = document.querySelector('#search input')
   if (input) {
@@ -23,11 +24,18 @@ window.addEventListener('DOMContentLoaded', () => {
   menuDiv.addEventListener('click', event => {
     let id = event.target.id
     event.preventDefault()
-    loadPage(id)
-    let title = findTitle(id)
-    window.history.pushState({ id, title }, title, id + '.html')
+
+    // TODO DRY up this code with above code
+    let page = findTitle(id)
+    loadPage(page)
+    window.history.pushState(page, page.title, id + '.html')
     highlightMenuItem(id)
   })
+})
+
+window.addEventListener('popstate', event => {
+  loadPage(event.state)
+  highlightMenuItem(event.state.id)
 })
 
 // TODO move this to F# build side
@@ -74,20 +82,16 @@ function renderMenu(menuDiv, menu) {
   })
 }
 
-window.addEventListener('popstate', event => {
-  let id = event.state.id
-  loadPage(id)
-  highlightMenuItem(id)
-
-})
-
-async function loadPage(id) {
+async function loadPage({id, section, title}) {
   let response = await fetch(`/content${id}.html`)
   let content = document.getElementById('content')
-  document.title = `${window.location.host} - ${window.history.state.title}`
+  document.title = `${window.location.host} - ${title}`
   content.innerHTML = await response.text()
   document.body.scrollIntoView()
-  addSocialLinksTo(content)
+
+  if (window.socialLinks && section !== 'Main') {
+    addSocialLinksTo(content)
+  }
 }
 
 function addSocialLinksTo(content) {
@@ -118,10 +122,11 @@ function highlightMenuItem(id) {
 function findTitle(id) {
   let pages = window.menu.map(section => {
     let relativeId = id.replace('/' + section.path, '')
-    return section.pages.find(page => page.id == relativeId)
+    let page = section.pages.find(page => page.id == relativeId)
+    return page ? { id, title: page.name, section: section.heading } : false
   }).filter( a => a )
 
-  return pages.length > 0 && pages[0].name
+  return pages.length > 0 && pages[0]
 }
 
 function scrollToMenuItem(page) {

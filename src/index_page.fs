@@ -29,9 +29,7 @@ let indexEntry index (path: string, fm: Frontmatter) =
 let generateArticleIndex output (frontmatters: Map<string, Frontmatter>) =
   let indexPath = output + "/index.html"
 
-  let dateSort (_, (fm: Frontmatter)) =
-    [fm.updated; fm.created]
-    |> Seq.find (fun date -> date <> "")
+  let dateSort (_, (fm: Frontmatter)) = fm.created
 
 
   let html =
