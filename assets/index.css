@@ -5,11 +5,19 @@ article {
   border-radius: 4px;
 }
 
+article header {
+  margin-bottom: 1em;
+}
+
 article h1 {
   margin: 0;
 }
 
 article h1 a,
 article h1 a:visited {
-  color: var(--main-text);
+  color: var(--links);
+}
+
+article h1 a:hover {
+  color: var(--links-hover);
 }

@@ -69,3 +69,14 @@ a:hover {
 #menu a.current {
   color: var(--accent1);
 }
+
+
+article h1 a,
+article h1 a:visited {
+  color: var(--main-text);
+}
+
+article h1 a:hover {
+  color: var(--links);
+  background: none;
+}

@@ -8,7 +8,8 @@ window.addEventListener('DOMContentLoaded', () => {
   page = page == '/' ? (window.mainPage || '/main/index') : page
 
   loadPage(page)
-  window.history.replaceState({ id: page }, findTitle(page), page + '.html')
+  let title = findTitle(page)
+  window.history.replaceState({ id: page, title }, title, page + '.html')
   highlightMenuItem(page)
   scrollToMenuItem(page)
 
@@ -23,7 +24,8 @@ window.addEventListener('DOMContentLoaded', () => {
     let id = event.target.id
     event.preventDefault()
     loadPage(id)
-    window.history.pushState({ id: id }, findTitle(id), id + '.html')
+    let title = findTitle(id)
+    window.history.pushState({ id, title }, title, id + '.html')
     highlightMenuItem(id)
   })
 })
@@ -82,7 +84,25 @@ window.addEventListener('popstate', event => {
 async function loadPage(id) {
   let response = await fetch(`/content${id}.html`)
   let content = document.getElementById('content')
+  document.title = `${window.location.host} - ${window.history.state.title}`
   content.innerHTML = await response.text()
+  document.body.scrollIntoView()
+  addSocialLinksTo(content)
+}
+
+function addSocialLinksTo(content) {
+  let socialDiv = document.createElement('div')
+  let link = document.createElement('a')
+
+  socialDiv.id = 'social'
+  link.classList.add("twitter-share-button")
+  link.href = "https://twitter.com/intent/tweet"
+  link.setAttribute('data-size', 'large')
+  link.innerHTML = 'Tweet'
+  socialDiv.appendChild(link)
+  content.appendChild(socialDiv)
+
+  if (twttr) { twttr.widgets.load(link) }
 }
 
 function highlightMenuItem(id) {
@@ -97,7 +117,8 @@ function highlightMenuItem(id) {
 
 function findTitle(id) {
   let pages = window.menu.map(section => {
-    return section.pages.find(page => page.id == id)
+    let relativeId = id.replace('/' + section.path, '')
+    return section.pages.find(page => page.id == relativeId)
   }).filter( a => a )
 
   return pages.length > 0 && pages[0].name

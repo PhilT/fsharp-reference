@@ -9,8 +9,7 @@ let indexEntry index (path: string, fm: Frontmatter) =
   <header>
     <h1><a href='/%s.html'>%s</a></h1>
     <div class='timestamps'>
-      <span class='created'>Created: %s</span>
-      <span class='updated'>%s</span>
+      <span class='created'>Created: %s</span> <span class='updated'>%s</span>
     </div>
   </header>
 
@@ -23,7 +22,7 @@ let indexEntry index (path: string, fm: Frontmatter) =
     path
     fm.title
     fm.created
-    (Frontmatter.item "updated" fm.updated "Updated: ")
+    (Frontmatter.item "| Updated: " fm.updated "")
     fm.description
     path
 
