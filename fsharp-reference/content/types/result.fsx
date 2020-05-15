@@ -30,7 +30,7 @@ let test details =
 
 let validDetails = { Name = "Phil"; Email = "phil@example.com" }
 let invalidName = { Name = null; Email = "phil@example.com" }
-let invalidEmail = {Name = "Phil"; Email = ""}
+let invalidEmail = { Name = "Phil"; Email = "" }
 
 test validDetails
 test invalidName
