@@ -2,7 +2,7 @@
 title: Automatically Renew Let's Encrypt HTTPS/TLS Certificates
 description: Here's how I renew the TLS Certificates on my 3 websites every 3 months with one command.
 created: 2019-11-01
-updated:
+updated: 2020-11-12
 keywords: deployment aws static
 
 ---
@@ -55,7 +55,18 @@ Then for each website you need a line:
 
 Save the file and run with `./install-all`.
 
-That's it! The certificates should install automatically.
+The certificates should install automatically.
+
+Don't forget, if the certificates had already expired, make sure you switch 
+back to **Redirect HTTP to HTTPS** in Cloudfront. Similar to the steps in the 
+first part of this article:
+
+1. Browse to **https://console.aws.amazon.com/cloudfront**
+1. Click on the **ID** of the expired distribution
+1. Click the **Behaviours** tab
+1. Select the first line in the table and click **Edit**
+1. Change **Viewer Protocol Policy** to **Redirect HTTP to HTTPS**
+1. Scroll down and click **Yes, Edit** at the bottom right
 
 ## Conclusion
 
