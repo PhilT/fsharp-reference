@@ -4,7 +4,7 @@ title: Text rendering with OpenGL and F#
 description: Unlike WebGL, rendering text in OpenGL is a bit more complicated. Here's how I went about it with F#.
 created: 2020-01-16
 updated:
-keywords: f# opengl silk.net
+keywords: game f# opengl silk.net
 ---
 
 ![Example text rendering](/assets/text-rendering.webp)

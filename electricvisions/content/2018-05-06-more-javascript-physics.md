@@ -3,7 +3,7 @@ title: More JavaScript Physics
 description: Physics will play an important role in this game and the performance of the physics engine is a crucial factor. I've spent a bit more time tweaking the comparison and trying out ideas.
 created: 2018-05-06
 updated:
-keywords: javascript physics, 3d
+keywords: game javascript physics
 ---
 
 What I've realised is that decoupling of physics from the display is required if I ever want to render large worlds server-side. It'll also help with separation of concerns. When building large programs this will help keep issues localised.

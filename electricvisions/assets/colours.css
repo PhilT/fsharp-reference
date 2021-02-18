@@ -1,0 +1,39 @@
+:root {
+  --common-accent: #FFCC66;
+  --common-bg: #1F2430;
+  --common-fg: #CBCCC6;
+  --common-ui: #707A8C;
+
+  --syntax-tag: #5CCFE6;
+  --syntax-func: #FFD580;
+  --syntax-entity: #73D0FF;
+  --syntax-string: #BAE67E;
+  --syntax-regexp: #95E6CB;
+  --syntax-markup: #F28779;
+  --syntax-keyword: #FFA759;
+  --syntax-special: #FFE6B3;
+  --syntax-comment: #5C6773;
+  --syntax-constant: #D4BFFF;
+  --syntax-operator: #F29E74;
+  --syntax-error: #FF3333;
+
+  --vcs-added: #A6CC70;
+  --vcs-modified: #77A8D9;
+  --vcs-removed: #F27983;
+}
+
+.ui-line: { color: var(--common-bg); filter: brightness(0.85) }
+
+.ui-panel-bg:      { color: var(--common-bg); filter: brightness(0.1) }
+.ui-panel-shadow:  { color: var(--common-bg); filter: brightness(0.7) }
+.ui-panel-border:  { color: var(--common-bg); filter: brightness(0.6) }
+
+.ui-gutter-normal: { color: var(--common-ui); filter: opacity(0.4) }
+.ui-gutter-active: { color: var(--common-ui); filter: opacity(0.8) }
+
+.ui-selection-bg: { color: #7399E6; filter: opacity(0.13); }
+.ui-selection-inactive: { color: #96B0E6; filter: opacity(0.07); }
+.ui-selection-border: { color: #96B0E6; filter: opacity(0.07); }
+.ui-guide-active: { color: var(--common-ui); filter: opacity(0.7); }
+.ui-guide-normal: { color: var(--common-ui); filter: opacity(0.3); }
+

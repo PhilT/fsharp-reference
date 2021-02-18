@@ -3,7 +3,7 @@ title: OpenGL Library Choice
 description: WebGL interfaces directly with JavaScript, OpenGL is natively C. So we need some bindings in F# or C# to allow us to interface with OpenGL. To add further complications we also need to handle Window initialization which can get pretty tricky when dealing with multiple platforms.
 created: 2019-11-08
 updated:
-keywords: f# opengl silk.net opentk opengl.net netcore
+keywords: game f# opengl silk.net opentk opengl.net netcore
 ---
 
 ## Requirements

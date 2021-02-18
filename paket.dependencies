@@ -1,6 +1,8 @@
-source https://www.nuget.org/api/v2
-nuget FSharp.Literate
-nuget Newtonsoft.Json
+source https://api.nuget.org/v3/index.json
+
 nuget Expecto
-nuget FSharp.Control.Reactive.Testing
 nuget FSharp.Compiler.Service
+nuget FSharp.Control.Reactive.Testing
+nuget FSharp.Literate
+nuget Microsoft.NET.Test.Sdk
+nuget YoloDev.Expecto.TestSdk

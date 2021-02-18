@@ -3,7 +3,7 @@ title: JavaScript Physics Engines
 description: Under promise and over deliver! Last week I said I'd be releasing a demo of 3 physics engines I've been comparing. Well guess what?! I've got 4 to show you!
 created: 2018-04-15
 updated:
-keywords: javascript webgl, physics
+keywords: game javascript webgl physics
 ---
 
 **UPDATE**: Samuel tweaked my wall demo and it's now keeping up with the big boys! I need to run a few more tests before making a final decision but I guess the key thing is to abstract it away and then it makes switching much easier. The BabylonJS plugins are great for this so that will certainly be a factor.

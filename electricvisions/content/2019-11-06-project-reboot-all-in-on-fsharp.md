@@ -2,8 +2,8 @@
 title: Project Reboot - Going all in on F#
 description: Whoah! Over a year since I posted updates! Selling our house and all our stuff and moving into a van is time consuming! In that time I've had a chance to re-evaluate some of the choices I made when starting this project.
 created: 2019-11-06
-updated:
-keywords: f# functional netcore
+updated: 2021-02-15
+keywords: game f# functional netcore
 ---
 
 After an encouraging start with my library in JavaScript I got the nagging
@@ -31,13 +31,4 @@ I've already developed in JavaScript.
 As part of learning F# and some associated tech which I may need I've
 rewritten this blog to generate HTML using F# and some libraries like
 [FSharp.Literate](https://fsprojects.github.io/FSharp.Formatting/literate.html)
-to ensure code in articles actually runs correctly. Head over to
-[electricvisions.com](https://electricvisions.com) for more general articles
-on F# development and infrastructure.
-
-
-I've also pushed up an [FSharp reference site](fsharp-reference.com) which I'll
-be finishing off in due course to help me (and hopefully others) get to grips
-with all the features of the language.
-
-
+to ensure code in articles actually runs correctly.

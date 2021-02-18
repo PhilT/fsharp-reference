@@ -3,7 +3,7 @@ title: Language and framework choice
 description: I've considered a number of different languages to write a game in. From C to Elm. Certainly C is the most widely used. Elm probably being the least widely used. Ruby is what I use most these days. So why did I choose JavaScript? Let's take a brief look at languages I considered and why I ruled them out.
 created: 2018-04-08
 updated:
-keywords: javascript webgl
+keywords: game javascript webgl
 ---
 
 

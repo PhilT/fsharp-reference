@@ -57,10 +57,6 @@ ul {
   color: var(--logo-color);
 }
 
-a {
-  font-weight: bold;
-}
-
 a:hover {
   color: var(--links);
   background-color: var(--pale);
@@ -74,6 +70,8 @@ a:hover {
 article h1 a,
 article h1 a:visited {
   color: var(--main-text);
+  font-weight: normal;
+  font-size: x-large;
 }
 
 article h1 a:hover {
