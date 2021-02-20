@@ -7,7 +7,7 @@
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="../library/library.fsproj" />
+    <ProjectReference Include="../src/app.fsproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="expectrum.fs" />
