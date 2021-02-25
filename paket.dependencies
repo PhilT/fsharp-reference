@@ -1,8 +1,8 @@
 source https://api.nuget.org/v3/index.json
 
 nuget Expecto
-nuget FSharp.Compiler.Service
 nuget FSharp.Control.Reactive.Testing
+nuget FSharp.Formatting
 nuget FSharp.Literate
 nuget Microsoft.NET.Test.Sdk
 nuget YoloDev.Expecto.TestSdk

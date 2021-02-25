@@ -4,7 +4,7 @@ title: Text rendering with OpenGL and F#
 description: Unlike WebGL, rendering text in OpenGL is a bit more complicated. Here's how I went about it with F#.
 created: 2020-01-16
 updated:
-keywords: game f# opengl silk.net
+keywords: game f# opengl
 ---
 
 ![Example text rendering](/assets/text-rendering.webp)
@@ -55,7 +55,7 @@ Once you've declared one function with the full path to the DLL, subsequent
 declarations will use this as well. FreeType is using standard C calling convention
 so we also specify that in the declaration. Notice that the parameter is `HANDLE&`.
 In FreeType, this is an output parameter and so we must pass in a pointer that
-will be pointed at the HANDLE for the FreeType library. Finally `FT_Error` is
+will be pointed at the `HANDLE` for the FreeType library. Finally `FT_Error` is
 just an int.
 
 Translating the structures/records used in FreeType was a bit laborious.
@@ -161,20 +161,21 @@ I was then able to iterate over the `Character` records I created earlier to
 copy the data into the texture.
 *)
 
-use dataPtr = fixed character.data
-let dataVoidPtr = dataPtr |> NativePtr.toVoidPtr
+let dummyFunc =
+  use dataPtr = fixed character.data
+  let dataVoidPtr = dataPtr |> NativePtr.toVoidPtr
 
-gl.TexSubImage2D(
-  GLEnum.Texture2D,
-  0,
-  x,
-  0,
-  character.width,
-  character.height,
-  GLEnum.Red,
-  GLEnum.UnsignedByte,
-  dataVoidPtr
-)
+  gl.TexSubImage2D(
+    GLEnum.Texture2D,
+    0,
+    x,
+    0,
+    character.width,
+    character.height,
+    GLEnum.Red,
+    GLEnum.UnsignedByte,
+    dataVoidPtr
+  )
 
 (**
 ## Rendering to OpenGL

@@ -1,9 +1,9 @@
 ---
-title: Automatically Renew Let's Encrypt HTTPS/TLS Certificates
+title: Automatic Let's Encrypt TLS Certificates
 description: Here's how I renew the TLS Certificates on my 3 websites every 3 months with one command.
 created: 2019-11-01
 updated: 2020-11-12
-keywords: deployment aws
+keywords: deploy aws
 
 ---
 

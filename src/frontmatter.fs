@@ -56,7 +56,7 @@ module Frontmatter =
       (item "# " fm.title "\n")
       "<div class='timestamps'>\n"
       (item "<span class='created'>Created: " fm.created "</span>\n")
-      (item "<span class='updated'>| Updated: " fm.updated "</span>\n")
+      (item "<span class='updated'>Updated: " fm.updated "</span>\n")
       (item "<div class='keywords'>keywords: " keywords "</div>\n")
       "</div>\n"
       "</header>\n"

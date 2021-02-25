@@ -37,7 +37,8 @@ All we need to begin with is Expecto itself.
   Time for a "Hello world" example:
  *)
 
-#r "../../packages/Expecto/lib/netstandard2.0/Expecto"
+//#I "packages/Expecto/lib/netstandard2.0"
+#r "nuget: Expecto"
 
 open Expecto
 

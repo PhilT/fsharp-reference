@@ -3,7 +3,7 @@ title: Project Reboot - Going all in on F#
 description: Whoah! Over a year since I posted updates! Selling our house and all our stuff and moving into a van is time consuming! In that time I've had a chance to re-evaluate some of the choices I made when starting this project.
 created: 2019-11-06
 updated: 2021-02-15
-keywords: game f# functional netcore
+keywords: game f# .net
 ---
 
 After an encouraging start with my library in JavaScript I got the nagging

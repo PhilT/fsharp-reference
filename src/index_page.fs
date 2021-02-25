@@ -4,33 +4,32 @@ open System.IO
 open System.Text.RegularExpressions
 
 let indexEntry index (path: string, fm: Frontmatter) =
-  sprintf "%s
-  <article>
+  let keywords = fm.keywords |> String.concat " "
+  let updated = Frontmatter.item "<span class='updated'><span class='label'>Updated: </span>" fm.updated "</span>"
+
+  $"{index}
+  <article class='summary'>
   <header>
-    <h1><a href='/%s.html'>%s</a></h1>
+    <div class='keywords'>{keywords}</div>
+    <h1><a href='/{path}.html'>{fm.title}</a></h1>
     <div class='timestamps'>
-      <span class='created'>Created: %s</span> <span class='updated'>%s</span>
+      <span class='created'><span class='label'>Created: </span>{fm.created}</span>
+      {updated}
     </div>
   </header>
 
   <p>
-    %s
-    <a href='/%s.html'>read more »</a>
+    {fm.description}
+    <a href='/{path}.html'>read more»</a>
   </p>
   </article>
-  " index
-    path
-    fm.title
-    fm.created
-    (Frontmatter.item "| Updated: " fm.updated "")
-    fm.description
-    path
+  "
 
-let generateArticleIndex output (frontmatters: Map<string, Frontmatter>) =
+
+let generate output site frontmatters =
   let indexPath = output + "/index.html"
 
   let dateSort (_, (fm: Frontmatter)) = fm.created
-
 
   let html =
     frontmatters
@@ -38,56 +37,7 @@ let generateArticleIndex output (frontmatters: Map<string, Frontmatter>) =
     |> List.filter (fun (_, fm) -> fm.created <> "")
     |> List.sortByDescending dateSort
     |> Seq.fold indexEntry ""
+    |> Template.wrap site
 
   printfn "Writing article index to '%s'" indexPath
   File.WriteAllText(indexPath, html)
-
-
-let generatePageInfoFor section frontmatters =
-  frontmatters
-  |> Map.filter (fun key _ -> Stringx.startsWith section key)
-  |> Map.map (fun path fm ->
-    sprintf "{ id: '%s', name: '%s', keywords: [%s] }"
-      (Pathutils.removePath (section + @"\\") path)
-      fm.title
-      (Listx.toString fm.keywords)
-  )
-  |> Map.toList
-  |> List.map (fun (_, v) -> v)
-  |> String.concat ",\n"
-
-
-let generateJsIndex sections output frontmatters =
-  let indexPath = output + "/../assets/index.js"
-
-  let sectionsList =
-    sections
-    |>
-      List.map (fun section ->
-      let heading = Stringx.titleize section
-      let path = section + "/"
-      let pages = generatePageInfoFor section frontmatters
-      sprintf "{\n\
-          heading: '%s',\n\
-          path: '%s',\n\
-          pages: [\n%s\n\
-          ]\n\
-        }"
-        heading
-        path
-        pages
-    )
-    |> String.concat ",\n"
-
-
-  let js = "window.menu = [\n" + sectionsList + "\n]\n"
-
-  printfn "Writing index to '%s'" indexPath
-  File.WriteAllText(indexPath, js)
-
-
-let generate output (config: Config) frontmatters =
-  if (List.isEmpty config.sections) then
-    generateArticleIndex output frontmatters
-  else
-    generateJsIndex config.sections output frontmatters

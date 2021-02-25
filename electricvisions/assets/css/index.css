@@ -1,0 +1,30 @@
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+article.summary {
+  flex: 1 1 15em;
+  margin: 1em;
+  padding: 1em;
+  background-color: var(--ui-selection-bg);
+  border-radius:5px;
+}
+
+article.summary h1 {
+  margin: 0 0 2px;
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+article.summary a, article.summary a:visited {
+  color: var(--common-accent);
+}
+
+article.summary a:hover {
+  color: var(--vcs-removed);
+}
+
+
+

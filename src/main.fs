@@ -2,8 +2,12 @@ module WebsiteBuilder.Main
 
 open FSharp.Data
 open FSharp.Literate
+open FSharp.Formatting.Literate
+open FSharp.Formatting.Markdown
 open System.IO
-open System.Text.RegularExpressions
+
+type Hello = One | Two | Three
+
 
 let processSite site =
   printfn "Website: %s..." site
@@ -11,7 +15,7 @@ let processSite site =
   let config = Config.load site
 
   let sourceDir = site + "/content"
-  let output = "output/" + site + "/content"
+  let output = "output/" + site
 
   let filterDocumentType (file: string) =
     match Path.GetExtension(file) with
@@ -19,21 +23,15 @@ let processSite site =
     | _ -> false
 
 
-  let format (doc: LiterateDocument) =
-    Formatting.format doc.MarkdownDocument true OutputKind.Html
-
-
   let parseScript source =
     let doc = Literate.ParseScriptString(source)
-
-    Literate.FormatLiterateNodes(doc, OutputKind.Html, "", true, true)
-    |> format
+    Literate.ToHtml(doc)
 
 
   let parse (path: string) source =
     match Path.GetExtension(path) with
     | ".fsx" -> parseScript source
-    | _ -> FSharp.Markdown.Markdown.TransformHtml source
+    | _ -> Markdown.ToHtml(Markdown.Parse source)
 
 
   let rec processFiles dirs =
@@ -45,7 +43,7 @@ let processSite site =
 
 
   let processFile (frontmatters: Map<string, Frontmatter>) path =
-    let sourceDirRegex = sourceDir + @"\\"
+    let sourceDirRegex = sourceDir + "/" // FIXME: This is not cross platform compatible
     let outputPath = Pathutils.toOutputPath sourceDirRegex output path
     let name = Pathutils.toName sourceDirRegex path
 
@@ -60,7 +58,8 @@ let processSite site =
     then
       printfn "Processing %s" name
 
-      let html = parse path content
+      let html = parse path content |> Template.wrapArticle site |> Template.wrap site
+
       File.WriteAllText(outputPath, html)
     else
       printfn "Up-to-date %s" name
@@ -70,10 +69,10 @@ let processSite site =
 
   processFiles [sourceDir]
   |> Seq.fold processFile Map.empty
-  |> IndexPage.generate output config
+  |> IndexPage.generate output site
 
   printfn ""
 
 
-let sites = ["electricvisions"; "fsharp-reference"; "matter-game"]
-sites |> Seq.iter processSite
+["electricvisions"]
+|> Seq.iter processSite

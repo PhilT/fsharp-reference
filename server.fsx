@@ -12,7 +12,7 @@ let port = match website with
             | "fsharp-reference" -> "9001"
             | "matter-game" -> "9002"
             | _ -> "9003"
-let host = "http://localhost:" + port + "/"
+let host = "http://+:" + port + "/"
 
 printfn "Serving files from %s" siteRoot
 printfn "Host set to %A" host

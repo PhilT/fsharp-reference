@@ -1,4 +1,3 @@
 FSharp.Literate
+FSharp.Formatting
 FSharp.Control.Reactive.Testing
-FSharp.Compiler.Service
-

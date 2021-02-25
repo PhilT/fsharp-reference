@@ -20,6 +20,8 @@
   --vcs-added: #A6CC70;
   --vcs-modified: #77A8D9;
   --vcs-removed: #F27983;
+
+  --ui-selection-bg: hsla(221.1,29.4%,23.3%,0.50);
 }
 
 .ui-line: { color: var(--common-bg); filter: brightness(0.85) }

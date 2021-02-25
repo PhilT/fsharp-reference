@@ -1,0 +1,44 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 2em;
+}
+
+nav h1 {
+  margin: 0;
+  color: var(--syntax-entity);
+}
+
+nav header a {
+  display: flex;
+}
+
+#social {
+  display: flex;
+  margin-bottom: 0;
+}
+
+#social li,
+#social a {
+  display: block;
+}
+
+nav li a, nav header a {
+  height: 32px;
+  padding: 4px;
+  width: auto;
+  border-radius: 4px;
+}
+
+header a img {
+  padding: 0 8px;
+}
+
+nav img {
+  width: 32px;
+  height: 32px;
+}
+
+nav a img:hover {
+  fill: red;
+}

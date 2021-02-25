@@ -1,0 +1,11 @@
+echo "Building docs..."
+mkdir -p output/electricvisions/assets
+
+cp -rf assets/* output/electricvisions/assets
+cp -rf electricvisions/assets output/electricvisions
+
+cp -f electricvisions/favicon.ico output/electricvisions
+
+dotnet run -p src
+echo Done.
+

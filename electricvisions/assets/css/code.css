@@ -1,0 +1,81 @@
+span.s { color: var(--syntax-string); } /* strings --- and styles for other string related formats */
+
+span.pf { color: var(--syntax-operator); } /* printf formatters */
+span.e { color: var(--syntax-string); } /* escaped chars */
+
+/*span.id { color: var(--syntax-tag); } /* identifiers --- and styles for more specific identifier types */
+/*span.m { color: var(--syntax-entity) } /* module */
+/*span.rt { color: var(--syntax-entity); } /* reference type */
+span.vt { color: var(--syntax-entity); } /* value type */
+/*span.if { color: var(--syntax-entity); } /* interface */
+/*span.ta { color: var(--syntax-entity); } /* type argument */
+/*span.d { color: var(--syntax-entity); } /* disposable */
+/*span.prop { color: var(--syntax-entity); } /* property */
+span.p, span.pn { color: var(--syntax-keyword); } /* puntuation */
+span.f { color: var(--syntax-func); } /* function */
+span.pat { color: var(--syntax-entity); } /* active pattern */
+/*span.u { color: var(--syntax-func); } /* union case */
+span.e { color: var(--syntax-entity); } /* enumeration */
+span.k { color: var(--syntax-keyword); } /* keywords */
+span.c { color: var(--syntax-comment); } /* comment */
+span.o { color: var(--syntax-operator); } /* operators */
+span.n { color: var(--syntax-constant); } /* numbers */
+span.l { color: var(--syntax-comment); } /* line number */
+span.v { color: var(--syntax-func); font-weight: bold; } /* mutable var or ref cell */
+span.inactive { color: var(--syntax-comment); } /* inactive code */
+span.prep { color: var(--syntax-constant); } /* preprocessor */
+span.fsi { color: var(--common-ui); } /* fsi output */
+
+/* tool tip */
+.fsdocs-tip {
+	background:#475b5f;
+  border-radius:4px;
+  font: 11pt "Open Sans", sans-serif;
+	padding:6px 8px 6px 8px;
+	display:none;
+  color:#d1d1d1;
+  pointer-events:none;
+}
+table.pre pre {
+  padding:0px;
+  margin:0px;
+  border:none;
+}
+table.pre, pre.fssnip, pre {
+  line-height:13pt;
+  border:2px solid var(--common-ui);
+  border-collapse:separate;
+  white-space:pre;
+  font: var(--code-font);
+  width:100%;
+  margin: 0;
+  background-color: var(--common-bg);
+  padding:10px;
+  border-radius:5px;
+  color: var(--main-text);
+  max-width: none;
+}
+pre.fssnip code {
+  font: 14px monospace;
+  background-color: var(--common-bg);
+}
+table.pre pre {
+  padding:0px;
+  margin:0px;
+  border-radius:0px;
+  width: 100%;
+}
+table.pre td {
+  padding:0px;
+  white-space:normal;
+  margin:0px;
+}
+table.pre td.lines {
+  width:30px;
+}
+
+table.pre code, table.pre pre, pre code {
+  background: none;
+  padding: 0;
+}
+

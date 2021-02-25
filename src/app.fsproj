@@ -5,6 +5,7 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="template.fs" />
     <Compile Include="stringx.fs" />
     <Compile Include="listx.fs" />
     <Compile Include="config.fs" />

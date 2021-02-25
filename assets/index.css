@@ -1,23 +1,23 @@
-article {
+article.summary {
   background-color: var(--article-index);
   padding: 16px;
   margin: 16px 0;
   border-radius: 4px;
 }
 
-article header {
+article.summary header {
   margin-bottom: 1em;
 }
 
-article h1 {
+article.summary h1 {
   margin: 0;
 }
 
-article h1 a,
-article h1 a:visited {
+article.summary h1 a,
+article.summary h1 a:visited {
   color: var(--links);
 }
 
-article h1 a:hover {
+article.summary h1 a:hover {
   color: var(--links-hover);
 }
