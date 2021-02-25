@@ -12,9 +12,9 @@ So, for now, that means Energy.js is out. It's performance is right up there and
 
 Ammo is pretty complicated and Cannon is the slowest of the bunch. Oimo seemed pretty decent and simple so I added another tab to the comparison to test Oimo directly without going through BabylonJS for potential use on the server. It also allowed me to tweak performance a bit as well.
 
-![Collapsing wall physics engine test](/assets/enginetest/engine_test2.webp)
+![Collapsing wall physics engine test](/assets/engine_test2.webp)
 
-[Here is the comparison](/assets/enginetest) again updated using Oimo.js directly.
+[Here is the comparison](/assets/enginetest/index.html) again updated using Oimo.js directly.
 
 I'm pretty happy with the results. I've spent a fair bit of time thinking about this stuff and procrastinating with low-level details, productivity tools and functional programming.
 
