@@ -26,5 +26,18 @@ article.summary a:hover {
   color: var(--vcs-removed);
 }
 
+article.about {
+  flex: 100%;
+  order: -1;
+  background: none;
+  margin: 0;
+}
 
+article.about h1 {
+  display: none;
+}
 
+article.about .timestamps,
+article.about .keywords {
+  display: none;
+}

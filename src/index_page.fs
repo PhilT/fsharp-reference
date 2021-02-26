@@ -8,7 +8,7 @@ let indexEntry index (path: string, fm: Frontmatter) =
   let updated = Frontmatter.item "<span class='updated'><span class='label'>Updated: </span>" fm.updated "</span>"
 
   $"{index}
-  <article class='summary'>
+  <article class='summary {keywords}'>
   <header>
     <div class='keywords'>{keywords}</div>
     <h1><a href='/{path}.html'>{fm.title}</a></h1>
