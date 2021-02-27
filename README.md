@@ -3,8 +3,7 @@
 All the websites I run, in one place!
 
 * electricvisions.com - Company website, General tech blog, Windows, F#, .NET, Ruby
-* fsharp-reference.com - Quick reference of the F# language
-* matter-game.com - Matter, the game I'm working on, progress, learnings, graphics engine, etc
+* matter-game.com - Matter, the game I'm working on
 
 ## Building
 
@@ -22,8 +21,7 @@ Run a local development web server on one of the following ports:
 | website | port |
 | ------- | -------- |
 | `electricvisions`| 9000 |
-| `fsharp-reference`| 9001 |
-| `matter-game`| 9002 |
+| `matter-game`| 9001 |
 
 ### `./release`
 

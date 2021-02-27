@@ -43,7 +43,7 @@ let processSite site =
 
 
   let processFile (frontmatters: Map<string, Frontmatter>) path =
-    let sourceDirRegex = sourceDir + "/" // FIXME: This is not cross platform compatible
+    let sourceDirRegex = sourceDir + @"(\\|/)"
     let outputPath = Pathutils.toOutputPath sourceDirRegex output path
     let name = Pathutils.toName sourceDirRegex path
 

@@ -9,8 +9,7 @@ let siteRoot = "output/" + website
 let pageRoot = siteRoot + "/index.html"
 let port = match website with
             | "electricvisions" -> "9000"
-            | "fsharp-reference" -> "9001"
-            | "matter-game" -> "9002"
+            | "matter-game" -> "9001"
             | _ -> "9003"
 let host = "http://+:" + port + "/"
 
