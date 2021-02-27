@@ -8,10 +8,16 @@ article#full header {
   justify-content: space-between;
 }
 
+article#full .created {
+  margin-right: 1em;
+}
+
 article#full h1 {
+  flex: 100%;
   font-weight: normal;
   font-size: 2.5em;
   margin: 0;
+  margin-bottom: 0.5em;
   color: var(--common-accent);
 }
 
@@ -19,13 +25,9 @@ article#full li {
   margin-left: 2em;
 }
 
-article#full .keywords {
-  font-size: 0.7em;
-  flex: 100%;
-}
-
+article#full .keywords,
 article#full .timestamps {
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 article#full h2 {

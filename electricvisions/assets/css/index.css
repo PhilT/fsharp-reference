@@ -26,6 +26,11 @@ article.summary a:hover {
   color: var(--vcs-removed);
 }
 
+article.summay .timestamps .created,
+article.summay .timestamps .updated {
+  display: block;
+}
+
 article.about {
   flex: 100%;
   order: -1;
