@@ -26,8 +26,8 @@ article.summary a:hover {
   color: var(--vcs-removed);
 }
 
-article.summay .timestamps .created,
-article.summay .timestamps .updated {
+article.summary .timestamps .created,
+article.summary .timestamps .updated {
   display: block;
 }
 
