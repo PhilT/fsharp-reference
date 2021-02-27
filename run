@@ -1,10 +1,14 @@
 echo "Building docs..."
 mkdir -p output/electricvisions/assets
+mkdir -p output/matter-game/assets
 
 cp -rf assets/* output/electricvisions/assets
+cp -rf assets/* output/matter-game/assets
 cp -rf electricvisions/assets output/electricvisions
+cp -rf matter-game/assets output/matter-game
 
 cp -f electricvisions/favicon.ico output/electricvisions
+cp -f matter-game/favicon.ico output/matter-game
 
 dotnet run -p src
 echo Done.
