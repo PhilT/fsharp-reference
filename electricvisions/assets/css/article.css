@@ -2,9 +2,32 @@ article#full {
   margin: 4em;
 }
 
+article#full header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 article#full h1 {
   font-weight: normal;
   font-size: 2.5em;
   margin: 0;
-  color: var(--syntax-entity);
+  color: var(--common-accent);
+}
+
+article#full li {
+  margin-left: 2em;
+}
+
+article#full .keywords {
+  font-size: 0.7em;
+  flex: 100%;
+}
+
+article#full .timestamps {
+  font-size: 0.9em;
+}
+
+article#full h2 {
+  color: var(--syntax-regexp);
 }

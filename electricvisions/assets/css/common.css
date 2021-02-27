@@ -9,30 +9,38 @@ body {
   padding-bottom: 40px;
 }
 
-ul, li, a, img {
+ul, ol, li, a, img, p {
   padding: 0;
   margin: 0;
 }
 
-ul {
+ul, p {
   margin-bottom: 1em;
 }
 
-/*--------------------------------------------------------------------------
-  Links
-/*--------------------------------------------------------------------------*/
+em {
+  margin-right: 2px;
+}
 
 h1 a, h1 a:hover, h1 a:focus,
 h2 a, h2 a:hover, h2 a:focus,
 h3 a, h3 a:hover, h3 a:focus,
 h4 a, h4 a:hover, h4 a:focus,
 h5 a, h5 a:hover, h5 a:focus,
-h6 a, h6 a:hover, h6 a:focus { color : inherit; text-decoration : inherit; outline:none }
+h6 a, h6 a:hover, h6 a:focus {
+  color : inherit;
+  text-decoration : inherit;
+  outline:none;
+}
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin-bottom: 0.25em;
+}
 
 a, a:visited {
   text-decoration: none;
-  color: var(--common-ui);
+  color: var(--syntax-entity);
 }
 
 #content {
@@ -55,3 +63,4 @@ a, a:visited {
 .timestamps .updated {
   display: block;
 }
+
