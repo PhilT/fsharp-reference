@@ -75,6 +75,7 @@ table.pre td.lines {
 }
 
 table.pre code, table.pre pre, pre code {
+  display: inline-block;
   background: none;
   padding: 0;
 }
